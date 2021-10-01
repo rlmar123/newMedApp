@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/home_icon"
+    android:title="HOME"
+    android:icon="@drawable/ic_sharp_home_24"/>
+
+    <item
+        android:id="@+id/doctor_info"
+        android:title="Doctor Info"
+        android:icon="@drawable/ic_sharp_contacts_24"/>
+
+    <item
+        android:id="@+id/refill_icon"
+        android:title="Refill"
+        android:icon="@drawable/ic_sharp_medical_services_24"/>
+
+  <item
+      android:id="@+id/add_subtract"
+      android:title="sort"
+      android:icon="@drawable/ic_sharp_note_add_24"/>
+
+
+</menu>

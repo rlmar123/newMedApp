@@ -1,21 +1,26 @@
 package com.example.new_med_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.new_med_app.Model.Doctor;
 import com.example.new_med_app.Model.Medication;
+import com.example.new_med_app.UI.RecyclerDoctorAdapt;
 import com.example.new_med_app.UI.RecyclerMedicationAdapt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -23,6 +28,8 @@ import java.util.ArrayList;
 public class FragmentDocInfo extends Fragment
 {
     private Button doc_save_button = null;
+    private Button doc_email_button = null;
+    private Button doc_phone_button = null;
 
     // doc_popup.xml widget variables
     private EditText doc_first_name= null;
@@ -31,7 +38,7 @@ public class FragmentDocInfo extends Fragment
     private EditText doc_phone_number= null;
 
     private RecyclerView doc_recycler_view = null;
-    private RecyclerMedicationAdapt recycler_adapter= null; // we need a new adapter!!!!!
+
 
     FloatingActionButton add_doc_button = null;
 
@@ -56,29 +63,34 @@ public class FragmentDocInfo extends Fragment
         doc_recycler_view.setHasFixedSize(true);
         doc_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        ArrayList<Medication> our_medication_list = new ArrayList<>();
+        ArrayList<Doctor> our_doc_list = new ArrayList<>();
         add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
+
 
         // fab
         add_doc_button.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 createDocPopUp();
             }
         });
 
 
+
         // will delete
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
+       our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+
 
 
         //setup recycler_adapter
-        RecyclerMedicationAdapt recycler_adapter = new RecyclerMedicationAdapt(getActivity(), our_medication_list);
+        RecyclerDoctorAdapt recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
         doc_recycler_view.setAdapter(recycler_adapter);
 
 
@@ -119,6 +131,26 @@ public class FragmentDocInfo extends Fragment
         //this displays the dialog
         our_dialog = our_builder.create();
         our_dialog.show();
+
+
+
+       /* new Handler().postDelayed(new Runnable()
+        {
+
+            @Override
+            public void run()
+            {
+                Intent myIntent = new Intent(getActivity(), getActivity().getClass());
+
+                our_dialog.dismiss();
+
+                startActivity(myIntent);
+
+                //kills previous activity
+                getActivity().finish();
+
+            }
+        }, 1500); */
 
 
     }

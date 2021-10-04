@@ -70,11 +70,15 @@ public class FragmentHome extends Fragment
         });
 
         // will delete
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
-        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn", "James", "Jones", 45, 45, 2 ));
+        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn",  45, 45, 2 ));
+
+        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn",  45, 45, 2 ));
+
+        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn",  45, 45, 2 ));
+
+        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn",  45, 45, 2 ));
+
+        our_medication_list.add(new Medication("Tylenol", "Acetimono[pehn",  45, 45, 2 ));
 
         //setup recycler_adapter
         RecyclerMedicationAdapt recycler_adapter = new RecyclerMedicationAdapt(getActivity(), our_medication_list);

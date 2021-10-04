@@ -9,20 +9,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.new_med_app.Model.Doctor;
 import com.example.new_med_app.R;
-
-import com.example.new_med_app.Model.Medication;
 
 import java.util.List;
 
-public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedicationAdapt.ViewHolder>
+public class RecyclerDoctorAdapt extends RecyclerView.Adapter<RecyclerDoctorAdapt.ViewHolder>
 {
     private Context the_context = null;
-    private List<Medication> list_of_meds = null;
+    private List<Doctor> list_of_doctors = null;
 
     //to build alert dialog
     private AlertDialog.Builder confirm_builder = null;
@@ -30,22 +30,22 @@ public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedica
 
     private LayoutInflater the_inflater = null;
 
-    //confrimation_pop_up.xml widget variables
-    private Button the_no_button = null;
-    private Button the_yes_button = null;
+
+    private Button doc_email_button = null;
+    private Button doc_phone_button = null;
 
     // RecyclerViewAdapt Constructor
-    public RecyclerMedicationAdapt(Context context, List<Medication> the_list)
+    public RecyclerDoctorAdapt(Context context, List<Doctor> the_list)
     {
         the_context = context;
-        list_of_meds = the_list;
+        list_of_doctors = the_list;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         //connection to my_list_row.xml
-        View the_view = LayoutInflater.from(the_context).inflate(R.layout.medication_row, parent, false);
+        View the_view = LayoutInflater.from(the_context).inflate(R.layout.doc_info_row, parent, false);
         return new ViewHolder(the_view, the_context);
     }
 
@@ -53,17 +53,15 @@ public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedica
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
-        Medication medication = list_of_meds.get(position);
+        Doctor doctor = list_of_doctors.get(position);
 
-        holder.first.setText(medication.getMedicationName());
-        holder.last.setText(medication.getDrugNomenclature());
-
-
+        holder.first.setText(doctor.getFirstName());
+        holder.last.setText(doctor.getLastName());
     }
 
     @Override
     public int getItemCount() {
-        return list_of_meds.size();
+        return list_of_doctors.size();
     }
 
     //magic happens here
@@ -82,35 +80,39 @@ public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedica
             super(itemView);
             the_context = the_ctx;
 
-            first = itemView.findViewById(R.id.doc_first);
-            last = itemView.findViewById(R.id.doc_last);
+            first = itemView.findViewById(R.id.doc_first_info);
+            last = itemView.findViewById(R.id.doc_last_info);
+            doc_phone_button = itemView.findViewById(R.id.the_phone_button);
+            doc_email_button = itemView.findViewById(R.id.the_email_button);
+
             /*
             itemColor = itemView.findViewById(R.id.color_text);
             itemSize = itemView.findViewById(R.id.item_size);
             dateAdded = itemView.findViewById(R.id.date_item_added);
 
-            phoneButton = itemView.findViewById(R.id.the_phone_button);
-            emailButton = itemView.findViewById(R.id.the_email_button);
+             */
 
 
-            phoneButton.setOnClickListener(this);
-            emailButton.setOnClickListener(this);*/
+
+
+            doc_phone_button.setOnClickListener(this);
+            doc_email_button.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v)
         {
             int pos = getAdapterPosition();
-            Medication click_item = list_of_meds.get(pos);
+            Doctor click_item = list_of_doctors.get(pos);
 
             switch (v.getId())
             {
-                /*case R.id.the_phone_button:
+                case R.id.the_phone_button:
 
                     Toast.makeText(the_context, "phone", Toast.LENGTH_LONG).show();
 
-                    Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "777-222-2222"));
-                    the_context.startActivity(the_intent);
+                    //Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "777-222-2222"));
+                   // the_context.startActivity(the_intent);
 
 
                 break;
@@ -118,17 +120,17 @@ public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedica
                 case R.id.the_email_button:
 
                  Toast.makeText(the_context, "Email", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Intent.ACTION_SEND);
+                /*    Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_TEXT,"This is from the med app");
                     intent.putExtra(Intent.EXTRA_SUBJECT,"This is from the med app");
-                    the_context.startActivity(intent);
-                    break;*/
+                    the_context.startActivity(intent);*/
+                    break;
 
             } //end switch
         }
 
-        private void listEditItem(final Medication edit_item)
+        private void listEditItem(final Doctor edit_item)
         {
             final EditText edit_baby_item;
             final EditText edit_item_quantity;
@@ -211,7 +213,7 @@ public class RecyclerMedicationAdapt extends RecyclerView.Adapter<RecyclerMedica
 
         }
 
-        private void listdeleteItem(final Medication del_obj)
+        private void listdeleteItem(final Doctor del_obj)
         {
 
             /*confirm_builder = new AlertDialog.Builder(the_context);

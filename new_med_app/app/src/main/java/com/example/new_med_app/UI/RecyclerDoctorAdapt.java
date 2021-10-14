@@ -3,6 +3,8 @@ package com.example.new_med_app.UI;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,8 +113,8 @@ public class RecyclerDoctorAdapt extends RecyclerView.Adapter<RecyclerDoctorAdap
 
                     Toast.makeText(the_context, "phone", Toast.LENGTH_LONG).show();
 
-                    //Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "777-222-2222"));
-                   // the_context.startActivity(the_intent);
+                    Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "777-222-2222"));
+                    the_context.startActivity(the_intent);
 
 
                 break;
@@ -120,11 +122,11 @@ public class RecyclerDoctorAdapt extends RecyclerView.Adapter<RecyclerDoctorAdap
                 case R.id.the_email_button:
 
                  Toast.makeText(the_context, "Email", Toast.LENGTH_LONG).show();
-                /*    Intent intent = new Intent(Intent.ACTION_SEND);
+                    Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_TEXT,"This is from the med app");
                     intent.putExtra(Intent.EXTRA_SUBJECT,"This is from the med app");
-                    the_context.startActivity(intent);*/
+                    the_context.startActivity(intent);
                     break;
 
             } //end switch

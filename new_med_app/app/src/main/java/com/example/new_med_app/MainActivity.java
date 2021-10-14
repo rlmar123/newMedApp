@@ -31,13 +31,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private ImageView lines;
     private ImageView settinds;
 
-    //to build alert dialog
-    private AlertDialog.Builder our_builder = null;
-    private AlertDialog our_dialog = null;
-
-    //data storage
-    private List<Medication> our_medication_list = null;
-
     private Fragment opening_fragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,16 +47,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
    //     add_icon = findViewById(R.id.add_icon);
         test_bar.setOnNavigationItemSelectedListener(navListener);
-/*
-
-        add_icon.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                createAddPopUp();
-            }
-        });
-*/
 
         /* starts before 1 month from now */
         Calendar startDate = Calendar.getInstance();

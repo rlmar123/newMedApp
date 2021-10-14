@@ -9,20 +9,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.new_med_app.Model.Doctor;
+import com.example.new_med_app.Model.DoctorViewModel;
 import com.example.new_med_app.Model.Medication;
 import com.example.new_med_app.UI.RecyclerDoctorAdapt;
 import com.example.new_med_app.UI.RecyclerMedicationAdapt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FragmentDocInfo extends Fragment
@@ -38,13 +43,23 @@ public class FragmentDocInfo extends Fragment
     private EditText doc_phone_number= null;
 
     private RecyclerView doc_recycler_view = null;
-
+    private RecyclerDoctorAdapt recycler_adapter = null;
+    private ArrayList<Doctor> our_doc_list = null;
 
     FloatingActionButton add_doc_button = null;
 
     //to build alert dialog
     private AlertDialog.Builder our_builder = null;
     private AlertDialog our_dialog = null;
+
+    private static final int NEW_CONTACT_ACTIVITY_REQUEST_CODE = 1;
+    private static final String TAG = "Clicked";
+    public static final String CONTACT_ID = "contact_id";
+    private DoctorViewModel doctorViewModel;
+
+    private LiveData<List<Doctor>> docList;
+
+
 
     public FragmentDocInfo()
     {
@@ -62,8 +77,27 @@ public class FragmentDocInfo extends Fragment
         doc_recycler_view = view.findViewById(R.id.doc_test_recycler);
         doc_recycler_view.setHasFixedSize(true);
         doc_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
+/*
+        doctorViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity()
+                .getApplication())
+                .create(DoctorViewModel.class);
 
-        ArrayList<Doctor> our_doc_list = new ArrayList<>();
+        doctorViewModel.getDoctors().observe(this, contacts -> {
+
+            *//*recyclerViewAdapter = new RecyclerViewAdapter(contacts, MainActivity.this, this);
+            recyclerView.setAdapter(recyclerViewAdapter);
+*//*
+
+
+            //setup recycler_adapter
+            recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
+            doc_recycler_view.setAdapter(recycler_adapter);
+
+
+
+        });*/
+
+        our_doc_list = new ArrayList<>();
         add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
 
 
@@ -73,24 +107,25 @@ public class FragmentDocInfo extends Fragment
             @Override
             public void onClick(View v)
             {
-                createDocPopUp();
+               createDocPopUp();
+
             }
         });
 
 
 
         // will delete
-       our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777"));
+       our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
+        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
 
 
 
         //setup recycler_adapter
-        RecyclerDoctorAdapt recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
+        recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
         doc_recycler_view.setAdapter(recycler_adapter);
 
 

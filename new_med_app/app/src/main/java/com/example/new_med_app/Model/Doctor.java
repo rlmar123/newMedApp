@@ -1,14 +1,33 @@
 package com.example.new_med_app.Model;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "doctor_table")
 public class Doctor
 {
-    private String first_name;
-    private String last_name;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
+    @ColumnInfo(name = "f_name")
+    private String firstName;
+
+    @ColumnInfo(name = "l_name")
+    private String lastName;
+
+    @ColumnInfo(name = "address")
     private String address;
-    private String city_state;
 
-    private String phone_number;
+    @ColumnInfo(name = "city_state")
+    private String cityState;
+
+    @ColumnInfo(name = "phone_number")
+    private String phoneNumber;
+
+    @ColumnInfo(name = "email")
+    private String email;
 
 
     public Doctor()
@@ -16,30 +35,65 @@ public class Doctor
         // null
     }
 
-    public Doctor(String first_name, String last_name, String address, String city_state, String phone_number)
+    public Doctor(@NonNull String firstName, @NonNull String lastName, String address, String city_state, @NonNull String phone_number, @NonNull String email)
     {
-        this.first_name = first_name;
-        this.last_name = last_name;
+        // id is created by db
+
+        this.firstName = firstName;
+        this.lastName = lastName;
 
         this.address = address;
-        this.city_state = city_state;
+        this.cityState = city_state;
 
-        this.phone_number = phone_number;
+        this.phoneNumber = phone_number;
+        this.email = email;
 
     }
 
+    public int getId()
+    {return id;}
+
     public String getFirstName()
-    {return first_name;}
+    {return firstName;}
 
     public String getLastName()
-    {return last_name;}
+    {return lastName;}
 
     public String getAddress()
     {return address;}
 
     public String getCityState()
-    {return city_state;}
+    {return cityState;}
 
     public String getPhoneNumber()
-    {return phone_number;}
-}
+    {return phoneNumber;}
+
+    public String getEmail()
+    {return email;}
+
+
+    // setters
+    public void setId(int id)
+    {this.id = id;}
+
+    public void setFirstName(String firstName)
+    {this.firstName = firstName;}
+
+    public void setLastName(String lastName)
+    {this.lastName = lastName;}
+
+    public void setAddress(String address)
+    {this.address = address;}
+
+    public void setCityState(String cityState)
+    {this.cityState = cityState;}
+
+    public void setPhoneNumber(String phoneNumber)
+    {this.phoneNumber = phoneNumber;}
+
+    public void setEmail(String email)
+    {this.email = email;}
+
+
+
+} // end Doctor class

@@ -5,9 +5,6 @@ public class Medication
     private String medication_name = null;
     private String drug_nomenclature = null;
 
-
-
-
     private int quantity_total = 0;
     private int quantity_left = 0;
 
@@ -16,7 +13,7 @@ public class Medication
 
     public Medication()
     {
-        // null Finish medication row
+        // null
     }
 
     public Medication(String medication_name, String drug_nomenclature, int quantity_left, int quantity_total, int refills_left)

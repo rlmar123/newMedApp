@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     } // end onCreate
 
 
-
-
-
-
-
     // fragments change here
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -113,7 +108,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                             break;
 
                         case R.id.doctor_info:
-                            test_bar.setBackgroundResource(R.color.black);selectedFragment = new FragmentDocInfo();
+                            test_bar.setBackgroundResource(R.color.black);
+                            selectedFragment = new FragmentDocInfo();
 
                             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                                     selectedFragment).commit();

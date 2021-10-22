@@ -64,20 +64,20 @@
             </EditText>
 
 
-       <!--     <Button
-                android:id="@+id/the_save_button"
-                android:background="@color/colorAccent"
+            <Button
+                android:id="@+id/doc_save_button"
+                android:backgroundTint="#FF0000"
                 android:layout_marginEnd="5dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
-                android:text="@string/save_button"
+                android:text="Add Doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/the_item_size"
+                android:layout_below="@id/doc_phone_number"
                 >
 
-            </Button>-->
+            </Button>
 
         </RelativeLayout>
 

@@ -72,8 +72,7 @@ public class RecyclerDoctorAdapt extends RecyclerView.Adapter<RecyclerDoctorAdap
         public TextView first = null;
         public TextView last = null;
 
-        public Button phoneButton = null;
-        public Button emailButton = null;
+
 
         public int id;
 

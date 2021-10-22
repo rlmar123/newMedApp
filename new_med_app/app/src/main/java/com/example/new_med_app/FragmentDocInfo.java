@@ -22,15 +22,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.new_med_app.Model.Doctor;
 import com.example.new_med_app.Model.DoctorViewModel;
 import com.example.new_med_app.Model.Medication;
+import com.example.new_med_app.UI.RecDocAdapt;
 import com.example.new_med_app.UI.RecyclerDoctorAdapt;
 import com.example.new_med_app.UI.RecyclerMedicationAdapt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
-public class FragmentDocInfo extends Fragment
+public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactClickListener
 {
     private Button doc_save_button = null;
     private Button doc_email_button = null;
@@ -44,6 +47,7 @@ public class FragmentDocInfo extends Fragment
 
     private RecyclerView doc_recycler_view = null;
     private RecyclerDoctorAdapt recycler_adapter = null;
+    public RecDocAdapt recDocAdapt = null;
     private ArrayList<Doctor> our_doc_list = null;
 
     FloatingActionButton add_doc_button = null;
@@ -63,7 +67,7 @@ public class FragmentDocInfo extends Fragment
 
     public FragmentDocInfo()
     {
-
+        // null
     }
 
 
@@ -77,27 +81,24 @@ public class FragmentDocInfo extends Fragment
         doc_recycler_view = view.findViewById(R.id.doc_test_recycler);
         doc_recycler_view.setHasFixedSize(true);
         doc_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
-/*
-        doctorViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity()
-                .getApplication())
-                .create(DoctorViewModel.class);
 
-        doctorViewModel.getDoctors().observe(this, contacts -> {
-
-            *//*recyclerViewAdapter = new RecyclerViewAdapter(contacts, MainActivity.this, this);
-            recyclerView.setAdapter(recyclerViewAdapter);
-*//*
+       doctorViewModel =  new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(DoctorViewModel.class);
 
 
-            //setup recycler_adapter
-            recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
-            doc_recycler_view.setAdapter(recycler_adapter);
+       doctorViewModel.getDoctors().observe(this, doctors ->
+       {
+
+           Toast.makeText(getActivity(), "fragment doc " + doctors.size() , Toast.LENGTH_LONG).show();
 
 
 
-        });*/
+           recDocAdapt = new RecDocAdapt(doctors, getActivity(), this);
+           doc_recycler_view.setAdapter(recDocAdapt);
 
-        our_doc_list = new ArrayList<>();
+
+      });
+
+    //    our_doc_list = new ArrayList<>();
         add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
 
 
@@ -107,14 +108,21 @@ public class FragmentDocInfo extends Fragment
             @Override
             public void onClick(View v)
             {
-               createDocPopUp();
+                createDocPopUp();
+
+
+         //       Intent intent = new Intent(getContext(), getActivity().getClass());
+         //       startActivityForResult(intent, NEW_CONTACT_ACTIVITY_REQUEST_CODE);
+
+                Log.d("TAG", "onCreate"+ "button!!!!!!!!");
 
             }
         });
 
 
 
-        // will delete
+
+      /*  // will delete
        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
         our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
         our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
@@ -129,8 +137,10 @@ public class FragmentDocInfo extends Fragment
         doc_recycler_view.setAdapter(recycler_adapter);
 
 
+
         //keeps data up to date
-        recycler_adapter.notifyDataSetChanged();
+      recycler_adapter.notifyDataSetChanged();*/
+
 
         return view;
     }
@@ -146,20 +156,30 @@ public class FragmentDocInfo extends Fragment
         doc_last_name = update_pop_up.findViewById(R.id.last_name);
         doc_email = update_pop_up.findViewById(R.id.doc_email);
         doc_phone_number = update_pop_up.findViewById(R.id.doc_phone_number);
-      /*  doc_save_button = update_pop_up.findViewById(R.id.doc);
 
-       *//* doc_save_button.setOnClickListener(new View.OnClickListener() {
+        doc_save_button = update_pop_up.findViewById(R.id.doc_save_button);
+
+        doc_save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-               *//**//* if((!list_medication_name.getText().toString().isEmpty()) && (!list_amount_per_dose.getText().toString().isEmpty()) && (!list_times_per_day.getText().toString().isEmpty()) && (!list_amount_of_pills.getText().toString().isEmpty()) && (!list_number_of_refills.getText().toString().isEmpty()))
-                    Snackbar.make(v, list_medication_name.getText().toString(), Snackbar.LENGTH_LONG).show();
+                if((!doc_first_name.getText().toString().isEmpty()) && (!doc_last_name.getText().toString().isEmpty()) && (!doc_email.getText().toString().isEmpty()) && (!doc_phone_number.getText().toString().isEmpty()))
+                {
+                    Snackbar.make(v, doc_phone_number.getText().toString(), Snackbar.LENGTH_LONG).show();
+                    Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
+
+                    DoctorViewModel.insert(doctor);
+
+                    Log.d("TAG", "onCreate"+ "SOC ADDED!!!!!!!!");
+                    our_dialog.dismiss();
+                }
+
 
                 else
-                    Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();*//**//*
+                    Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();
 
             }
-        });*/
+        });
 
         our_builder.setView(update_pop_up);
 
@@ -190,4 +210,9 @@ public class FragmentDocInfo extends Fragment
 
     }
 
+    @Override
+    public void onContactClick(int position) {
+        Doctor doctor = Objects.requireNonNull(doctorViewModel.allDocs.getValue()).get(position);
+        Log.d(TAG, "onContactClick: " + doctor.getId());
+    }
 } // end Fragment

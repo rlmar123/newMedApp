@@ -45,10 +45,13 @@ public class RecDocAdapt extends RecyclerView.Adapter<RecDocAdapt.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Doctor doctor = Objects.requireNonNull(dList.get(position));
 
+        // convert to phone number format
+        String phone_formtatted = doctor.getPhoneNumber().replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+
         holder.fname.setText(doctor.getFirstName());
         holder.lName.setText(doctor.getLastName());
         holder.email.setText(doctor.getEmail());
-        holder.phone_number.setText(doctor.getPhoneNumber());
+        holder.phone_number.setText(phone_formtatted);
 
     }
 
@@ -93,18 +96,17 @@ public class RecDocAdapt extends RecyclerView.Adapter<RecDocAdapt.ViewHolder> {
         public void onClick(View view) {
             onContactClickListener.onContactClick(getAdapterPosition());
 
-           Doctor click_item = dList.get(getAdapterPosition());
+           Doctor temp_doc = dList.get(getAdapterPosition());
 
             switch (view.getId())
             {
                 case R.id.the_phone_button:
 
-                    Toast.makeText(context.getApplicationContext(), "phone", Toast.LENGTH_LONG).show();
+                    // convert to phone number format
+                    String phone_formtatted = temp_doc.getPhoneNumber().replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
 
-                    Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "777-222-2222"));
+                    Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone_formtatted));
                     context.startActivity(the_intent);
-
-
                     break;
 
                 case R.id.the_email_button:

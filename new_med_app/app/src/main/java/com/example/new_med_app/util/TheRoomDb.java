@@ -38,16 +38,6 @@ public abstract class TheRoomDb extends RoomDatabase
                         DoctorDao doctorDao = INSTANCE.doctorDao();
                         doctorDao.deleteAll();
 
-                        // DELETE!!!!!!
-                       Doctor doctor = new Doctor("0j0", "jkjjkj", "uiuiu", "kjhkjkjk", "00000000000", "hhkhkhk");
-                       doctorDao.insert(doctor);
-
-                        Doctor nextDoc = new Doctor("YEP", "jkjjkj", "uiuiu", "kjhkjkjk", "1111111111", "hhkhkhk");
-                        doctorDao.insert(nextDoc);
-
-                        Doctor lastDoc = new Doctor("YEAH BABY!!!!!!", "jkjjkj", "uiuiu", "kjhkjkjk", "222222222", "hhkhkhk");
-                        doctorDao.insert(lastDoc);
-
 
                     });
                 }

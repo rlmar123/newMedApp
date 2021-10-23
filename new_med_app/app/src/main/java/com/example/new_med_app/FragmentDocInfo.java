@@ -57,6 +57,7 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
     private AlertDialog our_dialog = null;
 
     private static final int NEW_CONTACT_ACTIVITY_REQUEST_CODE = 1;
+    private static final int MAX_PHONE_NUMBER_LENGTH = 10;
     private static final String TAG = "Clicked";
     public static final String CONTACT_ID = "contact_id";
     private DoctorViewModel doctorViewModel;
@@ -119,29 +120,6 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
             }
         });
 
-
-
-
-      /*  // will delete
-       our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-        our_doc_list.add(new Doctor("Tylenol", "Acetimono[pehn", "James", "Jones", "777777", "yahoo"));
-
-
-
-        //setup recycler_adapter
-        recycler_adapter = new RecyclerDoctorAdapt(getActivity(), our_doc_list);
-        doc_recycler_view.setAdapter(recycler_adapter);
-
-
-
-        //keeps data up to date
-      recycler_adapter.notifyDataSetChanged();*/
-
-
         return view;
     }
 
@@ -163,18 +141,28 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
             @Override
             public void onClick(View v)
             {
+                // no fields are missing
                 if((!doc_first_name.getText().toString().isEmpty()) && (!doc_last_name.getText().toString().isEmpty()) && (!doc_email.getText().toString().isEmpty()) && (!doc_phone_number.getText().toString().isEmpty()))
                 {
-                    Snackbar.make(v, doc_phone_number.getText().toString(), Snackbar.LENGTH_LONG).show();
-                    Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
+                    // phone number equals 10 digits
+                    if(doc_phone_number.getText().toString().length() == MAX_PHONE_NUMBER_LENGTH)
+                    {
 
-                    DoctorViewModel.insert(doctor);
+                        Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
 
-                    Log.d("TAG", "onCreate"+ "SOC ADDED!!!!!!!!");
-                    our_dialog.dismiss();
+                        DoctorViewModel.insert(doctor);
+
+                        our_dialog.dismiss();
+                       Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
+                    }
+
+                    // phone number does not equal 10 digits
+                    else
+                        Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
+
                 }
 
-
+               // field is missing
                 else
                     Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();
 

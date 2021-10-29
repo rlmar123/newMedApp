@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -64,6 +65,8 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
 
     private LiveData<List<Doctor>> docList;
 
+    private Doctor del_doc;
+
 
 
     public FragmentDocInfo()
@@ -91,17 +94,26 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
 
            Toast.makeText(getActivity(), "fragment doc " + doctors.size() , Toast.LENGTH_LONG).show();
 
-
-
            recDocAdapt = new RecDocAdapt(doctors, getActivity(), this);
            doc_recycler_view.setAdapter(recDocAdapt);
 
-
       });
 
-    //    our_doc_list = new ArrayList<>();
-        add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
+       // this does the swiping action
+       new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
 
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                doctorViewModel.delete(recDocAdapt.getNoteAt(viewHolder.getAdapterPosition()));
+            }
+        }).attachToRecyclerView(doc_recycler_view);
+
+        add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
 
         // fab
         add_doc_button.setOnClickListener(new View.OnClickListener()
@@ -109,20 +121,14 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
             @Override
             public void onClick(View v)
             {
-                createDocPopUp();
-
-
-         //       Intent intent = new Intent(getContext(), getActivity().getClass());
-         //       startActivityForResult(intent, NEW_CONTACT_ACTIVITY_REQUEST_CODE);
-
-                Log.d("TAG", "onCreate"+ "button!!!!!!!!");
-
+               createDocPopUp();
             }
         });
 
         return view;
     }
 
+    
     private void createDocPopUp()
     {
         our_builder = new AlertDialog.Builder(getActivity());

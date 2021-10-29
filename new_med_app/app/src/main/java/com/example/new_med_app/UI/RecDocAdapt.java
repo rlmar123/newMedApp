@@ -55,6 +55,10 @@ public class RecDocAdapt extends RecyclerView.Adapter<RecDocAdapt.ViewHolder> {
 
     }
 
+    public Doctor getNoteAt(int position) {
+        return dList.get(position);
+    }
+
     @Override
     public int getItemCount() {
         return Objects.requireNonNull(dList.size());

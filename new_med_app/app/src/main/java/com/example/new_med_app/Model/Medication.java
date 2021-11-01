@@ -1,14 +1,30 @@
 package com.example.new_med_app.Model;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "medication_table")
 public class Medication
 {
-    private String medication_name = null;
-    private String drug_nomenclature = null;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
-    private int quantity_total = 0;
-    private int quantity_left = 0;
+    @ColumnInfo(name = "med_name")
+    private String medicationName;
 
-    private int refills_left = 0;
+    @ColumnInfo(name = "drug_nomenclature")
+    private String drugNomenclature;
+
+    @ColumnInfo(name = "quantity_total")
+    private int quantityTotal;
+
+    @ColumnInfo(name = "quantity_left")
+    private int quantityLeft;
+
+    @ColumnInfo(name = "refills_left")
+    private int refillsLeft;
 
 
     public Medication()
@@ -18,51 +34,38 @@ public class Medication
 
     public Medication(String medication_name, String drug_nomenclature, int quantity_left, int quantity_total, int refills_left)
     {
-        this.medication_name = medication_name;
-        this.drug_nomenclature = drug_nomenclature;
+        this.medicationName = medication_name;
+        this.drugNomenclature = drug_nomenclature;
 
+        this.quantityLeft = quantity_left;
+        this.quantityTotal = quantity_total;
 
-
-        this.quantity_left = quantity_left;
-        this.quantity_total = quantity_total;
-
-        this.refills_left = refills_left;
+        this.refillsLeft = refills_left;
     }
 
     // setters
-    public void setMedicationName(String medication_name)
-    {
-        this.medication_name = medication_name;
-    }
+    public void setId(int id) {this.id = id;}
 
-    public void setDrugNomenclature(String drug_nomenclature)
-    {
-        this.drug_nomenclature = drug_nomenclature;
-    }
+    public void setMedicationName(String medication_name) {medicationName = medication_name;}
 
+    public void setDrugNomenclature(String drug_nomenclature) {drugNomenclature = drug_nomenclature;}
 
+    public void setQuantityLeft(int quantity_left) {quantityLeft = quantity_left;}
 
-    public void setQuantityLeft(int quantity_left)
-    {
-        this.quantity_left= quantity_left;
-    }
+    public void setQuantityTotal(int quantity_total) {quantityTotal = quantity_total;}
 
-    public void setQuantityTotal(int quantity_total)
-    {
-        this.quantity_total= quantity_total;
-    }
+    public void setRefillsLeft(int refills_left) {refillsLeft = refills_left;}
 
     // getters
-    public String getMedicationName()
-    {return this.medication_name;}
+    public int getId() {return id;}
 
-    public String getDrugNomenclature()
-    {return this.drug_nomenclature;}
+    public String getMedicationName() {return medicationName;}
 
+    public String getDrugNomenclature() {return drugNomenclature;}
 
-    public int getQuantityLeft()
-    {return this.quantity_left;}
+    public int getQuantityLeft() {return quantityLeft;}
 
-    public int getQuantityTotal()
-    {return this.quantity_total;}
+    public int getQuantityTotal() {return quantityTotal;}
+
+    public int getRefillsLeft() {return refillsLeft;}
 }

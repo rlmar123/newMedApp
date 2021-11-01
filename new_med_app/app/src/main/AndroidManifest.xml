@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prod_med_app">
         <activity
-            android:name="com.example.new_med_app.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.new_med_app.TitleActivity"
+            android:name=".TitleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

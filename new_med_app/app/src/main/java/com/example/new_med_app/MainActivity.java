@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private ImageView lines;
     private ImageView settinds;
 
+    private HorizontalCalendar horizontalCalendar;
+
     private Fragment opening_fragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.MONTH, 1);
 
-        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
+        horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
                 .range(startDate, endDate)
                 .datesNumberOnScreen(5)
                 .build();
@@ -69,12 +71,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
             }
         });
-
-
-
-
-
-
 
     } // end onCreate
 
@@ -94,14 +90,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                                         selectedFragment).commit();
 
+                            horizontalCalendar.show();
                             Toast.makeText(MainActivity.this, "HOME!!!!" , Toast.LENGTH_LONG).show();
                             break;
 
                         case R.id.refill_icon:
 
-                               /* selectedFragment = new NextFragment();
+                                /*selectedFragment = new NextFragment();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
-                                        selectedFragment).commit();*/
+                                        selectedFragment).commit();
+                            horizontalCalendar.show();*/
                             Toast.makeText(MainActivity.this, "REFILL!!!!" , Toast.LENGTH_LONG).show();
 
 
@@ -114,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                                     selectedFragment).commit();
 
+                            horizontalCalendar.hide();
                         //    Toast.makeText(MainActivity.this, "DOCTOR INFO!!!!" , Toast.LENGTH_LONG).show();
                             break;
                     }

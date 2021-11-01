@@ -17,7 +17,7 @@ import com.example.new_med_app.data.DoctorDao;
 
 
 // add Medication.class
-@Database(entities = {Doctor.class}, version = 1, exportSchema = false)
+@Database(entities = {Doctor.class, Medication.class}, version = 1, exportSchema = false)
 public abstract class TheRoomDb extends RoomDatabase
 {
     public static final int NUMBER_OF_THREADS = 4;

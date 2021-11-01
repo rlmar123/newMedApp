@@ -14,6 +14,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.example.new_med_app.Model.Doctor;
 import com.example.new_med_app.Model.Medication;
 import com.example.new_med_app.data.DoctorDao;
+import com.example.new_med_app.data.MedicationDao;
 
 
 // add Medication.class
@@ -60,5 +61,6 @@ public abstract class TheRoomDb extends RoomDatabase
     }
 
     public abstract DoctorDao doctorDao();
+    public abstract MedicationDao medicationDao();
 
 } //end class TheRoomDb

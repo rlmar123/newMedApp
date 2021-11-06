@@ -15,7 +15,8 @@ public class MedicationViewModel extends AndroidViewModel
     public static MedicationRepository repository;
     public final LiveData<List<Medication>> allMeds;
 
-    public MedicationViewModel(@NonNull Application application) {
+    public MedicationViewModel(@NonNull Application application)
+    {
         super(application);
         repository = new MedicationRepository(application);
         allMeds = repository.getAllData();
@@ -32,4 +33,4 @@ public class MedicationViewModel extends AndroidViewModel
 
 
 
-} // end DoctorViewModel class
+} // end MedicationViewModel class

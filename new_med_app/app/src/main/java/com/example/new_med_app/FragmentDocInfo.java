@@ -80,12 +80,13 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
  @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.doc_info_fragment, container, false);
+       View view = inflater.inflate(R.layout.doc_info_fragment, container, false);
 
-        doc_recycler_view = view.findViewById(R.id.doc_test_recycler);
-        doc_recycler_view.setHasFixedSize(true);
-        doc_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
+       doc_recycler_view = view.findViewById(R.id.doc_test_recycler);
+       doc_recycler_view.setHasFixedSize(true);
+       doc_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+       add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
        doctorViewModel =  new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(DoctorViewModel.class);
 
 
@@ -112,8 +113,6 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                 doctorViewModel.delete(recDocAdapt.getNoteAt(viewHolder.getAdapterPosition()));
             }
         }).attachToRecyclerView(doc_recycler_view);
-
-        add_doc_button = (FloatingActionButton) view.findViewById(R.id.add_doc_fab);
 
         // fab
         add_doc_button.setOnClickListener(new View.OnClickListener()
@@ -155,11 +154,9 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                     {
 
                         Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
-
                         DoctorViewModel.insert(doctor);
 
                         our_dialog.dismiss();
-                       Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
                     }
 
                     // phone number does not equal 10 digits

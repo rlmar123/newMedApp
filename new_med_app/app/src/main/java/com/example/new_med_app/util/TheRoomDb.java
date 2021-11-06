@@ -37,7 +37,9 @@ public abstract class TheRoomDb extends RoomDatabase
                     // clears db
                     databaseWriteExecutor.execute(() -> {
                         DoctorDao doctorDao = INSTANCE.doctorDao();
+                        MedicationDao medicationDao = INSTANCE.medicationDao();
                         doctorDao.deleteAll();
+                        medicationDao.deleteAll();
 
 
                     });

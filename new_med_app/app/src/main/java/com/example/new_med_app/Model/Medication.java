@@ -17,6 +17,13 @@ public class Medication
     @ColumnInfo(name = "drug_nomenclature")
     private String drugNomenclature;
 
+    // number of pills
+    @ColumnInfo(name = "drug_dosage")
+    private int drugDosage;
+
+    @ColumnInfo(name = "num_of_times")
+    private int timesPerDay;
+
     @ColumnInfo(name = "quantity_total")
     private int quantityTotal;
 
@@ -26,22 +33,36 @@ public class Medication
     @ColumnInfo(name = "refills_left")
     private int refillsLeft;
 
+    private static final int HOURS = 24;
 
     public Medication()
     {
         // null
     }
 
-    public Medication(String medication_name, String drug_nomenclature, int quantity_left, int quantity_total, int refills_left)
+    public Medication(String medication_name, String drug_nomenclature, int drug_dosage, int times_per_day, int quantity_total, int quantity_left, int refills_left)
     {
         this.medicationName = medication_name;
         this.drugNomenclature = drug_nomenclature;
+        this.drugDosage = drug_dosage;
+        this.timesPerDay = times_per_day;
 
-        this.quantityLeft = quantity_left;
         this.quantityTotal = quantity_total;
+        this.quantityLeft = quantity_left;
 
         this.refillsLeft = refills_left;
     }
+
+    private void quantityLeftDecrement()
+    {
+        // always ZERO
+        if (quantityLeft <= 0)
+            quantityLeft = 0;
+
+        else
+            quantityLeft--;
+    }
+
 
     // setters
     public void setId(int id) {this.id = id;}
@@ -50,9 +71,13 @@ public class Medication
 
     public void setDrugNomenclature(String drug_nomenclature) {drugNomenclature = drug_nomenclature;}
 
-    public void setQuantityLeft(int quantity_left) {quantityLeft = quantity_left;}
+    public void setDrugDosage(int drug_dosage) {drugDosage = drug_dosage;}
+
+    public void setTimesPerDay(int times_per_day) {timesPerDay = times_per_day;}
 
     public void setQuantityTotal(int quantity_total) {quantityTotal = quantity_total;}
+
+    public void setQuantityLeft(int quantity_left) {quantityLeft = quantity_left;}
 
     public void setRefillsLeft(int refills_left) {refillsLeft = refills_left;}
 
@@ -62,6 +87,10 @@ public class Medication
     public String getMedicationName() {return medicationName;}
 
     public String getDrugNomenclature() {return drugNomenclature;}
+
+    public int getDrugDosage() {return drugDosage;}
+
+    public int getTimesPerDay() {return timesPerDay;}
 
     public int getQuantityLeft() {return quantityLeft;}
 

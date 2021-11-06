@@ -38,12 +38,21 @@
 
             </EditText>
 
+            <EditText
+                android:id="@+id/medication_nomenclature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/medication_name"
+                android:hint="Medication Npmenclature : "
+                android:inputType="textAutoComplete">
+
+            </EditText>
 
             <EditText
                 android:id="@+id/amount_per_dose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/medication_name"
+                android:layout_below="@id/medication_nomenclature"
                 android:hint="Amount of Pills at a time : "
                 android:inputType="number">
 

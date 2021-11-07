@@ -142,10 +142,17 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
             {
                 if((!list_medication_name.getText().toString().isEmpty()) && (!list_medication_nomenclature.getText().toString().isEmpty()) && (!list_amount_per_dose.getText().toString().isEmpty()) && (!list_times_per_day.getText().toString().isEmpty()) && (!list_amount_of_pills.getText().toString().isEmpty()) && (!list_number_of_refills.getText().toString().isEmpty()))
                 {
+                    int dose = Integer.parseInt(list_amount_per_dose.getText().toString());
+                    int times = Integer.parseInt(list_times_per_day.getText().toString());
+                    int pills = Integer.parseInt(list_amount_of_pills.getText().toString());
+                    int refills = Integer.parseInt(list_amount_per_dose.getText().toString());
+                    Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + 11, Toast.LENGTH_LONG).show();
 
-                   Medication medication = new Medication("Penicillin", "Acetimono[pehn", 3, 3, 4, 23, 12);
+
+                   Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, times, pills, pills, refills);
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!", Toast.LENGTH_LONG).show();
                     MedicationViewModel.insert(medication);
+
 
                     our_dialog.dismiss();
                 }

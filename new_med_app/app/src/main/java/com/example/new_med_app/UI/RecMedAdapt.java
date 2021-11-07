@@ -48,12 +48,15 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         Medication medication = Objects.requireNonNull(medicationList.get(position));
 
         holder.med_name.setText(medication.getMedicationName());
-        Log.d("from onBind", " " + medication.getMedicationName());
-    /*    holder.med_nomenclature.setText("Dimetapp");
-        holder.doc_first.setText("DOC FIRST!!!!!");
-        holder.doc_last.setText("DOC LAST!!!!!");
-        holder.quantity_left.setText(medication.getQuantityLeft());
-        holder.num_of_refills.setText(medication.getRefillsLeft());*/
+        holder.med_nomenclature.setText(medication.getDrugNomenclature());
+        holder.doc_first.setText("Napoleon");
+        holder.doc_last.setText(" Dynamite!!!!!");
+
+
+        ///FIX BELOW!!!!!!!!
+     /*   holder.quantity_left.setText(medication.getQuantityLeft());
+        holder.num_of_refills.setText(medication.getRefillsLeft());
+        holder.dosage.setText(medication.getRefillsLeft());*/
 
     }
 
@@ -78,12 +81,14 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         public TextView doc_last = null;
         public TextView quantity_left = null;
         public TextView num_of_refills = null;
+        public TextView dosage = null;
 
         OnContactClickListener onContactClickListener;
 
         public ViewHolder(@NonNull View itemView, OnContactClickListener onContactClickListener) {
             super(itemView);
 
+            // connect to xml widgets in medication_row
             med_name = itemView.findViewById(R.id.med_name);
             med_nomenclature = itemView.findViewById(R.id.nomenclature);
             doc_first = itemView.findViewById(R.id.doc_first);
@@ -92,6 +97,7 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
 
             quantity_left = itemView.findViewById(R.id.quantity_left);
             num_of_refills = itemView.findViewById(R.id.refills_text);
+            dosage = itemView.findViewById(R.id.quantity_left);
 
             this.onContactClickListener = onContactClickListener;
 

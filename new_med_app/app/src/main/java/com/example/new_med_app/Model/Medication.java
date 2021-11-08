@@ -40,15 +40,16 @@ public class Medication
         // null
     }
 
-    public Medication(String medication_name, String drug_nomenclature, int drug_dosage, int times_per_day, int quantity_total, int quantity_left, int refills_left)
+    public Medication(String medication_name, String drug_nomenclature, int drug_dosage, int times_per_day, int quantity_total, int refills_left)
     {
         this.medicationName = medication_name;
         this.drugNomenclature = drug_nomenclature;
         this.drugDosage = drug_dosage;
         this.timesPerDay = times_per_day;
 
+        // same at the beginning
         this.quantityTotal = quantity_total;
-        this.quantityLeft = quantity_left;
+        this.quantityLeft = quantity_total;
 
         this.refillsLeft = refills_left;
     }

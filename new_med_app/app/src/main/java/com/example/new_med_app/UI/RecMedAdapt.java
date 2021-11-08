@@ -49,14 +49,14 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
 
         holder.med_name.setText(medication.getMedicationName());
         holder.med_nomenclature.setText(medication.getDrugNomenclature());
+
         holder.doc_first.setText("Napoleon");
         holder.doc_last.setText(" Dynamite!!!!!");
 
+        holder.quantity_total.setText("Total Pills : " + medication.getQuantityTotal());
+        holder.num_of_refills.setText("Refills Left : " + medication.getRefillsLeft());
 
-        ///FIX BELOW!!!!!!!!
-     /*   holder.quantity_left.setText(medication.getQuantityLeft());
-        holder.num_of_refills.setText(medication.getRefillsLeft());
-        holder.dosage.setText(medication.getRefillsLeft());*/
+        holder.dosage.setText(Integer.toString(medication.getDrugDosage()) + " pills " + medication.getTimesPerDay() + " times per day");
 
     }
 
@@ -79,7 +79,7 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         public TextView med_nomenclature = null;
         public TextView doc_first = null;
         public TextView doc_last = null;
-        public TextView quantity_left = null;
+        public TextView quantity_total = null;
         public TextView num_of_refills = null;
         public TextView dosage = null;
 
@@ -91,13 +91,14 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
             // connect to xml widgets in medication_row
             med_name = itemView.findViewById(R.id.med_name);
             med_nomenclature = itemView.findViewById(R.id.nomenclature);
+
             doc_first = itemView.findViewById(R.id.doc_first);
             doc_last = itemView.findViewById(R.id.doc_last);
 
-
-            quantity_left = itemView.findViewById(R.id.quantity_left);
+            quantity_total = itemView.findViewById(R.id.quantity_total);
             num_of_refills = itemView.findViewById(R.id.refills_text);
-            dosage = itemView.findViewById(R.id.quantity_left);
+            dosage = itemView.findViewById(R.id.dosage_text);
+
 
             this.onContactClickListener = onContactClickListener;
 

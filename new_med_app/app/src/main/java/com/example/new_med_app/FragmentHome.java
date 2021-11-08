@@ -145,11 +145,11 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
                     int dose = Integer.parseInt(list_amount_per_dose.getText().toString());
                     int times = Integer.parseInt(list_times_per_day.getText().toString());
                     int pills = Integer.parseInt(list_amount_of_pills.getText().toString());
-                    int refills = Integer.parseInt(list_amount_per_dose.getText().toString());
+                    int refills = Integer.parseInt(list_number_of_refills.getText().toString());
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + 11, Toast.LENGTH_LONG).show();
 
 
-                   Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, times, pills, pills, refills);
+                   Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, times, pills,refills);
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!", Toast.LENGTH_LONG).show();
                     MedicationViewModel.insert(medication);
 

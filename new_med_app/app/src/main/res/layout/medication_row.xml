@@ -61,7 +61,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/quantity_left"
+                android:id="@+id/quantity_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/doc_first"
@@ -73,7 +73,7 @@
                 android:id="@+id/refills_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/quantity_left"
+                android:layout_below="@id/quantity_total"
                 android:text="Refills : 2"
                 android:textSize="18sp"
                 android:textStyle="bold" />

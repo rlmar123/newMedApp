@@ -5,6 +5,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(tableName = "medication_table")
 public class Medication
 {
@@ -34,13 +37,15 @@ public class Medication
     private int refillsLeft;
 
     private static final int HOURS = 24;
+  //  private List<Integer> date_range;
+
 
     public Medication()
     {
         // null
     }
 
-    public Medication(String medication_name, String drug_nomenclature, int drug_dosage, int times_per_day, int quantity_total, int refills_left)
+    public Medication(String medication_name, String drug_nomenclature, int drug_dosage, int times_per_day, int quantity_total, int refills_left, int num)
     {
         this.medicationName = medication_name;
         this.drugNomenclature = drug_nomenclature;
@@ -52,6 +57,8 @@ public class Medication
         this.quantityLeft = quantity_total;
 
         this.refillsLeft = refills_left;
+
+    //    this.date_range = new ArrayList<>(num);
     }
 
     private void quantityLeftDecrement()

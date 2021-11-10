@@ -1,7 +1,6 @@
 package com.example.new_med_app;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +16,12 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.new_med_app.Model.Doctor;
-import com.example.new_med_app.Model.DoctorViewModel;
 import com.example.new_med_app.Model.Medication;
 import com.example.new_med_app.Model.MedicationViewModel;
-import com.example.new_med_app.UI.RecDocAdapt;
 import com.example.new_med_app.UI.RecMedAdapt;
-import com.example.new_med_app.UI.RecyclerMedicationAdapt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,9 +34,11 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
     private EditText list_medication_name= null;
     private EditText list_medication_nomenclature = null;
     private EditText list_amount_per_dose = null;
-    private EditText list_times_per_day = null;
+    private EditText list_hours_per_day = null;
     private EditText list_amount_of_pills = null;
     private EditText list_number_of_refills = null;
+
+    private EditText list_number_of_days = null;
 
     private RecyclerView home_recycler_view = null;
     private RecMedAdapt recycler_adapter= null;
@@ -130,26 +126,34 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
         list_medication_name = add_pop_up.findViewById(R.id.medication_name);
         list_medication_nomenclature = add_pop_up.findViewById(R.id.medication_nomenclature);
         list_amount_per_dose= add_pop_up.findViewById(R.id.amount_per_dose);
-        list_times_per_day = add_pop_up.findViewById(R.id.times_per_day);
+        list_hours_per_day = add_pop_up.findViewById(R.id.times_per_day);
         list_amount_of_pills = add_pop_up.findViewById(R.id.amount_of_pills);
         list_number_of_refills = add_pop_up.findViewById(R.id.number_of_refills);
 
+    //    list_number_of_days = add_pop_up.findViewById(R.id.number_of_days);
         medicine_save_button = add_pop_up.findViewById(R.id.med_save_button);
 
         medicine_save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                if((!list_medication_name.getText().toString().isEmpty()) && (!list_medication_nomenclature.getText().toString().isEmpty()) && (!list_amount_per_dose.getText().toString().isEmpty()) && (!list_times_per_day.getText().toString().isEmpty()) && (!list_amount_of_pills.getText().toString().isEmpty()) && (!list_number_of_refills.getText().toString().isEmpty()))
+                if((!list_medication_name.getText().toString().isEmpty()) &&
+                  (!list_medication_nomenclature.getText().toString().isEmpty()) &&
+                  (!list_amount_per_dose.getText().toString().isEmpty()) &&
+                  (!list_hours_per_day.getText().toString().isEmpty()) &&
+                  (!list_amount_of_pills.getText().toString().isEmpty()) &&
+                  (!list_number_of_refills.getText().toString().isEmpty()))
                 {
                     int dose = Integer.parseInt(list_amount_per_dose.getText().toString());
-                    int times = Integer.parseInt(list_times_per_day.getText().toString());
+                    int hours = Integer.parseInt(list_hours_per_day.getText().toString());
                     int pills = Integer.parseInt(list_amount_of_pills.getText().toString());
                     int refills = Integer.parseInt(list_number_of_refills.getText().toString());
+                //    int days = Integer.parseInt(list_number_of_days.getText().toString());
+
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + 11, Toast.LENGTH_LONG).show();
 
 
-                   Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, times, pills,refills);
+                   Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, hours, pills, refills, 0);
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!", Toast.LENGTH_LONG).show();
                     MedicationViewModel.insert(medication);
 

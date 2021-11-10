@@ -3,6 +3,8 @@ package com.example.new_med_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.telephony.PhoneNumberFormattingTextWatcher;
+import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,7 +60,8 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
     private AlertDialog our_dialog = null;
 
     private static final int NEW_CONTACT_ACTIVITY_REQUEST_CODE = 1;
-    private static final int MAX_PHONE_NUMBER_LENGTH = 10;
+
+    private static final int MAX_PHONE_NUMBER_LENGTH = 14;
     private static final String TAG = "Clicked";
     public static final String CONTACT_ID = "contact_id";
     private DoctorViewModel doctorViewModel;
@@ -142,6 +145,7 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
 
         doc_save_button = update_pop_up.findViewById(R.id.doc_save_button);
 
+        doc_phone_number.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
         doc_save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -149,9 +153,11 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                 // no fields are missing
                 if((!doc_first_name.getText().toString().isEmpty()) && (!doc_last_name.getText().toString().isEmpty()) && (!doc_email.getText().toString().isEmpty()) && (!doc_phone_number.getText().toString().isEmpty()))
                 {
+
                     // phone number equals 10 digits
                     if(doc_phone_number.getText().toString().length() == MAX_PHONE_NUMBER_LENGTH)
                     {
+
 
                         Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
                         DoctorViewModel.insert(doctor);
@@ -161,7 +167,7 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
 
                     // phone number does not equal 10 digits
                     else
-                        Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
+                       Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
 
                 }
 

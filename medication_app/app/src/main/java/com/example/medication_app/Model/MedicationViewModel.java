@@ -24,7 +24,10 @@ public class MedicationViewModel extends AndroidViewModel
     private static final int THIRTY = 30;
     private static final int THIRTY_ONE = 31;
 
-    // private int num = 0;
+    private static int current_julian_date;
+    private static int selected_julian_date;
+
+
 
 
 
@@ -37,6 +40,7 @@ public class MedicationViewModel extends AndroidViewModel
     }
 
     public LiveData<List<Medication>> getMedicines(int num) {return allMeds;}
+
     public LiveData<List<Medication>> getToday(int num)
     {
         todays_list = repository.getToday(num);
@@ -134,15 +138,14 @@ public class MedicationViewModel extends AndroidViewModel
        Log.d("calendar", " " + the_month);
        Log.d("calendar", " " + the_day);
 
-
-
-
-
-
-
         return julian_date;
     }
 
+    public static int getCurrentJulianDate() {return current_julian_date;}
+    public static int getSelectedJulianDate() {return selected_julian_date;}
 
+    public static void setCurrentJulianDate(int currentJulianDate) {current_julian_date = currentJulianDate;}
+
+    public static void setSelectedJulianDate(int selectedJulianDate) {selected_julian_date = selectedJulianDate;}
 
 } // end MedicationViewModel class

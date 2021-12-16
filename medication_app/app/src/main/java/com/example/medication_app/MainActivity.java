@@ -15,6 +15,7 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
 import com.example.medication_app.Model.MedicationViewModel;
+import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
@@ -23,8 +24,6 @@ import java.util.Date;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
-
-//import com.example.ne575757473w_med_app.Model.MedicationViewModel;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener
 {
@@ -39,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
    private String formatted;
 
-   private final int day_offset = 0;
-
    private Fragment opening_fragment = null;
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -48,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
 
+      //// DELETE WHEN DONE!!!!!
+      MedicationViewModel.setCurrentJulianDate(getTodaysDate());
 
       test_bar = findViewById(R.id.bottom_nav);
 
@@ -78,26 +77,23 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
          {
 
             formatted = setStringDate(position);
-            changeFragment(new FragmentHome(), MedicationViewModel.julianDate(formatted));
+            int selectedDate = MedicationViewModel.julianDate(formatted);
 
-            Toast.makeText(MainActivity.this, "REFILL!!!!" + formatted, Toast.LENGTH_LONG).show();
+            MedicationViewModel.setSelectedJulianDate(selectedDate);
+            changeFragment(new FragmentHome(), CONSTANTS.SELECTED);
+
+            Log.d("FROM calendar", "SELECTED" + MedicationViewModel.getSelectedJulianDate());
+            Log.d("FROM main!!!!!", "CURRENT" + MedicationViewModel.getCurrentJulianDate());
+            Toast.makeText(MainActivity.this, "REFILL!!!!" + MedicationViewModel.getSelectedJulianDate(), Toast.LENGTH_LONG).show();
 
          }
       });
 
 
-      Date now = new Date();
-
-      Calendar calendar = Calendar.getInstance();
-      calendar.setTime(now);
-
-
-      ///// YEAAAAAHHHHHH!!!!!
-      Integer begin = calendar.get(Calendar.DAY_OF_YEAR);
-
-  /*    opening_fragment = new FragmentHome();
-      Log.d("FROM MAIN!!!", "YAY!! " + begin);
-      changeFragment(opening_fragment, begin);*/
+      // set opening fragment to home and today's date
+      opening_fragment = new FragmentHome();
+      Log.d("FROM MAIN!!!", "RIGHT HERE!!!!! " + MedicationViewModel.getCurrentJulianDate());
+      changeFragment(opening_fragment, CONSTANTS.CURRENT);
 
    } // end onCreate
 
@@ -113,16 +109,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                  {
                     case R.id.home_icon:
                        selectedFragment = new FragmentHome();
-                       Date now = new Date();
 
-                       Calendar calendar = Calendar.getInstance();
-                       calendar.setTime(now);
-
-
-                       ///// YEAAAAAHHHHHH!!!!!
-                       Integer tye = calendar.get(Calendar.DAY_OF_YEAR);
-                       // here we may need to add date
-                      changeFragment(selectedFragment, tye);
+                       changeFragment(selectedFragment, CONSTANTS.CURRENT);
 
                        horizontalCalendar.show();
                        break;
@@ -151,16 +139,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    private void changeFragment(Fragment fragment)
    {
       Bundle bundle = new Bundle();
-      bundle.putInt("count", 23);
+      bundle.putInt("current", 2399);
 
       fragment.setArguments(bundle);
       getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
    }
 
-   private void changeFragment(Fragment fragment, int day)
+   private void changeFragment(Fragment fragment, String day)
    {
       Bundle bundle = new Bundle();
-      bundle.putInt("count", day);
+      bundle.putString(CONSTANTS.COUNT, day);
 
       fragment.setArguments(bundle);
       getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
@@ -184,11 +172,23 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    {
       Calendar cal = horizontalCalendar.getDateAt(pos);
 
-      cal.add(Calendar.DATE,day_offset);
+      cal.add(Calendar.DATE, CONSTANTS.DAY_OFFSET);
       SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
 
       String formatted = format1.format(cal.getTime());
 
       return formatted;
+   }
+
+   private Integer getTodaysDate()
+   {
+      Date now = new Date();
+
+      Calendar calendar = Calendar.getInstance();
+      calendar.setTime(now);
+
+      Integer today = calendar.get(Calendar.DAY_OF_YEAR);
+
+      return today;
    }
 } // end MainActivity

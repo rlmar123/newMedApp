@@ -25,6 +25,7 @@ import com.example.medication_app.Model.Medication;
 import com.example.medication_app.Model.MedicationViewModel;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.RecMedAdapt;
+import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -67,7 +68,6 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
@@ -82,20 +82,14 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
         home_recycler_view.setHasFixedSize(true);
         home_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        if(getArguments() != null)
-        {
-            day = getArguments().getInt("count");
-            Log.d("FROM HOME!!!!!", "YAY!! " + day);
-
-        }
-
+        setDay();
         medicationViewModel =  new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(MedicationViewModel.class);
 
-
-
-        medicationViewModel.getMedicines(day).observe(this, medications ->
+        //
+        medicationViewModel.getToday(day).observe(this, medications ->
         {
             Log.d("NUM", "" + medications.size());
+
             recycler_adapter = new RecMedAdapt(medications, getActivity(), this);
             home_recycler_view.setAdapter(recycler_adapter);
 
@@ -153,12 +147,12 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
             public void onClick(View v)
             {
                 if((!list_medication_name.getText().toString().isEmpty()) &&
-                        (!list_medication_nomenclature.getText().toString().isEmpty()) &&
-                        (!list_amount_per_dose.getText().toString().isEmpty()) &&
-                        (!list_hours_per_day.getText().toString().isEmpty()) &&
-                        (!list_amount_of_pills.getText().toString().isEmpty()) &&
-                        (!list_number_of_refills.getText().toString().isEmpty()) &&
-                        (!list_number_of_days.getText().toString().isEmpty()))
+                   (!list_medication_nomenclature.getText().toString().isEmpty()) &&
+                   (!list_amount_per_dose.getText().toString().isEmpty()) &&
+                   (!list_hours_per_day.getText().toString().isEmpty()) &&
+                   (!list_amount_of_pills.getText().toString().isEmpty()) &&
+                   (!list_number_of_refills.getText().toString().isEmpty()) &&
+                   (!list_number_of_days.getText().toString().isEmpty()))
                 {
                     int dose = Integer.parseInt(list_amount_per_dose.getText().toString());
                     int hours = Integer.parseInt(list_hours_per_day.getText().toString());
@@ -167,13 +161,11 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
                     int days = Integer.parseInt(list_number_of_days.getText().toString());
 
 
-
-
-
-
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + day, Toast.LENGTH_LONG).show();
-                    Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, hours, pills, refills, day, days);
+                    Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, hours, pills, refills, MedicationViewModel.getCurrentJulianDate(), days);
 
+                    Log.d("FROM HOME!!!!!", "BEGIN " + medication.getBeginDate());
+                    Log.d("FROM HOME!!!!!", "END " + medication.getEndDate());
 
                     MedicationViewModel.insert(medication);
 
@@ -195,10 +187,22 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
         our_dialog.show();
     }
 
+    public void setDay()
+    {
+        if(getArguments() != null)
+        {
+            if(getArguments().getString(CONSTANTS.COUNT).equals(CONSTANTS.CURRENT))
+                day = MedicationViewModel.getCurrentJulianDate();
+
+            else if(getArguments().getString(CONSTANTS.COUNT).equals(CONSTANTS.SELECTED))
+                day = MedicationViewModel.getSelectedJulianDate();
+        }
+    }
+
     @Override
     public void onContactClick(int position)
     {
-        Medication medication = Objects.requireNonNull(medicationViewModel.allMeds.getValue()).get(position);
+        Medication medication = Objects.requireNonNull(medicationViewModel.todays_list.getValue()).get(position);
 
     }
 

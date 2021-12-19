@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -87,14 +88,34 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!--<TextView
-                android:id="@+id/number_of_days_text"
+            <TextView
+                android:id="@+id/start_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dosage_text"
-                android:text="Number of Days : "
+                android:text="Start Date :           "
                 android:textSize="18sp"
-                android:textStyle="bold" />-->
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/end_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dosage_text"
+                android:layout_toRightOf="@id/start_text"
+                android:text="End Date :           "
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/med_image"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="160dp"
+                android:layout_toRightOf="@id/quantity_total"
+                tools:srcCompat="@tools:sample/avatars" />
 
         </RelativeLayout>
 

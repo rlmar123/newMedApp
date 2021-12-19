@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,6 +53,7 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
 
         holder.dosage.setText(Integer.toString(medication.getDrugDosage()) + " pills " + medication.getTimesPerDay() + " times per day");
 
+        holder.med_image.setBackgroundResource(R.drawable.ic_baseline_local_hospital_24);
     }
 
     public Medication getMedAt(int position) {
@@ -76,6 +78,7 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         public TextView quantity_total = null;
         public TextView num_of_refills = null;
         public TextView dosage = null;
+        public ImageView med_image = null;
 
         OnContactClickListener onContactClickListener;
 
@@ -92,6 +95,8 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
             quantity_total = itemView.findViewById(R.id.quantity_total);
             num_of_refills = itemView.findViewById(R.id.refills_text);
             dosage = itemView.findViewById(R.id.dosage_text);
+
+            med_image = itemView.findViewById(R.id.med_image);
 
 
             this.onContactClickListener = onContactClickListener;

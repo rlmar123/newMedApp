@@ -1,6 +1,7 @@
 package com.example.medication_app;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
@@ -19,6 +21,8 @@ import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       // date is passed as string to MedicationViewModel
       horizontalCalendar.setCalendarListener(new HorizontalCalendarListener()
       {
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
          public void onDateSelected(Calendar date, int position)
          {
@@ -92,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
       // set opening fragment to home and today's date
       opening_fragment = new FragmentHome();
-      Log.d("FROM MAIN!!!", "RIGHT HERE!!!!! " + MedicationViewModel.getCurrentJulianDate());
       changeFragment(opening_fragment, CONSTANTS.CURRENT);
 
    } // end onCreate
@@ -180,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       return formatted;
    }
 
+
    private Integer getTodaysDate()
    {
       Date now = new Date();
@@ -188,7 +193,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       calendar.setTime(now);
 
       Integer today = calendar.get(Calendar.DAY_OF_YEAR);
-
       return today;
    }
 } // end MainActivity

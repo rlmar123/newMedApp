@@ -161,6 +161,9 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
                     int days = Integer.parseInt(list_number_of_days.getText().toString());
 
 
+                    /*
+                    *     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+            System.out.println(LocalDate.now().format(formatter));*/
                     Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + day, Toast.LENGTH_LONG).show();
                     Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, hours, pills, refills, MedicationViewModel.getCurrentJulianDate(), days);
 

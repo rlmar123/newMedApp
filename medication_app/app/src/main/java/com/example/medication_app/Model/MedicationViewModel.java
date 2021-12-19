@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.medication_app.data.MedicationRepository;
+import com.example.medication_app.util.CONSTANTS;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,21 +16,12 @@ import java.util.List;
 public class MedicationViewModel extends AndroidViewModel
 {
     public static MedicationRepository repository;
+
     public final LiveData<List<Medication>> allMeds;
     public LiveData<List<Medication>> todays_list;
 
-    private static final int DIVIDE_BY = 100;
-
-    private static final int LEAP = 28;
-    private static final int THIRTY = 30;
-    private static final int THIRTY_ONE = 31;
-
     private static int current_julian_date;
     private static int selected_julian_date;
-
-
-
-
 
     public MedicationViewModel(@NonNull Application application)
     {
@@ -94,38 +86,38 @@ public class MedicationViewModel extends AndroidViewModel
         int julian_date;
         int original_date = Integer.parseInt(the_date);
 
-        int the_day = original_date % DIVIDE_BY;
-        original_date = original_date / DIVIDE_BY;
+        int the_day = original_date % CONSTANTS.DIVIDE_BY;
+        original_date = original_date / CONSTANTS.DIVIDE_BY;
 
-        int the_month = original_date % DIVIDE_BY;
-        int the_year = original_date / DIVIDE_BY;
+        int the_month = original_date % CONSTANTS.DIVIDE_BY;
+        int the_year = original_date / CONSTANTS.DIVIDE_BY;
 
         // add days for each month
 
         // Jan
-        calendar_days.put(1, THIRTY_ONE);
+        calendar_days.put(1, CONSTANTS.THIRTY_ONE);
         // Feb
-        calendar_days.put(2, LEAP);
+        calendar_days.put(2, CONSTANTS.LEAP);
         // Mar
-        calendar_days.put(3, THIRTY_ONE);
+        calendar_days.put(3, CONSTANTS.THIRTY_ONE);
         // Apr
-        calendar_days.put(4, THIRTY);
+        calendar_days.put(4, CONSTANTS.THIRTY);
         // May
-        calendar_days.put(5, THIRTY_ONE);
+        calendar_days.put(5, CONSTANTS.THIRTY_ONE);
         // Jun
-        calendar_days.put(6, THIRTY);
+        calendar_days.put(6, CONSTANTS.THIRTY);
         // Jul
-        calendar_days.put(7, THIRTY_ONE);
+        calendar_days.put(7, CONSTANTS.THIRTY_ONE);
         // Aug
-        calendar_days.put(8, THIRTY_ONE);
+        calendar_days.put(8, CONSTANTS.THIRTY_ONE);
         // Sep
-        calendar_days.put(9, THIRTY);
+        calendar_days.put(9, CONSTANTS.THIRTY);
         // Oct
-        calendar_days.put(10, THIRTY_ONE);
+        calendar_days.put(10, CONSTANTS.THIRTY_ONE);
         // Nov
-        calendar_days.put(11, THIRTY);
+        calendar_days.put(11, CONSTANTS.THIRTY);
         // Dec
-        calendar_days.put(12, THIRTY_ONE);
+        calendar_days.put(12, CONSTANTS.THIRTY_ONE);
 
 
         for(int i = 1; i < the_month; i++)

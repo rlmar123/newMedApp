@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable-v24/ic_sharp_medical_services_24.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable-v24/ic_sharp_note_add_24.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.1" />
+        <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable/ic_baseline_local_hospital_24.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/drawable/ic_round_email_24.xml" value="0.1" />
@@ -20,7 +21,7 @@
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/doc_pop_up.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/home_fragment.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/home_toolbar.xml" value="0.1" />
-        <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/medication_row.xml" value="0.1" />
+        <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/medication_row.xml" value="0.264" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/layout/title_toolbar.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/menu/botton_navigation.xml" value="0.1" />
         <entry key="..\:/Users/Batman/AndroidStudioProjects/medication_app/app/src/main/res/menu/home_nav_menu.xml" value="0.1" />

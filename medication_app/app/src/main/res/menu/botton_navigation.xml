@@ -16,10 +16,4 @@
         android:title="Refill"
         android:icon="@drawable/ic_sharp_medical_services_24"/>
 
-  <item
-      android:id="@+id/add_subtract"
-      android:title="sort"
-      android:icon="@drawable/ic_sharp_note_add_24"/>
-
-
 </menu>

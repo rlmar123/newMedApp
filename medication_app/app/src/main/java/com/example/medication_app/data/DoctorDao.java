@@ -33,5 +33,4 @@ public interface DoctorDao
 
     @Delete
     void delete(Doctor doctor);
-
 } // end DoctorDao interface

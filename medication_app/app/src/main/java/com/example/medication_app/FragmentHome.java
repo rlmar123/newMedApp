@@ -29,6 +29,8 @@ import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -62,11 +64,7 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
     FloatingActionButton add_meds_button = null;
     private int day;
 
-    public FragmentHome()
-    {
-
-    }
-
+    public FragmentHome() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
@@ -83,16 +81,13 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
         home_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         setDay();
+
         medicationViewModel =  new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication()).create(MedicationViewModel.class);
 
-        //
         medicationViewModel.getToday(day).observe(this, medications ->
         {
-            Log.d("NUM", "" + medications.size());
-
             recycler_adapter = new RecMedAdapt(medications, getActivity(), this);
             home_recycler_view.setAdapter(recycler_adapter);
-
         });
 
         // this does the swiping action
@@ -105,18 +100,14 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
             }
 
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                medicationViewModel.delete(recycler_adapter.getMedAt(viewHolder.getAdapterPosition()));
-            }
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {medicationViewModel.delete(recycler_adapter.getMedAt(viewHolder.getAdapterPosition()));}
 
         }).attachToRecyclerView(home_recycler_view);
 
         add_meds_button.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
-                createAddPopUp();
-            }
+            public void onClick(View v) {createAddPopUp();}
         });
 
         return view;
@@ -127,21 +118,12 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
     {
         our_builder = new AlertDialog.Builder(getActivity());
 
-        //make connection to popup.xml
-        View add_pop_up = getLayoutInflater().inflate(R.layout.add_pop_up, null);
+       //make connection to popup.xml
+       View the_pop_up = getLayoutInflater().inflate(R.layout.add_pop_up, null);
 
+       connectToXML(the_pop_up);
 
-        list_medication_name = add_pop_up.findViewById(R.id.medication_name);
-        list_medication_nomenclature = add_pop_up.findViewById(R.id.medication_nomenclature);
-        list_amount_per_dose= add_pop_up.findViewById(R.id.amount_per_dose);
-        list_hours_per_day = add_pop_up.findViewById(R.id.times_per_day);
-        list_amount_of_pills = add_pop_up.findViewById(R.id.amount_of_pills);
-        list_number_of_refills = add_pop_up.findViewById(R.id.number_of_refills);
-
-        list_number_of_days = add_pop_up.findViewById(R.id.number_of_days);
-        medicine_save_button = add_pop_up.findViewById(R.id.med_save_button);
-
-        medicine_save_button.setOnClickListener(new View.OnClickListener() {
+       medicine_save_button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v)
@@ -160,16 +142,11 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
                     int refills = Integer.parseInt(list_number_of_refills.getText().toString());
                     int days = Integer.parseInt(list_number_of_days.getText().toString());
 
+                    // today's date in string
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+                    String test =  LocalDate.now().format(formatter).toString();
 
-                    /*
-                    *     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-            System.out.println(LocalDate.now().format(formatter));*/
-                    Toast.makeText(getActivity(), "ADDED !!!!!!!!!!!" + day, Toast.LENGTH_LONG).show();
-                    Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), dose, hours, pills, refills, MedicationViewModel.getCurrentJulianDate(), days);
-
-                    Log.d("FROM HOME!!!!!", "BEGIN " + medication.getBeginDate());
-                    Log.d("FROM HOME!!!!!", "END " + medication.getEndDate());
-
+                    Medication medication = new Medication(list_medication_name.getText().toString(), list_medication_nomenclature.getText().toString(), test, dose, hours, pills, refills, MedicationViewModel.getCurrentJulianDate(), days);
                     MedicationViewModel.insert(medication);
 
                     our_dialog.dismiss();
@@ -183,7 +160,7 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
             }
         });
 
-        our_builder.setView(add_pop_up);
+        our_builder.setView(the_pop_up);
 
         //this displays the dialog
         our_dialog = our_builder.create();
@@ -203,10 +180,19 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
     }
 
     @Override
-    public void onContactClick(int position)
-    {
-        Medication medication = Objects.requireNonNull(medicationViewModel.todays_list.getValue()).get(position);
+    public void onContactClick(int position) {Medication medication = Objects.requireNonNull(medicationViewModel.todays_list.getValue()).get(position); }
 
+    private void connectToXML(View add_pop_up)
+    {
+       list_medication_name = add_pop_up.findViewById(R.id.medication_name);
+       list_medication_nomenclature = add_pop_up.findViewById(R.id.medication_nomenclature);
+       list_amount_per_dose= add_pop_up.findViewById(R.id.amount_per_dose);
+       list_hours_per_day = add_pop_up.findViewById(R.id.times_per_day);
+       list_amount_of_pills = add_pop_up.findViewById(R.id.amount_of_pills);
+       list_number_of_refills = add_pop_up.findViewById(R.id.number_of_refills);
+
+       list_number_of_days = add_pop_up.findViewById(R.id.number_of_days);
+       medicine_save_button = add_pop_up.findViewById(R.id.med_save_button);
     }
 
 } // end Fragment

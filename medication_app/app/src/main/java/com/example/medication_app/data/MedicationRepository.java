@@ -23,9 +23,7 @@ public class MedicationRepository
         allMedicines = medicationDao.getAllMedications();
     }
 
-    public LiveData<Medication> get(int id) {
-        return medicationDao.get(id);
-    }
+    public LiveData<Medication> get(int id) {return medicationDao.get(id);}
     public LiveData<List<Medication>> getAllData() {return allMedicines;}
 
     public LiveData<List<Medication>> getToday(int target)
@@ -34,17 +32,9 @@ public class MedicationRepository
         return today_meds;
     }
 
-    public void insert(Medication medication)
-    {TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.insert(medication));}
+    public void insert(Medication medication) {TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.insert(medication));}
 
-    public void update(Medication medication) {
-        TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.update(medication));
-    }
-    public void delete(Medication medication) {
-        TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.delete(medication));
-    }
-
-
-
+    public void update(Medication medication) {TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.update(medication));}
+    public void delete(Medication medication) {TheRoomDb.databaseWriteExecutor.execute(() -> medicationDao.delete(medication));}
 
 } // end DoctorRepository class

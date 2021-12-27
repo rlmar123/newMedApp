@@ -31,7 +31,6 @@ import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener
 {
-
    BottomNavigationView test_bar;
    FrameLayout frameLayout;
 
@@ -49,14 +48,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
 
-      //// DELETE WHEN DONE!!!!!
+      // store today's date in the viewModel
       MedicationViewModel.setCurrentJulianDate(getTodaysDate());
 
       test_bar = findViewById(R.id.bottom_nav);
 
-  ///    add_icon = findViewById(R.id.add_icon);
       test_bar.setOnNavigationItemSelectedListener(navListener);
-
 
       // starts before 1 month from now
       Calendar startDate = Calendar.getInstance();
@@ -70,8 +67,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
               .range(startDate, endDate)
               .datesNumberOnScreen(5)
               .build();
-
-
 
       // date is passed as string to MedicationViewModel
       horizontalCalendar.setCalendarListener(new HorizontalCalendarListener()
@@ -87,18 +82,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             MedicationViewModel.setSelectedJulianDate(selectedDate);
             changeFragment(new FragmentHome(), CONSTANTS.SELECTED);
 
-            Log.d("FROM calendar", "SELECTED" + MedicationViewModel.getSelectedJulianDate());
-            Log.d("FROM main!!!!!", "CURRENT" + MedicationViewModel.getCurrentJulianDate());
             Toast.makeText(MainActivity.this, "REFILL!!!!" + MedicationViewModel.getSelectedJulianDate(), Toast.LENGTH_LONG).show();
 
          }
       });
 
-
       // set opening fragment to home and today's date
       opening_fragment = new FragmentHome();
       changeFragment(opening_fragment, CONSTANTS.CURRENT);
-
    } // end onCreate
 
    // fragments change here
@@ -183,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
       return formatted;
    }
-
 
    private Integer getTodaysDate()
    {

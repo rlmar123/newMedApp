@@ -37,5 +37,4 @@ public interface MedicationDao
 
     @Delete
     void delete(Medication medication);
-
 } //end MedicationDao

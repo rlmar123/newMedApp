@@ -50,10 +50,7 @@ public class TitleActivity extends AppCompatActivity implements PopupMenu.OnMenu
          @Override
          public void onClick(View v)
          {
-
-            Toast.makeText(TitleActivity.this, "LINES", Toast.LENGTH_LONG).show();
             showPopup(v);
-
          }
       });
 
@@ -65,7 +62,6 @@ public class TitleActivity extends AppCompatActivity implements PopupMenu.OnMenu
       the_pop.setOnMenuItemClickListener(this);
       the_pop.inflate(R.menu.nav_menu);
       the_pop.show();
-
    }
 
    @Override

@@ -53,6 +53,8 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
 
         holder.dosage.setText(Integer.toString(medication.getDrugDosage()) + " pills " + medication.getTimesPerDay() + " times per day");
 
+        holder.date_start.setText("Start : " +medication.getBeginDateString());
+        holder.date_end.setText("End : " + medication.getEndDateString());
         holder.med_image.setBackgroundResource(R.drawable.ic_baseline_local_hospital_24);
     }
 
@@ -69,6 +71,7 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         void onContactClick(int position);
     }
 
+    // MAGIC HAPPENS HERE!!!!!!
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         public TextView med_name = null;
@@ -78,6 +81,8 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         public TextView quantity_total = null;
         public TextView num_of_refills = null;
         public TextView dosage = null;
+        public TextView date_start = null;
+        public TextView date_end = null;
         public ImageView med_image = null;
 
         OnContactClickListener onContactClickListener;
@@ -95,9 +100,10 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
             quantity_total = itemView.findViewById(R.id.quantity_total);
             num_of_refills = itemView.findViewById(R.id.refills_text);
             dosage = itemView.findViewById(R.id.dosage_text);
+            date_start = itemView.findViewById(R.id.start_text);
+            date_end = itemView.findViewById(R.id.end_text);
 
             med_image = itemView.findViewById(R.id.med_image);
-
 
             this.onContactClickListener = onContactClickListener;
 
@@ -110,31 +116,6 @@ public class RecMedAdapt extends RecyclerView.Adapter<RecMedAdapt.ViewHolder> {
         {
             onContactClickListener.onContactClick(getAdapterPosition());
 
-            /*
-           Doctor temp_doc = dList.get(getAdapterPosition());
-
-            switch (view.getId())
-            {
-                case R.id.the_phone_button:
-
-                    // convert to phone number format
-                    String phone_formtatted = temp_doc.getPhoneNumber().replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-
-                    Intent the_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone_formtatted));
-                    context.startActivity(the_intent);
-                    break;
-
-                case R.id.the_email_button:
-
-                    Toast.makeText(context.getApplicationContext(), "Email", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Intent.ACTION_SEND);
-                    intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_TEXT,"This is from the med app");
-                    intent.putExtra(Intent.EXTRA_SUBJECT,"This is from the med app");
-                    context.startActivity(intent);
-                    break;
-
-            } //end switch*/
         }
     }
 }

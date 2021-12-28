@@ -122,19 +122,19 @@ public class Medication
    // getters
    public int getId() {return id;}
 
-   public String getMedicationName() {return medicationName;}
+   public String getMedicationName() {return this.medicationName;}
 
-   public String getDrugNomenclature() {return drugNomenclature;}
+   public String getDrugNomenclature() {return this.drugNomenclature;}
 
-   public int getDrugDosage() {return drugDosage;}
+   public int getDrugDosage() {return this.drugDosage;}
 
-   public int getTimesPerDay() {return timesPerDay;}
+   public int getTimesPerDay() {return this.timesPerDay;}
 
-   public int getQuantityLeft() {return quantityLeft;}
+   public int getQuantityLeft() {return this.quantityLeft;}
 
-   public int getQuantityTotal() {return quantityTotal;}
+   public int getQuantityTotal() {return this.quantityTotal;}
 
-   public int getRefillsLeft() {return refillsLeft;}
+   public int getRefillsLeft() {return this.refillsLeft;}
 
    public int getBeginDate() {return this.beginDate;}
 

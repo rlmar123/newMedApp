@@ -11,6 +11,7 @@ public class CONSTANTS
 
    public static final int DAY_OFFSET = 0;
    public static final int DIVIDE_BY = 100;
+   public static final int YEAR = 365;
 
    // for months
    public static final int LEAP = 28;

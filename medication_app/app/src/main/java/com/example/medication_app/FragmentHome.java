@@ -153,10 +153,7 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
                 }
 
                 else
-                {
-                    Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();
-                }
-
+                   Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();
             }
         });
 
@@ -194,5 +191,4 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
        list_number_of_days = add_pop_up.findViewById(R.id.number_of_days);
        medicine_save_button = add_pop_up.findViewById(R.id.med_save_button);
     }
-
 } // end Fragment

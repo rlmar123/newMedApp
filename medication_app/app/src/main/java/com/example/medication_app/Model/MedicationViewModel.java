@@ -67,9 +67,6 @@ public class MedicationViewModel extends AndroidViewModel
       }
 
       julian_date = count + the_day;
-      Log.d("calendar", " " + the_year);
-      Log.d("calendar", " " + the_month);
-      Log.d("calendar", " " + the_day);
 
       return julian_date;
    }

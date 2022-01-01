@@ -25,6 +25,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.StringTokenizer;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
@@ -179,10 +180,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    {
       Date now = new Date();
 
+      String test;
+
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(now);
 
       Integer today = calendar.get(Calendar.DAY_OF_YEAR);
+
       return today;
    }
 } // end MainActivity

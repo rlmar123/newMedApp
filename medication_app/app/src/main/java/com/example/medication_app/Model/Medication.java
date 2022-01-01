@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey;
 
 import com.example.medication_app.util.CONSTANTS;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 @Entity(tableName = "medication_table")
@@ -75,6 +77,13 @@ public class Medication
       this.numOfDays = numOfDays;
 
       this.endDate = (this.beginDate) + (this.numOfDays - 1);
+
+      String test;
+
+      test = Integer.toString(MedicationViewModel.getCurrentJulianDate());
+      test = "21" + test;
+
+      Log.d("from today_DEC_31 ", test);
 
       calcStringEndDate(YYYYMMDD);
       Log.d("FROM MEDICATION", "CONSTRUCTOR " + this.beginDateString);

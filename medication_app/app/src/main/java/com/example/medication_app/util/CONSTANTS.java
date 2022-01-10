@@ -1,5 +1,7 @@
 package com.example.medication_app.util;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 public class CONSTANTS
@@ -12,13 +14,19 @@ public class CONSTANTS
    public static final int DAY_OFFSET = 0;
    public static final int DIVIDE_BY = 100;
 
-   public static final int YEAR = 365;
-   public static final String YEAR_PREFIX = "22";
+   public static final int YEAR_LEAP = 634;
+   public static final int YEAR_REG = 635;
+
+   // Dec 31 2022
+   public static final int MAX_DAY = 22365;
 
    // for months
    public static final int LEAP = 28;
    public static final int THIRTY = 30;
    public static final int THIRTY_ONE = 31;
+
+
+   public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // add days for each month
    public static HashMap <Integer, Integer> loadDays()
@@ -51,6 +59,21 @@ public class CONSTANTS
       calendar_days.put(12, CONSTANTS.THIRTY_ONE);
 
       return calendar_days;
+   }
+
+   public static String getPrefix()
+   {
+      String prefix;
+      Date now = new Date();
+
+      Calendar calendar = Calendar.getInstance();
+      calendar.setTime(now);
+
+      Integer year = calendar.get(Calendar.YEAR);
+      year = year % CONSTANTS.DIVIDE_BY;
+      prefix = Integer.toString(year);
+
+      return prefix;
    }
 
 } // end CONSTANTS

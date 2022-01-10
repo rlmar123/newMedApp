@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    BottomNavigationView test_bar;
    FrameLayout frameLayout;
 
-   private ImageView lines;
-   private ImageView settinds;
-
    private HorizontalCalendar horizontalCalendar;
 
    private String formatted;
@@ -51,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
       // store today's date in the viewModel
       MedicationViewModel.setCurrentJulianDate(getTodaysDate());
+
+      Log.d("FROM Main", "getTodaysDate " + MedicationViewModel.getCurrentJulianDate());
 
       test_bar = findViewById(R.id.bottom_nav);
 
@@ -80,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             formatted = setStringDate(position);
             int selectedDate = MedicationViewModel.julianDate(formatted);
 
-            MedicationViewModel.setSelectedJulianDate(selectedDate);
+            // here!!! 22XXX
+            MedicationViewModel.setSelectedJulianDate(MedicationViewModel.dateFormatter(selectedDate));
             changeFragment(new FragmentHome(), CONSTANTS.SELECTED);
 
             Toast.makeText(MainActivity.this, "REFILL!!!!" + MedicationViewModel.getSelectedJulianDate(), Toast.LENGTH_LONG).show();
@@ -105,26 +105,25 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                  {
                     case R.id.home_icon:
                        selectedFragment = new FragmentHome();
-
                        changeFragment(selectedFragment, CONSTANTS.CURRENT);
-
                        horizontalCalendar.show();
+
+                       Toast.makeText(MainActivity.this, "HOME", Toast.LENGTH_LONG).show();
                        break;
 
                     case R.id.refill_icon:
 
                        /*selectedFragment = new NextFragment();*/
-                       Toast.makeText(MainActivity.this, "REFILL!!!!" , Toast.LENGTH_LONG).show();
                        break;
 
                     case R.id.doctor_info:
                        test_bar.setBackgroundResource(R.color.black);
 
                        selectedFragment = new FragmentDocInfo();
-                        changeFragment(selectedFragment);
+                       changeFragment(selectedFragment, "hey");
 
                        horizontalCalendar.hide();
-                       //    Toast.makeText(MainActivity.this, "DOCTOR INFO!!!!" , Toast.LENGTH_LONG).show();
+
                        break;
                  }
 
@@ -132,22 +131,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
               }
            };
 
-   private void changeFragment(Fragment fragment)
-   {
-      Bundle bundle = new Bundle();
-      bundle.putInt("current", 2399);
-
-      fragment.setArguments(bundle);
-      getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
-   }
-
    private void changeFragment(Fragment fragment, String day)
    {
       Bundle bundle = new Bundle();
       bundle.putString(CONSTANTS.COUNT, day);
 
       fragment.setArguments(bundle);
-      getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
+      getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.main_frame, fragment).commit();
+      //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
    }
 
    @Override
@@ -180,13 +171,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    {
       Date now = new Date();
 
-      String test;
-
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(now);
 
       Integer today = calendar.get(Calendar.DAY_OF_YEAR);
 
-      return today;
+      return MedicationViewModel.dateFormatter(today);
    }
 } // end MainActivity

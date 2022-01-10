@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medication_app.Model.Doctor;
 import com.example.medication_app.Model.DoctorViewModel;
+import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.example.medication_app.UI.RecDocAdapt;
@@ -149,7 +150,7 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                 {
 
                     // phone number equals 10 digits
-                    if(doc_phone_number.getText().toString().length() == MAX_PHONE_NUMBER_LENGTH)
+                    if(doc_phone_number.getText().toString().length() == CONSTANTS.MAX_PHONE_NUMBER_LENGTH)
                     {
 
 

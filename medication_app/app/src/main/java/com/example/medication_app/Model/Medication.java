@@ -76,17 +76,15 @@ public class Medication
       this.beginDate = beginDate;
       this.numOfDays = numOfDays;
 
-      this.endDate = (this.beginDate) + (this.numOfDays - 1);
-
+     // we wont need this, this will go into todyays date in main
       String test;
 
       test = Integer.toString(MedicationViewModel.getCurrentJulianDate());
-      test = "21" + test;
-
-      Log.d("from today_DEC_31 ", test);
+      test = MedicationViewModel.getPrefix() + test;
 
       calcStringEndDate(YYYYMMDD);
-      Log.d("FROM MEDICATION", "CONSTRUCTOR " + this.beginDateString);
+
+      endDate();
    }
 
 
@@ -168,8 +166,6 @@ public class Medication
       String string_month;
       String string_day;
 
-      String string_end_date;
-
       day = original_date % CONSTANTS.DIVIDE_BY;
       original_date = original_date / CONSTANTS.DIVIDE_BY;
 
@@ -211,4 +207,34 @@ public class Medication
       Log.d("FROM MEDICATION", "string_end_date " + this.endDateString);
    }
 
+
+   private void endDate()
+   {
+      this.endDate = (this.beginDate) + (this.numOfDays - 1);
+      Integer difference;
+
+      // if day is greater than Dec 31
+      if(this.endDate > CONSTANTS.MAX_DAY)
+      {
+         Date now = new Date();
+
+         Calendar calendar = Calendar.getInstance();
+         calendar.setTime(now);
+
+         Integer year = calendar.get(Calendar.YEAR);
+
+         // leap year
+         if((year % 4) == 0)
+
+            difference = CONSTANTS.YEAR_LEAP;
+
+         // non leap year
+         else
+            difference = CONSTANTS.YEAR_REG;
+
+         this.endDate = this.endDate + difference;
+      }
+
+      Log.d("FROM END DATE", "FIRST END DATE " + this.endDate);
+   }
 } // end Medication class

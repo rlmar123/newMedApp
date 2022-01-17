@@ -6,68 +6,184 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".DashboardActivity">
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+         <com.airbnb.lottie.LottieAnimationView
+             android:id="@+id/bannerView"
+             android:layout_width="match_parent"
+             android:layout_height="200dp"
+             android:layout_gravity="center"
+             app:lottie_autoPlay="true"
+             app:lottie_loop="true"
+             app:lottie_rawRes="@raw/pharmacy" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
+             android:text="MED DASHBOARD"
+             android:textAlignment="center"
+             android:textSize="24sp" />
 
-                android:textAlignment="center"
-                android:text="Medtracker Dashboard"
-                android:textSize="24sp"
-                android:gravity="bottom"
-                android:textColor="#000000"/>
+         <!--FIRST ROW-->
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="150dp"
+             android:orientation="horizontal"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            >
+             android:weightSum="2">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:orientation="vertical"
-                android:background="#ffffff"
-                >
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/HomeView"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/home" />
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Home"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    />
+               <com.airbnb.lottie.LottieAnimationView
+                   android:id="@+id/HomeView"
+                   android:layout_width="70dp"
+                   android:layout_height="60dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="15dp"
+                   app:lottie_autoPlay="true"
+                   app:lottie_loop="true"
+                   app:lottie_rawRes="@raw/home" />
+
+               <TextView
+                   android:id="@+id/home_text"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/my_blue"
+                   android:padding="8dp"
+                   android:text="Home"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+                   android:textSize="18sp" />
 
             </LinearLayout>
 
-        </LinearLayout>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:orientation="vertical">
 
 
+               <com.airbnb.lottie.LottieAnimationView
+                   android:id="@+id/DoctorView"
+                   android:layout_width="70dp"
+                   android:layout_height="60dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="15dp"
+                   app:lottie_autoPlay="true"
+                   app:lottie_loop="true"
+                   app:lottie_rawRes="@raw/stethoscope" />
+
+               <TextView
+                   android:id="@+id/doct_text"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/my_blue"
+                   android:padding="8dp"
+                   android:text="Doctor"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+                   android:textSize="18sp" />
+
+            </LinearLayout>
+
+         </LinearLayout>
+
+        <!--end first-->
 
 
-    </ScrollView>
+         <!--second ROW-->
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="50dp"
+             android:orientation="horizontal"
+             android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:orientation="vertical">
+
+               <com.airbnb.lottie.LottieAnimationView
+                   android:id="@+id/AppointView"
+                   android:layout_width="70dp"
+                   android:layout_height="60dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="15dp"
+                   app:lottie_autoPlay="true"
+                   app:lottie_loop="true"
+                   app:lottie_rawRes="@raw/appointment" />
+
+               <TextView
+                   android:id="@+id/appt_text"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/my_blue"
+                   android:padding="8dp"
+                   android:text="Appointment"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+                   android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:orientation="vertical">
+
+
+               <com.airbnb.lottie.LottieAnimationView
+                   android:id="@+id/AboutUs"
+                   android:layout_width="70dp"
+                   android:layout_height="60dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="15dp"
+                   app:lottie_autoPlay="true"
+                   app:lottie_loop="true"
+                   app:lottie_rawRes="@raw/about" />
+
+               <TextView
+                   android:id="@+id/about_text"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/my_blue"
+                   android:text="About Us"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+                   android:textSize="18sp" />
+
+            </LinearLayout>
+
+         </LinearLayout>
+
+      </LinearLayout>
+
+   </ScrollView>
+
+
 
 </LinearLayout>

@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
       test_bar = findViewById(R.id.bottom_nav);
 
+   //   frameLayout = findViewById(R.id.main_frame);
+
       test_bar.setOnNavigationItemSelectedListener(navListener);
 
       // starts before 1 month from now

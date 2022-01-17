@@ -2,6 +2,7 @@ package com.example.medication_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -53,6 +54,20 @@ public class TitleActivity extends AppCompatActivity implements PopupMenu.OnMenu
             showPopup(v);
          }
       });
+
+      Handler handler = new Handler();
+
+      handler.postDelayed(new Runnable() {
+         @Override
+         public void run()
+         {
+            Intent camera_intent = new Intent(TitleActivity.this, DashboardActivity.class);
+            startActivity(camera_intent);
+
+            //kills previous activity
+            finish();
+         }
+      }, 5000);
 
    } // end onCreate
 

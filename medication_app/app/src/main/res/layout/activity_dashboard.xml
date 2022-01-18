@@ -19,6 +19,8 @@
              android:layout_width="match_parent"
              android:layout_height="200dp"
              android:layout_gravity="center"
+             android:layout_margin="25dp"
+             android:background="@drawable/border"
              app:lottie_autoPlay="true"
              app:lottie_loop="true"
              app:lottie_rawRes="@raw/pharmacy" />
@@ -37,14 +39,13 @@
              android:layout_height="wrap_content"
              android:layout_marginTop="150dp"
              android:orientation="horizontal"
-
              android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_margin="2dp"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/fab_margin"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
@@ -74,8 +75,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_margin="2dp"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/fab_margin"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
@@ -119,8 +120,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_margin="2dp"
                 android:layout_weight="1"
+                android:layout_margin="@dimen/fab_margin"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
@@ -150,7 +151,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_margin="2dp"
+                android:layout_margin="@dimen/fab_margin"
                 android:layout_weight="1"
                 android:background="@drawable/border"
                 android:orientation="vertical">
@@ -171,6 +172,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:background="@color/my_blue"
+                   android:padding="8dp"
                    android:text="About Us"
                    android:textAlignment="center"
                    android:textColor="@color/white"

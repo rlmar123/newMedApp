@@ -1,6 +1,7 @@
 package com.example.medication_app;
 
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,11 +50,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       // store today's date in the viewModel
       MedicationViewModel.setCurrentJulianDate(getTodaysDate());
 
-      Log.d("FROM Main", "getTodaysDate " + MedicationViewModel.getCurrentJulianDate());
 
       test_bar = findViewById(R.id.bottom_nav);
-
-   //   frameLayout = findViewById(R.id.main_frame);
 
       test_bar.setOnNavigationItemSelectedListener(navListener);
 
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             formatted = setStringDate(position);
             int selectedDate = MedicationViewModel.julianDate(formatted);
 
-            // here!!! 22XXX
             MedicationViewModel.setSelectedJulianDate(MedicationViewModel.dateFormatter(selectedDate));
             changeFragment(new FragmentHome(), CONSTANTS.SELECTED);
 
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       });
 
       // set opening fragment to home and today's date
-      opening_fragment = new FragmentHome();
+      setOpeningFragment();
       changeFragment(opening_fragment, CONSTANTS.CURRENT);
    } // end onCreate
 
@@ -179,5 +176,28 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       Integer today = calendar.get(Calendar.DAY_OF_YEAR);
 
       return MedicationViewModel.dateFormatter(today);
+   }
+
+   private void setOpeningFragment()
+   {
+      Intent intent = getIntent();
+      String message = intent.getStringExtra(CONSTANTS.ANSWER);
+
+      if(message != null)
+      {
+         if (message.equals(CONSTANTS.HOME))
+           opening_fragment = new FragmentHome();
+
+         else if (message.equals(CONSTANTS.DOCTOR))
+            opening_fragment = new FragmentDocInfo();
+
+         // we need to changw later
+         else if (message.equals(CONSTANTS.APPOINTMENT))
+            opening_fragment = new FragmentDocInfo();
+
+         else if (message.equals(CONSTANTS.APPOINTMENT))
+            opening_fragment = new FragmentHome();
+      }
+
    }
 } // end MainActivity

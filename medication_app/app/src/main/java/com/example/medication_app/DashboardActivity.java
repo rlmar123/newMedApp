@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.medication_app.util.CONSTANTS;
+
 public class DashboardActivity extends AppCompatActivity
 {
 
@@ -31,6 +33,7 @@ public class DashboardActivity extends AppCompatActivity
          public void onClick(View view)
          {
             Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
+            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.HOME);
             Toast.makeText(DashboardActivity.this, "GOING TO MAIN", Toast.LENGTH_LONG).show();
             startActivity(intent);
          }
@@ -40,7 +43,10 @@ public class DashboardActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
-            Toast.makeText(DashboardActivity.this, "DOC_REXR", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
+            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.DOCTOR);
+            Toast.makeText(DashboardActivity.this, "GOING TO MAIN", Toast.LENGTH_LONG).show();
+            startActivity(intent);
          }
       });
 
@@ -48,6 +54,8 @@ public class DashboardActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
+            Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
+            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.APPOINTMENT);
             Toast.makeText(DashboardActivity.this, "APPT_REXR", Toast.LENGTH_LONG).show();
          }
       });
@@ -56,6 +64,8 @@ public class DashboardActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
+            Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
+            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.ABOUT_US);
             Toast.makeText(DashboardActivity.this, "ABOUT_REXR", Toast.LENGTH_LONG).show();
          }
       });

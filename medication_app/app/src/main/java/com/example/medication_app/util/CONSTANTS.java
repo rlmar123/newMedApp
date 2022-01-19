@@ -11,6 +11,13 @@ public class CONSTANTS
 
    public static final String COUNT = "COUNT";
 
+
+   public static final String ANSWER = "ANSWER";
+   public static final String HOME = "HOME";
+   public static final String DOCTOR = "DOCTOR";
+   public static final String APPOINTMENT = "APPOINTMENT";
+   public static final String ABOUT_US = "ABOUT_US";
+
    public static final int DAY_OFFSET = 0;
    public static final int DIVIDE_BY = 100;
 

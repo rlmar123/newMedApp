@@ -4,11 +4,9 @@ package com.example.medication_app;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,18 +20,15 @@ import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.StringTokenizer;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener
 {
-   BottomNavigationView test_bar;
+   BottomNavigationView bottom_nav;
    FrameLayout frameLayout;
 
    private HorizontalCalendar horizontalCalendar;
@@ -41,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    private String formatted;
 
    private Fragment opening_fragment = null;
+
    @Override
    protected void onCreate(Bundle savedInstanceState)
    {
@@ -50,10 +46,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       // store today's date in the viewModel
       MedicationViewModel.setCurrentJulianDate(getTodaysDate());
 
+      bottom_nav = findViewById(R.id.bottom_nav);
 
-      test_bar = findViewById(R.id.bottom_nav);
-
-      test_bar.setOnNavigationItemSelectedListener(navListener);
+      bottom_nav.setOnNavigationItemSelectedListener(navListener);
 
       // starts before 1 month from now
       Calendar startDate = Calendar.getInstance();
@@ -75,21 +70,18 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         @Override
          public void onDateSelected(Calendar date, int position)
          {
-
             formatted = setStringDate(position);
             int selectedDate = MedicationViewModel.julianDate(formatted);
 
             MedicationViewModel.setSelectedJulianDate(MedicationViewModel.dateFormatter(selectedDate));
             changeFragment(new FragmentHome(), CONSTANTS.SELECTED);
-
-            Toast.makeText(MainActivity.this, "REFILL!!!!" + MedicationViewModel.getSelectedJulianDate(), Toast.LENGTH_LONG).show();
-
          }
       });
 
       // set opening fragment to home and today's date
       setOpeningFragment();
       changeFragment(opening_fragment, CONSTANTS.CURRENT);
+
    } // end onCreate
 
    // fragments change here
@@ -116,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                        break;
 
                     case R.id.doctor_info:
-                       test_bar.setBackgroundResource(R.color.black);
+                       bottom_nav.setBackgroundResource(R.color.black);
 
                        selectedFragment = new FragmentDocInfo();
                        changeFragment(selectedFragment, "hey");
@@ -186,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
       if(message != null)
       {
          if (message.equals(CONSTANTS.HOME))
-           opening_fragment = new FragmentHome();
+            opening_fragment = new FragmentHome();
 
          else if (message.equals(CONSTANTS.DOCTOR))
             opening_fragment = new FragmentDocInfo();

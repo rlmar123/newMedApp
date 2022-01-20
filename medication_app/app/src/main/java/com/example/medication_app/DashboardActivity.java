@@ -57,6 +57,7 @@ public class DashboardActivity extends AppCompatActivity
             Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
             intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.APPOINTMENT);
             Toast.makeText(DashboardActivity.this, "APPT_REXR", Toast.LENGTH_LONG).show();
+            startActivity(intent);
          }
       });
 
@@ -67,6 +68,7 @@ public class DashboardActivity extends AppCompatActivity
             Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
             intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.ABOUT_US);
             Toast.makeText(DashboardActivity.this, "ABOUT_REXR", Toast.LENGTH_LONG).show();
+            startActivity(intent);
          }
       });
 

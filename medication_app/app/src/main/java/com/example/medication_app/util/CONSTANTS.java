@@ -11,7 +11,7 @@ public class CONSTANTS
 
    public static final String COUNT = "COUNT";
 
-
+   // for opening fragment
    public static final String ANSWER = "ANSWER";
    public static final String HOME = "HOME";
    public static final String DOCTOR = "DOCTOR";
@@ -31,7 +31,6 @@ public class CONSTANTS
    public static final int LEAP = 28;
    public static final int THIRTY = 30;
    public static final int THIRTY_ONE = 31;
-
 
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
@@ -66,21 +65,6 @@ public class CONSTANTS
       calendar_days.put(12, CONSTANTS.THIRTY_ONE);
 
       return calendar_days;
-   }
-
-   public static String getPrefix()
-   {
-      String prefix;
-      Date now = new Date();
-
-      Calendar calendar = Calendar.getInstance();
-      calendar.setTime(now);
-
-      Integer year = calendar.get(Calendar.YEAR);
-      year = year % CONSTANTS.DIVIDE_BY;
-      prefix = Integer.toString(year);
-
-      return prefix;
    }
 
 } // end CONSTANTS

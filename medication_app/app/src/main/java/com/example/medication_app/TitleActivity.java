@@ -40,20 +40,20 @@ public class TitleActivity extends AppCompatActivity implements PopupMenu.OnMenu
 
       title_text = findViewById(R.id.title_text);
       logo_text = findViewById(R.id.logo_text);
-      lines = findViewById(R.id.three_bars);
+   //   lines = findViewById(R.id.three_bars);
       settinds = findViewById(R.id.the_setting);
 
       title_text.startAnimation(text_animation);
       logo_text.startAnimation(logo_animation);
 
-      lines.setOnClickListener(new View.OnClickListener()
+/*      lines.setOnClickListener(new View.OnClickListener()
       {
          @Override
          public void onClick(View v)
          {
             showPopup(v);
          }
-      });
+      });*/
 
       Handler handler = new Handler();
 

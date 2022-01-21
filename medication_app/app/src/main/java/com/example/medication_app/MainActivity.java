@@ -102,10 +102,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                        Toast.makeText(MainActivity.this, "HOME", Toast.LENGTH_LONG).show();
                        break;
 
-                    case R.id.refill_icon:
-
-                       /*selectedFragment = new NextFragment();*/
-                       break;
 
                     case R.id.doctor_info:
                        bottom_nav.setBackgroundResource(R.color.black);
@@ -114,6 +110,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                        changeFragment(selectedFragment, "hey");
 
                        horizontalCalendar.hide();
+
+                       break;
+
+                    case R.id.dash_icon:
+
+                       Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                       startActivity(intent);
+                       finish();
 
                        break;
                  }

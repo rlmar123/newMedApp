@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
          else if (message.equals(CONSTANTS.APPOINTMENT))
             opening_fragment = new FragmentDocInfo();
 
-         else if (message.equals(CONSTANTS.APPOINTMENT))
+         else if (message.equals(CONSTANTS.ABOUT_US))
             opening_fragment = new FragmentHome();
       }
 

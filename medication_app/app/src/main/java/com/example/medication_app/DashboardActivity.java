@@ -1,6 +1,8 @@
 package com.example.medication_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 
 import android.content.ContentUris;
 import android.content.Intent;
@@ -11,9 +13,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.medication_app.util.CONSTANTS;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class DashboardActivity extends AppCompatActivity
 {

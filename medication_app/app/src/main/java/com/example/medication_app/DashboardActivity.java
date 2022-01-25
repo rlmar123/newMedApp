@@ -1,5 +1,6 @@
 package com.example.medication_app;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
@@ -26,6 +27,11 @@ public class DashboardActivity extends AppCompatActivity
    private TextView docText = null;
    private TextView apptText = null;
    private TextView aboutText = null;
+
+   //to build alert dialog
+   private AlertDialog.Builder our_builder = null;
+   private AlertDialog our_dialog = null;
+
    @Override
    protected void onCreate(Bundle savedInstanceState)
    {
@@ -63,45 +69,7 @@ public class DashboardActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
-           /* Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
-            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.APPOINTMENT);
-            Toast.makeText(DashboardActivity.this, "APPT_REXR", Toast.LENGTH_LONG).show();
-            startActivity(intent);*/
-
-
-            /*Intent intent = new Intent(Intent.ACTION_INSERT);
-
-
-
-            intent.setData(CalendarContract.Events.CONTENT_URI);
-
-            intent.putExtra(CalendarContract.Events.TITLE, "PARTY");
-            intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
-            intent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
-            intent.putExtra(CalendarContract.Events.ALL_DAY, true);
-
-            intent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");*/
-
-            Intent calIntent = new Intent(Intent.ACTION_INSERT);
-            calIntent.setData(CalendarContract.Events.CONTENT_URI);
-            calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
-            calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
-            calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
-            calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
-
-            Calendar startTime = Calendar.getInstance();
-            startTime.set(2012, 0, 29, 18, 0);
-
-            Calendar endTime = Calendar.getInstance();
-            endTime.set(2012, 6, 29, 22, 30);
-
-            calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
-            calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
-
-            if(calIntent.resolveActivity(getPackageManager()) != null)
-               startActivity(calIntent);
-            else
-               Toast.makeText(DashboardActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show();
+            createAppointment();
          }
       });
 
@@ -119,4 +87,45 @@ public class DashboardActivity extends AppCompatActivity
 
    } // end onCreate
 
+   private void createAppointment()
+   {
+      createApptPopUp();
+      Intent calIntent = new Intent(Intent.ACTION_INSERT);
+
+      calIntent.setData(CalendarContract.Events.CONTENT_URI);
+      calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
+      calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
+      calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
+      calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
+
+      Calendar startTime = Calendar.getInstance();
+      startTime.set(2012, 0, 29, 18, 0);
+
+      Calendar endTime = Calendar.getInstance();
+      endTime.set(2012, 6, 29, 22, 30);
+
+      calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
+      calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
+
+      if(calIntent.resolveActivity(getPackageManager()) != null)
+         startActivity(calIntent);
+      else
+         Toast.makeText(DashboardActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show();
+
+   }
+
+
+   private void createApptPopUp()
+   {
+      our_builder = new AlertDialog.Builder(DashboardActivity.this);
+
+      //make connection to popup.xml
+      View update_pop_up = getLayoutInflater().inflate(R.layout.appointment_pop_up, null);
+
+      our_builder.setView(update_pop_up);
+
+      //this displays the dialog
+      our_dialog = our_builder.create();
+      our_dialog.show();
+   }
 } // end DashboardActivity

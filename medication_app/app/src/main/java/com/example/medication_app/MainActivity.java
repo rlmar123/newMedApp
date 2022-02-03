@@ -195,5 +195,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             opening_fragment = new FragmentHome();
       }
 
-   }
+   } // end setOpeningFragment
+
 } // end MainActivity

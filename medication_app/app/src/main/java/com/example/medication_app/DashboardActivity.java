@@ -10,9 +10,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.transition.Fade;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.medication_app.util.CONSTANTS;
@@ -42,6 +44,18 @@ public class DashboardActivity extends AppCompatActivity
       docText = findViewById(R.id.doct_text);
       apptText = findViewById(R.id.appt_text);
       aboutText = findViewById(R.id.about_text);
+
+      LottieAnimationView lottieAnimationView = findViewById(R.id.AppointView);
+
+
+      Fade fade = new Fade();
+      View decor = getWindow().getDecorView();
+      fade.excludeTarget(decor.findViewById(R.id.action_bar_container), true);
+      fade.excludeTarget(android.R.id.statusBarBackground, true);
+      fade.excludeTarget(android.R.id.navigationBarBackground, true);
+
+      getWindow().setEnterTransition(fade);
+      getWindow().setExitTransition(fade);
 
       homeText.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -79,6 +93,8 @@ public class DashboardActivity extends AppCompatActivity
          {
             Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
             intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.ABOUT_US);
+
+
             Toast.makeText(DashboardActivity.this, "ABOUT_REXR", Toast.LENGTH_LONG).show();
             startActivity(intent);
          }
@@ -89,8 +105,11 @@ public class DashboardActivity extends AppCompatActivity
 
    private void createAppointment()
    {
-      createApptPopUp();
-      Intent calIntent = new Intent(Intent.ACTION_INSERT);
+     //enterAppointmentTitle();
+     /* enterAppointmentLoc();
+      enterAppointmentDesc();*/
+
+    /*  Intent calIntent = new Intent(Intent.ACTION_INSERT);
 
       calIntent.setData(CalendarContract.Events.CONTENT_URI);
       calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
@@ -99,8 +118,10 @@ public class DashboardActivity extends AppCompatActivity
       calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
 
       Calendar startTime = Calendar.getInstance();
+      // get start time
       startTime.set(2012, 0, 29, 18, 0);
 
+      // get end time
       Calendar endTime = Calendar.getInstance();
       endTime.set(2012, 6, 29, 22, 30);
 
@@ -110,17 +131,52 @@ public class DashboardActivity extends AppCompatActivity
       if(calIntent.resolveActivity(getPackageManager()) != null)
          startActivity(calIntent);
       else
-         Toast.makeText(DashboardActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show();
+         Toast.makeText(DashboardActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show(); */
+
+      Intent intent = new Intent(DashboardActivity.this, CalendarActivity.class);
+
+      ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(DashboardActivity.this, apptText, "example_transition");
+      // starting our activity with below method.
+      startActivity(intent,options.toBundle());
+      Log.d("main", "here!!!!!!");
 
    }
 
 
-   private void createApptPopUp()
+   private void enterAppointmentTitle()
    {
       our_builder = new AlertDialog.Builder(DashboardActivity.this);
 
       //make connection to popup.xml
-      View update_pop_up = getLayoutInflater().inflate(R.layout.appointment_pop_up, null);
+      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_title, null);
+
+      our_builder.setView(update_pop_up);
+
+      //this displays the dialog
+      our_dialog = our_builder.create();
+      our_dialog.show();
+   }
+
+   private void enterAppointmentLoc()
+   {
+      our_builder = new AlertDialog.Builder(DashboardActivity.this);
+
+      //make connection to popup.xml
+      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_loc, null);
+
+      our_builder.setView(update_pop_up);
+
+      //this displays the dialog
+      our_dialog = our_builder.create();
+      our_dialog.show();
+   }
+
+   private void enterAppointmentDesc()
+   {
+      our_builder = new AlertDialog.Builder(DashboardActivity.this);
+
+      //make connection to popup.xml
+      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_desc, null);
 
       our_builder.setView(update_pop_up);
 

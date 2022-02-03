@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarActivity">
+
+   <!--Transition name is same
+       as that we have used
+       in previous imageview-->
+
+   <TextView
+       android:id="@+id/second"
+       android:layout_width="match_parent"
+       android:layout_height="75dp"
+       android:layout_alignParentTop="true"
+       android:background="@color/my_blue"
+       android:contentDescription="I DID IT!!!"
+       android:text="Appointment"
+       android:scaleType="centerCrop"
+       android:textAlignment="center"
+       android:textColor="@color/white"
+       android:textSize="36dp"
+       android:transitionName="example_transition" />
+
+   <TextView
+       android:id="@+id/textView"
+       android:layout_width="match_parent"
+       android:layout_height="75dp"
+       android:layout_below="@id/second"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginStart="136dp"
+       android:layout_marginTop="282dp"
+       android:layout_marginEnd="153dp"
+       android:layout_marginBottom="326dp"
+       android:text="YEP!!!"
+       android:textSize="36dp" />
+
+</RelativeLayout>

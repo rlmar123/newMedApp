@@ -152,8 +152,6 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                     // phone number equals 10 digits
                     if(doc_phone_number.getText().toString().length() == CONSTANTS.MAX_PHONE_NUMBER_LENGTH)
                     {
-
-
                         Doctor doctor = new Doctor(doc_first_name.getText().toString(), doc_last_name.getText().toString(), "123 State ST", "kjhkjkjk", doc_phone_number.getText().toString(), doc_email.getText().toString());
                         DoctorViewModel.insert(doctor);
 

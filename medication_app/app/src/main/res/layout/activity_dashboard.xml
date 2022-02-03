@@ -132,6 +132,7 @@
                    android:layout_height="60dp"
                    android:layout_gravity="center"
                    android:layout_marginTop="15dp"
+
                    app:lottie_autoPlay="true"
                    app:lottie_loop="true"
                    app:lottie_rawRes="@raw/appointment" />
@@ -143,6 +144,7 @@
                    android:background="@color/my_blue"
                    android:padding="8dp"
                    android:text="Appointment"
+                   android:transitionName="example_transition"
                    android:textAlignment="center"
                    android:textColor="@color/white"
                    android:textSize="18sp" />

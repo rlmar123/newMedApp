@@ -7,16 +7,36 @@
     android:layout_height="match_parent">
 
 
+
    <androidx.cardview.widget.CardView
        android:layout_width="match_parent"
        android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#FF0000">
+
+
+         <TextView
+             android:id="@+id/enter_appointment_desc"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:text="Enter Appointment Description"
+             android:textAlignment="center"
+             android:textColor="#FFFFFF"
+             android:textSize="18sp"
+             android:textStyle="bold|italic">
+
+         </TextView>
+      </LinearLayout>
 
       <RelativeLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:padding="24dp">
 
-         <com.airbnb.lottie.LottieAnimationView
+     <!--    <com.airbnb.lottie.LottieAnimationView
              android:id="@+id/pillView"
              android:layout_width="150dp"
              android:layout_height="150dp"
@@ -30,35 +50,22 @@
              android:transitionName="example_transition"
              app:lottie_autoPlay="true"
              app:lottie_loop="true"
-             app:lottie_rawRes="@raw/pharmacy" />
+             app:lottie_rawRes="@raw/pharmacy" />-->
 
-         <TextView
-             android:id="@+id/appointment_title"
-             android:layout_width="wrap_content"
-             android:layout_height="47dp"
-             android:layout_below="@id/pillView"
-             android:layout_alignParentLeft="true"
 
-             android:text="Add a Doctor Info"
-             android:textColor="#FF0000"
-             android:textSize="18sp"
-             android:textStyle="italic">
 
-         </TextView>
-
-         <TextView
+         <EditText
              android:id="@+id/appointment_location"
-             android:layout_width="wrap_content"
-             android:layout_height="47dp"
-             android:layout_below="@id/appointment_title"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
              android:layout_alignParentLeft="true"
-             android:layout_marginTop="22dp"
-             android:text="Add a Doctor Info"
-             android:textColor="#FF0000"
+             android:hint="Add the appointment description"
+             android:layout_marginTop="25dp"
+             android:textColor="@color/my_blue"
              android:textSize="18sp"
              android:textStyle="italic">
 
-         </TextView>
+         </EditText>
 
       </RelativeLayout>
 

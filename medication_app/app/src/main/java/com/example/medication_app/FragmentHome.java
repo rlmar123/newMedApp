@@ -71,7 +71,7 @@ public class FragmentHome extends Fragment implements RecMedAdapt.OnContactClick
    private MedicationViewModel medicationViewModel;
    private LiveData<List<Medication>> medList;
 
-   FloatingActionButton add_meds_button = null;
+   private FloatingActionButton add_meds_button = null;
    private int day;
 
    public FragmentHome() { }

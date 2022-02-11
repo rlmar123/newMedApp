@@ -1,42 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CalendarActivity">
 
    <!--Transition name is same
        as that we have used
        in previous imageview-->
-
-   <TextView
-       android:id="@+id/second"
+   <LinearLayout
+       android:id="@+id/appoint_layout"
        android:layout_width="match_parent"
-       android:layout_height="75dp"
-       android:layout_alignParentTop="true"
-       android:background="@color/my_blue"
-       android:contentDescription="I DID IT!!!"
-       android:text="Appointment"
-       android:scaleType="centerCrop"
-       android:textAlignment="center"
-       android:textColor="@color/white"
-       android:textSize="36dp"
-       android:transitionName="example_transition" />
+       android:layout_height="50dp">
 
-   <TextView
-       android:id="@+id/textView"
+      <TextView
+          android:id="@+id/appointment_text"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_alignParentTop="true"
+          android:background="@color/my_blue"
+          android:scaleType="centerCrop"
+          android:text="Appointment"
+          android:textAlignment="center"
+          android:textColor="@color/white"
+          android:textSize="36sp"
+          android:transitionName="example_transition" />
+
+   </LinearLayout>
+
+
+   <!--   <LinearLayout
+       android:id="@+id/desc_layout"
        android:layout_width="match_parent"
-       android:layout_height="75dp"
-       android:layout_below="@id/second"
+       android:layout_height="150dp"
+       android:layout_below="@id/appoint_layout">
+
+      <TextView
+          android:id="@+id/desc_text"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="@dimen/cardview_default_radius"
+          android:background="@color/my_blue"
+          android:scaleType="centerCrop"
+          android:text="FART"
+          android:textAlignment="center"
+          android:textColor="@color/white"
+          android:textSize="36sp" />
+
+   </LinearLayout>-->
+
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/card_view"
+       android:layout_width="350dp"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/appoint_layout"
        android:layout_alignParentStart="true"
        android:layout_alignParentEnd="true"
-       android:layout_alignParentBottom="true"
-       android:layout_marginStart="136dp"
-       android:layout_marginTop="282dp"
-       android:layout_marginEnd="153dp"
-       android:layout_marginBottom="326dp"
-       android:text="YEP!!!"
-       android:textSize="36dp" />
+       android:layout_marginStart="29dp"
+       android:layout_marginTop="49dp"
+       android:layout_marginEnd="32dp"
+       android:layout_marginBottom="8dp"
+       app:cardCornerRadius="12dp"
+       app:cardElevation="11dp"
+       app:contentPadding="8dp">
+
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/appointment_title"
+          android:layout_width="match_parent"
+          android:layout_height="53dp"
+          android:hint="Appointment Title"
+          android:inputType="text" />
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/appointment_location"
+          android:layout_width="match_parent"
+          android:layout_height="53dp"
+          android:layout_marginTop="75dp"
+          android:hint="Appointment Location"
+          android:inputType="textEmailAddress" />
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/appointment_description"
+          android:layout_width="match_parent"
+          android:layout_height="53dp"
+          android:layout_marginTop="150dp"
+          android:hint="Appointment_Description"
+          android:inputType="textEmailAddress" />
+
+   </androidx.cardview.widget.CardView>
+
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/add_calendar_fab"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/card_view"
+       android:layout_alignParentStart="false"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentRight="true"
+
+       android:layout_centerInParent="true"
+       android:layout_marginStart="304dp"
+       android:layout_marginTop="298dp"
+       android:layout_marginEnd="30dp"
+       android:layout_marginRight="30dp"
+       app:backgroundTint="@color/my_red"
+       android:clickable="true"
+       app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
 
 </RelativeLayout>

@@ -105,11 +105,12 @@ public class DashboardActivity extends AppCompatActivity
 
    private void createAppointment()
    {
-     //enterAppointmentTitle();
-     /* enterAppointmentLoc();
-      enterAppointmentDesc();*/
 
-    /*  Intent calIntent = new Intent(Intent.ACTION_INSERT);
+
+    /*
+
+        THIS WILL BE MOVED!!!!!!!!!!!!!!!!!!!!!!!!!!!! TO CalendarActivity
+        Intent calIntent = new Intent(Intent.ACTION_INSERT);
 
       calIntent.setData(CalendarContract.Events.CONTENT_URI);
       calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
@@ -138,50 +139,7 @@ public class DashboardActivity extends AppCompatActivity
       ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(DashboardActivity.this, apptText, "example_transition");
       // starting our activity with below method.
       startActivity(intent,options.toBundle());
-      Log.d("main", "here!!!!!!");
-
    }
 
 
-   private void enterAppointmentTitle()
-   {
-      our_builder = new AlertDialog.Builder(DashboardActivity.this);
-
-      //make connection to popup.xml
-      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_title, null);
-
-      our_builder.setView(update_pop_up);
-
-      //this displays the dialog
-      our_dialog = our_builder.create();
-      our_dialog.show();
-   }
-
-   private void enterAppointmentLoc()
-   {
-      our_builder = new AlertDialog.Builder(DashboardActivity.this);
-
-      //make connection to popup.xml
-      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_loc, null);
-
-      our_builder.setView(update_pop_up);
-
-      //this displays the dialog
-      our_dialog = our_builder.create();
-      our_dialog.show();
-   }
-
-   private void enterAppointmentDesc()
-   {
-      our_builder = new AlertDialog.Builder(DashboardActivity.this);
-
-      //make connection to popup.xml
-      View update_pop_up = getLayoutInflater().inflate(R.layout.enter_appointment_desc, null);
-
-      our_builder.setView(update_pop_up);
-
-      //this displays the dialog
-      our_dialog = our_builder.create();
-      our_dialog.show();
-   }
 } // end DashboardActivity

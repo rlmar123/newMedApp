@@ -2,7 +2,6 @@ package com.example.medication_app;
 
 
 import android.app.AlertDialog;
-import android.app.DialogFragment;
 
 
 import android.app.TimePickerDialog;
@@ -11,25 +10,21 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
-import java.util.Locale;
 
 
 public class CalendarActivity extends AppCompatActivity
 {
 
-   private FloatingActionButton add_calendar_fab = null;
+   private Button add_end_button = null;
+   private Button add_begin_button = null;
+
 
    private int hour, minute;
 
@@ -41,26 +36,36 @@ public class CalendarActivity extends AppCompatActivity
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_calendar);
       
-     // Intent intent = getIntent();
 
+      add_begin_button = findViewById(R.id.add_begin_date);
+      add_end_button = findViewById(R.id.add_end_date);
 
-      //setOpeningFragment();
-      add_calendar_fab = findViewById(R.id.add_calendar_fab);
 
       calIntent = new Intent(Intent.ACTION_INSERT);
 
-      add_calendar_fab.setOnClickListener(new View.OnClickListener()
+      add_begin_button.setOnClickListener(new View.OnClickListener()
       {
          @Override
          public void onClick(View view)
          {
 
-            add_calendar_fab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
+            add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
 
             startTime();
+
+
+
+         } // end onClick
+
+      }); // end onClicklister
+
+      add_end_button.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View view)
+         {
+            add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
             endTime();
-
-
          } // end onClick
 
       }); // end onClicklister
@@ -146,6 +151,18 @@ public class CalendarActivity extends AppCompatActivity
       timePickerDialog.setTitle("End Time");
 
       timePickerDialog.show();
+
+   }
+
+   private void setEventInfo()
+   {
+      /*if((!list_medication_name.getText().toString().isEmpty()) &&
+              (!list_medication_nomenclature.getText().toString().isEmpty()) &&
+              (!list_amount_per_dose.getText().toString().isEmpty()) &&
+              (!list_hours_per_day.getText().toString().isEmpty()) &&
+              (!list_amount_of_pills.getText().toString().isEmpty()) &&
+              (!list_number_of_refills.getText().toString().isEmpty()) &&
+              (!list_number_of_days.getText().toString().isEmpty()))*/
 
    }
 

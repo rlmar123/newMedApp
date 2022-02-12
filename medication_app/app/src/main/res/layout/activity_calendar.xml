@@ -30,27 +30,6 @@
    </LinearLayout>
 
 
-   <!--   <LinearLayout
-       android:id="@+id/desc_layout"
-       android:layout_width="match_parent"
-       android:layout_height="150dp"
-       android:layout_below="@id/appoint_layout">
-
-      <TextView
-          android:id="@+id/desc_text"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_alignParentTop="true"
-          android:layout_marginTop="@dimen/cardview_default_radius"
-          android:background="@color/my_blue"
-          android:scaleType="centerCrop"
-          android:text="FART"
-          android:textAlignment="center"
-          android:textColor="@color/white"
-          android:textSize="36sp" />
-
-   </LinearLayout>-->
-
 
    <androidx.cardview.widget.CardView
        android:id="@+id/card_view"
@@ -93,22 +72,23 @@
 
    </androidx.cardview.widget.CardView>
 
-   <com.google.android.material.floatingactionbutton.FloatingActionButton
-       android:id="@+id/add_calendar_fab"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
+   <Button
+       android:id="@+id/add_begin_date"
+       android:layout_width="150dp"
+       android:layout_height="75dp"
        android:layout_below="@id/card_view"
-       android:layout_alignParentStart="false"
        android:layout_alignParentEnd="true"
-       android:layout_alignParentRight="true"
+       android:layout_marginTop="305dp"
+       android:layout_marginEnd="223dp" />
 
-       android:layout_centerInParent="true"
-       android:layout_marginStart="304dp"
-       android:layout_marginTop="298dp"
-       android:layout_marginEnd="30dp"
-       android:layout_marginRight="30dp"
-       app:backgroundTint="@color/my_red"
-       android:clickable="true"
-       app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
+   <Button
+       android:id="@+id/add_end_date"
+       android:layout_width="150dp"
+       android:layout_height="75dp"
+       android:layout_below="@id/card_view"
+       android:layout_alignParentEnd="true"
+       android:layout_marginTop="307dp"
+       android:layout_marginEnd="40dp" />
+
 
 </RelativeLayout>

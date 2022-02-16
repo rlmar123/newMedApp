@@ -10,6 +10,7 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -68,6 +69,7 @@ public class CalendarActivity extends AppCompatActivity
          public void onClick(View view)
          {
             setEventInfo();
+
 
          }
       });
@@ -183,6 +185,9 @@ public class CalendarActivity extends AppCompatActivity
       {
 
          add_begin_button.setVisibility(View.VISIBLE);
+     //    cardView.setVisibility(View.INVISIBLE);
+
+         ((ViewGroup) cardView.getParent()).removeView(cardView);
 
 
          calIntent.setData(CalendarContract.Events.CONTENT_URI);

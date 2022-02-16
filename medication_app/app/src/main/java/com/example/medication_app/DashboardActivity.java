@@ -105,35 +105,6 @@ public class DashboardActivity extends AppCompatActivity
 
    private void createAppointment()
    {
-
-
-    /*
-
-        THIS WILL BE MOVED!!!!!!!!!!!!!!!!!!!!!!!!!!!! TO CalendarActivity
-        Intent calIntent = new Intent(Intent.ACTION_INSERT);
-
-      calIntent.setData(CalendarContract.Events.CONTENT_URI);
-      calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
-      calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
-      calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
-      calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
-
-      Calendar startTime = Calendar.getInstance();
-      // get start time
-      startTime.set(2012, 0, 29, 18, 0);
-
-      // get end time
-      Calendar endTime = Calendar.getInstance();
-      endTime.set(2012, 6, 29, 22, 30);
-
-      calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
-      calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
-
-      if(calIntent.resolveActivity(getPackageManager()) != null)
-         startActivity(calIntent);
-      else
-         Toast.makeText(DashboardActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show(); */
-
       Intent intent = new Intent(DashboardActivity.this, CalendarActivity.class);
 
       ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(DashboardActivity.this, apptText, "example_transition");

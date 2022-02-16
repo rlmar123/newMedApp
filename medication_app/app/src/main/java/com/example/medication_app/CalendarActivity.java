@@ -15,6 +15,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
 
@@ -24,9 +27,17 @@ public class CalendarActivity extends AppCompatActivity
 
    private Button add_end_button = null;
    private Button add_begin_button = null;
+   private Button confirm_button = null;
 
+   private TextInputEditText appointment_title;
+   private TextInputEditText appointment_location;
+   private TextInputEditText appointment_description;
+   private TextInputEditText appointment_date;
 
-   private int hour, minute;
+   private CardView cardView;
+
+   private int begin_hour, begin_minute;
+   private int end_hour, end_minute;
 
    private Intent calIntent;
 
@@ -35,13 +46,31 @@ public class CalendarActivity extends AppCompatActivity
    {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_calendar);
-      
+
+      appointment_title = findViewById(R.id.appointment_title);
+      appointment_location = findViewById(R.id.appointment_location);
+      appointment_description = findViewById(R.id.appointment_description);
+      appointment_date = findViewById(R.id.appointment_date);
+
+      confirm_button = findViewById(R.id.confirm_button);
 
       add_begin_button = findViewById(R.id.add_begin_date);
       add_end_button = findViewById(R.id.add_end_date);
+      cardView = findViewById(R.id.card_view);
 
+      add_begin_button.setVisibility(View.INVISIBLE);
+      add_end_button.setVisibility(View.INVISIBLE);
 
       calIntent = new Intent(Intent.ACTION_INSERT);
+
+      confirm_button.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view)
+         {
+            setEventInfo();
+
+         }
+      });
 
       add_begin_button.setOnClickListener(new View.OnClickListener()
       {
@@ -49,12 +78,9 @@ public class CalendarActivity extends AppCompatActivity
          public void onClick(View view)
          {
 
-            add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
-
             startTime();
-
-
-
+            add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
+          //  add_begin_button.setClickable(false);
          } // end onClick
 
       }); // end onClicklister
@@ -65,6 +91,7 @@ public class CalendarActivity extends AppCompatActivity
          public void onClick(View view)
          {
             add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
+         //   appointment_date.setFocusable(true);
             endTime();
          } // end onClick
 
@@ -80,28 +107,23 @@ public class CalendarActivity extends AppCompatActivity
          @Override
          public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
          {
-
             Calendar startTime = Calendar.getInstance();
 
-            hour = selectedHour;
-            minute = selectedMinute;
-
-            calIntent.setData(CalendarContract.Events.CONTENT_URI);
-            calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
-            calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
-            calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
-            calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
+            begin_hour = selectedHour;
+            begin_minute = selectedMinute;
 
             // get start time
-            startTime.set(2012, 0, 29, hour, minute);
+            startTime.set(2012, 0, 29, begin_hour, begin_minute);
             calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
+            add_end_button.setVisibility(View.VISIBLE);
+            add_begin_button.setClickable(false);
 
          }
       };
 
       // int style = AlertDialog.THEME_HOLO_DARK;
 
-      TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, hour, minute, false);
+      TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, begin_hour, begin_minute, false);
 
       timePickerDialog.setTitle("Begin Time");
 
@@ -119,34 +141,32 @@ public class CalendarActivity extends AppCompatActivity
 
             Calendar endTime = Calendar.getInstance();
 
+            end_hour = selectedHour;
+            end_minute = selectedMinute;
 
-            hour = selectedHour;
-            minute = selectedMinute;
-
-            calIntent.setData(CalendarContract.Events.CONTENT_URI);
-            calIntent.putExtra(CalendarContract.Events.TITLE, "PARTY");
-            calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "MY CRIB");
-            calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "BYOB");
-            calIntent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com, test2@yahoo.com, test3@yahoo.com");
-
-
-            // get start time
-            endTime.set(2012, 0, 29, hour, minute);
+            // get end time
+            endTime.set(2012, 0, 29, end_hour, end_minute);
             calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
 
             if(calIntent.resolveActivity(getPackageManager()) != null)
+            {
                startActivity(calIntent);
+               finish();
+            }
 
             else
-               Toast.makeText(CalendarActivity.this, "There is no app that support this action", Toast.LENGTH_SHORT).show();
-            //   timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
+            {
+               Toast.makeText(CalendarActivity.this, "Please select a begin date", Toast.LENGTH_SHORT).show();
+               add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_red)));
+               add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_blue)));
+            }
 
          }
       };
 
       // int style = AlertDialog.THEME_HOLO_DARK;
 
-      TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, hour, minute, false);
+      TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, begin_hour, begin_minute, false);
 
       timePickerDialog.setTitle("End Time");
 
@@ -156,14 +176,25 @@ public class CalendarActivity extends AppCompatActivity
 
    private void setEventInfo()
    {
-      /*if((!list_medication_name.getText().toString().isEmpty()) &&
-              (!list_medication_nomenclature.getText().toString().isEmpty()) &&
-              (!list_amount_per_dose.getText().toString().isEmpty()) &&
-              (!list_hours_per_day.getText().toString().isEmpty()) &&
-              (!list_amount_of_pills.getText().toString().isEmpty()) &&
-              (!list_number_of_refills.getText().toString().isEmpty()) &&
-              (!list_number_of_days.getText().toString().isEmpty()))*/
+      if((!appointment_title.getText().toString().isEmpty()) &&
+      (!appointment_location.getText().toString().isEmpty()) &&
+      (!appointment_description.getText().toString().isEmpty()) &&
+      (!appointment_date.getText().toString().isEmpty()))
+      {
 
+         add_begin_button.setVisibility(View.VISIBLE);
+
+
+         calIntent.setData(CalendarContract.Events.CONTENT_URI);
+         calIntent.putExtra(CalendarContract.Events.TITLE, appointment_title.getText().toString());
+         calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, appointment_location.getText().toString());
+         calIntent.putExtra(CalendarContract.Events.DESCRIPTION, appointment_description.getText().toString());
+         calIntent.putExtra(Intent.EXTRA_EMAIL, appointment_date.getText().toString());
+      }
+
+      // Missing a field in the card view
+      else
+         Toast.makeText(CalendarActivity.this, "Missing a field!!!!", Toast.LENGTH_SHORT).show();
    }
 
 } // end class

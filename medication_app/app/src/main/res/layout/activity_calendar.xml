@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/my_green"
     tools:context=".CalendarActivity">
 
    <!--Transition name is same
@@ -12,10 +13,11 @@
    <LinearLayout
        android:id="@+id/appoint_layout"
        android:layout_width="match_parent"
-       android:layout_height="50dp">
+       android:layout_height="75dp">
 
       <TextView
           android:id="@+id/appointment_text"
+          android:paddingTop="10dp"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_alignParentTop="true"

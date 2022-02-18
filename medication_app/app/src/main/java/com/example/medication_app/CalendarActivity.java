@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -70,7 +72,6 @@ public class CalendarActivity extends AppCompatActivity
          {
             setEventInfo();
 
-
          }
       });
 
@@ -79,10 +80,8 @@ public class CalendarActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
-
             startTime();
             add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
-          //  add_begin_button.setClickable(false);
          } // end onClick
 
       }); // end onClicklister
@@ -93,7 +92,6 @@ public class CalendarActivity extends AppCompatActivity
          public void onClick(View view)
          {
             add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
-         //   appointment_date.setFocusable(true);
             endTime();
          } // end onClick
 
@@ -117,8 +115,9 @@ public class CalendarActivity extends AppCompatActivity
             // get start time
             startTime.set(2012, 0, 29, begin_hour, begin_minute);
             calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
-            add_end_button.setVisibility(View.VISIBLE);
-            add_begin_button.setClickable(false);
+
+            rightInAnim();
+            leftOutAnim();
 
          }
       };
@@ -178,6 +177,7 @@ public class CalendarActivity extends AppCompatActivity
 
    private void setEventInfo()
    {
+      // check all fields are filled
       if((!appointment_title.getText().toString().isEmpty()) &&
       (!appointment_location.getText().toString().isEmpty()) &&
       (!appointment_description.getText().toString().isEmpty()) &&
@@ -185,9 +185,10 @@ public class CalendarActivity extends AppCompatActivity
       {
 
          add_begin_button.setVisibility(View.VISIBLE);
-     //    cardView.setVisibility(View.INVISIBLE);
+         //cardView.setVisibility(View.INVISIBLE);
+         cardViewAnim();
+         leftInAnim();
 
-         ((ViewGroup) cardView.getParent()).removeView(cardView);
 
 
          calIntent.setData(CalendarContract.Events.CONTENT_URI);
@@ -201,5 +202,36 @@ public class CalendarActivity extends AppCompatActivity
       else
          Toast.makeText(CalendarActivity.this, "Missing a field!!!!", Toast.LENGTH_SHORT).show();
    }
+
+   private void leftInAnim()
+   {
+      Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
+      add_begin_button.startAnimation(animation);
+   }
+
+   private void rightInAnim()
+   {
+      add_end_button.setVisibility(View.VISIBLE);
+
+      Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+      add_end_button.startAnimation(animation);
+   }
+
+   private void leftOutAnim()
+   {
+      Animation the_animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+      add_begin_button.startAnimation(the_animation);
+      add_begin_button.setVisibility(View.INVISIBLE);
+   }
+
+   private void cardViewAnim()
+   {
+      Animation the_animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+      cardView.setAnimation(the_animation);
+      cardView.setVisibility(View.INVISIBLE);
+      ((ViewGroup) cardView.getParent()).removeView(cardView);
+   }
+
+
 
 } // end class

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="10dip"
+    android:overScrollMode="ifContentScrolls">
+
+   <LinearLayout
+       android:id="@+id/test_layout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+
+
+         <TextView
+             android:id="@+id/name_text"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Micah"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/micah" />
+
+         <TextView
+             android:id="@+id/phone_text"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+         <TextView
+             android:id="@+id/email_text"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+
+         <TextView
+             android:id="@+id/quote_text"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_2"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Stacy"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/stacy" />
+
+         <TextView
+             android:id="@+id/phone_text_2"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+         <TextView
+             android:id="@+id/email_text_2"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+
+         <TextView
+             android:id="@+id/quote_text_2"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textAlignment="center"
+             android:textSize="@dimen/text_size" />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_3"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Taylor"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/taylor" />
+
+         <TextView
+             android:id="@+id/phone_text_3"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+         <TextView
+             android:id="@+id/email_text_3"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_3"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_4"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Paul"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/paul" />
+
+         <TextView
+             android:id="@+id/phone_text_4"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+         <TextView
+             android:id="@+id/email_text_4"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_4"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_5"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Jeff"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/jeff" />
+
+         <TextView
+             android:id="@+id/phone_text_5"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/email_text_5"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_5"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_6"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Veronica"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/veronica" />
+
+         <TextView
+             android:id="@+id/phone_text_6"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="PHONE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+         <TextView
+             android:id="@+id/email_text_6"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="EMAIL"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_6"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="QUOTE"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+   </LinearLayout><!-- outer-->
+
+
+
+
+
+
+</ScrollView>

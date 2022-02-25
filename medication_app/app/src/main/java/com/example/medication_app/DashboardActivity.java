@@ -30,6 +30,8 @@ public class DashboardActivity extends AppCompatActivity
    private TextView apptText = null;
    private TextView aboutText = null;
 
+   private LottieAnimationView lottieAnimationView;
+
    //to build alert dialog
    private AlertDialog.Builder our_builder = null;
    private AlertDialog our_dialog = null;
@@ -45,7 +47,7 @@ public class DashboardActivity extends AppCompatActivity
       apptText = findViewById(R.id.appt_text);
       aboutText = findViewById(R.id.about_text);
 
-      LottieAnimationView lottieAnimationView = findViewById(R.id.AppointView);
+      lottieAnimationView = findViewById(R.id.AppointView);
 
 
       Fade fade = new Fade();
@@ -91,11 +93,11 @@ public class DashboardActivity extends AppCompatActivity
          @Override
          public void onClick(View view)
          {
-            Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
-            intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.ABOUT_US);
+            Intent intent = new Intent(DashboardActivity.this, AboutUsActivity.class);
+          //  intent.putExtra(CONSTANTS.ANSWER, CONSTANTS.ABOUT_US);
 
 
-            Toast.makeText(DashboardActivity.this, "ABOUT_REXR", Toast.LENGTH_LONG).show();
+            Toast.makeText(DashboardActivity.this, "ABOUT_US", Toast.LENGTH_LONG).show();
             startActivity(intent);
          }
       });

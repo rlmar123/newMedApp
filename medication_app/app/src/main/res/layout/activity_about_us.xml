@@ -29,23 +29,25 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/micah"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/micah" />
+             android:src="@drawable/micah"
+             android:transitionName="example_transition"/>
 
          <TextView
              android:id="@+id/phone_text"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
          <TextView
              android:id="@+id/email_text"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
 
@@ -54,7 +56,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="QUOTE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
 
@@ -81,14 +83,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
          <TextView
              android:id="@+id/email_text_2"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
 
@@ -98,8 +100,7 @@
              android:layout_height="match_parent"
              android:text="QUOTE"
              android:textAlignment="center"
-             android:textSize="@dimen/text_size" />
-
+             android:textSize="@dimen/email_size" />
       </LinearLayout>
 
       <LinearLayout
@@ -125,14 +126,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
          <TextView
              android:id="@+id/email_text_3"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
          <TextView
@@ -140,7 +141,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="QUOTE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
 
@@ -167,14 +168,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
          <TextView
              android:id="@+id/email_text_4"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
          <TextView
@@ -182,7 +183,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="QUOTE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
 
@@ -209,7 +210,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
          <TextView
@@ -217,7 +218,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
          <TextView
@@ -225,7 +226,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="QUOTE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
 
@@ -252,14 +253,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="PHONE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
          <TextView
              android:id="@+id/email_text_6"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="EMAIL"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
          <TextView
@@ -267,7 +268,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:text="QUOTE"
-             android:textSize="@dimen/text_size"
+             android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
 

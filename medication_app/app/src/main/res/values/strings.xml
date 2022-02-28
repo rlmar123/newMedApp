@@ -1,4 +1,28 @@
 <resources>
+
+   <!--Positions-->
    <string name="app_name">medication_app</string>
+   <string name="junior_developer">Junior Developer</string>
+   <string name="software_developer_I">Software Developer I</string>
+   <string name="software_developer_II">Software Developer II</string>
+   <string name="software_developer_manager">Software Manager</string>
+   <string name="software_analyst_I">Software Analyst I</string>
+   <string name="software_analyst_II">Software Analyst II</string>
+   <string name="software_analyst_manager">Software Analyst Manager</string>
+   <string name="director">Software Director</string>
+
+   <!--Quotes-->
+   <string name="micah_quote">\"Eat, Pray, LOVE !!!!\"</string>
+   <string name="stacy_quote">\"The Spice Must Flow......\"</string>
+   <string name="taylor_quote">\"I am the Program!!!!\"</string>
+   <string name="paul_quote">\"One Day at a Time\"</string>
+   <string name="jeff_quote">\"It is ok to be strange....\"</string>
+   <string name="veronica_quote">\"Believe in yourself, the rest will follow.\"</string>
+   <string name="khouri_quote">\"One Love....\"</string>
+   <string name="aisha_quote">\"Quality Takes Time\"</string>
+
+
+
+
 
 </resources>

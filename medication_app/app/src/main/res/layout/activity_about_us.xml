@@ -19,7 +19,6 @@
           android:layout_marginTop="@dimen/text_size"
           android:orientation="vertical">
 
-
          <TextView
              android:id="@+id/name_text"
              android:layout_width="match_parent"
@@ -36,26 +35,18 @@
              android:transitionName="example_transition"/>
 
          <TextView
-             android:id="@+id/phone_text"
+             android:id="@+id/position_text_1"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-         <TextView
-             android:id="@+id/email_text"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
+             android:text="@string/junior_developer"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
-
          <TextView
-             android:id="@+id/quote_text"
+             android:id="@+id/quote_text_1"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/micah_quote"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
@@ -74,31 +65,24 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/stacy"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/stacy" />
 
          <TextView
-             android:id="@+id/phone_text_2"
+             android:id="@+id/pooition_text_2"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
+             android:text="@string/software_developer_I"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
-         <TextView
-             android:id="@+id/email_text_2"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-
 
          <TextView
              android:id="@+id/quote_text_2"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/stacy_quote"
              android:textAlignment="center"
              android:textSize="@dimen/email_size" />
       </LinearLayout>
@@ -117,22 +101,16 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/taylor"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/taylor" />
 
          <TextView
-             android:id="@+id/phone_text_3"
+             android:id="@+id/position_text_3"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-         <TextView
-             android:id="@+id/email_text_3"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
+             android:text="@string/software_developer_II"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
@@ -140,7 +118,7 @@
              android:id="@+id/quote_text_3"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/taylor_quote"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
@@ -159,22 +137,16 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/paul"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/paul" />
 
          <TextView
-             android:id="@+id/phone_text_4"
+             android:id="@+id/position_text_4"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-         <TextView
-             android:id="@+id/email_text_4"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
+             android:text="@string/software_developer_manager"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
@@ -182,7 +154,7 @@
              android:id="@+id/quote_text_4"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/paul_quote"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
@@ -201,23 +173,16 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/jeff"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/jeff" />
 
          <TextView
-             android:id="@+id/phone_text_5"
+             android:id="@+id/position_text_5"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-
-         <TextView
-             android:id="@+id/email_text_5"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
+             android:text="@string/software_analyst_I"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
@@ -225,7 +190,7 @@
              android:id="@+id/quote_text_5"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/jeff_quote"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>
@@ -244,22 +209,16 @@
              android:textAlignment="center"/>
 
          <ImageView
+             android:id="@+id/veronica"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/veronica" />
 
          <TextView
-             android:id="@+id/phone_text_6"
+             android:id="@+id/position_text_6"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="PHONE"
-             android:textSize="@dimen/email_size"
-             android:textAlignment="center"/>
-         <TextView
-             android:id="@+id/email_text_6"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:text="EMAIL"
+             android:text="@string/software_analyst_II"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
 
@@ -267,7 +226,80 @@
              android:id="@+id/quote_text_6"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:text="QUOTE"
+             android:text="@string/veronica_quote"
+             android:textSize="@dimen/email_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+
+         <TextView
+             android:id="@+id/name_text_7"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Khouri"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:id="@+id/khouri"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/khouri" />
+
+         <TextView
+             android:id="@+id/position_text_7"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="@string/software_analyst_manager"
+             android:textSize="@dimen/email_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_7"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="@string/khouri_quote"
+             android:textSize="@dimen/email_size"
+             android:textAlignment="center"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/text_size"
+          android:orientation="vertical">
+         <TextView
+             android:id="@+id/name_text_8"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="Aisha"
+             android:textSize="@dimen/text_size"
+             android:textAlignment="center"/>
+
+         <ImageView
+             android:id="@+id/aisha"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:src="@drawable/aisha" />
+
+         <TextView
+             android:id="@+id/position_text_8"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="@string/director"
+             android:textSize="@dimen/email_size"
+             android:textAlignment="center"/>
+
+         <TextView
+             android:id="@+id/quote_text_8"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:text="@string/aisha_quote"
              android:textSize="@dimen/email_size"
              android:textAlignment="center"/>
       </LinearLayout>

@@ -27,12 +27,22 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+     <!--    <ImageView
              android:id="@+id/micah"
              android:layout_width="match_parent"
              android:layout_height="150dp"
              android:src="@drawable/micah"
-             android:transitionName="example_transition"/>
+             android:transitionName="sample_transition"/>-->
+
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/micah"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:layout_centerInParent="true"
+             android:src="@drawable/micah"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_1"

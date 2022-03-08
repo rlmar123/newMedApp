@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--
 
     <include
         android:id="@+id/include"
         layout="@layout/title_toolbar" />
+-->
 
     <devs.mulham.horizontalcalendar.HorizontalCalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+
         android:background="#000000"
         app:textColorSelected="#FFFF" />
 

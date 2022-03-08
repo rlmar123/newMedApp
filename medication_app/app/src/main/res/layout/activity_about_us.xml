@@ -16,6 +16,19 @@
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="32dp"
+             android:text="Meet the Team!!!!"
+             android:textAlignment="center"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/text_size"
           android:orientation="vertical">
 
@@ -74,11 +87,21 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+        <!-- <ImageView
              android:id="@+id/stacy"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/stacy" />
+             android:src="@drawable/stacy" />-->
+
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/stacy"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:layout_centerInParent="true"
+             android:src="@drawable/stacy"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/pooition_text_2"
@@ -110,11 +133,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/taylor"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/taylor" />
+             android:layout_centerInParent="true"
+             android:src="@drawable/taylor"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_3"
@@ -146,11 +173,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/paul"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/paul" />
+             android:layout_centerInParent="true"
+             android:src="@drawable/paul"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_4"
@@ -182,11 +213,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/jeff"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/jeff" />
+             android:layout_centerInParent="true"
+             android:src="@drawable/jeff"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_5"
@@ -218,11 +253,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/veronica"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/veronica" />
+             android:layout_centerInParent="true"
+             android:src="@drawable/veronica"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_6"
@@ -255,12 +294,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/khouri"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/khouri" />
-
+             android:layout_centerInParent="true"
+             android:src="@drawable/khouri"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
          <TextView
              android:id="@+id/position_text_7"
              android:layout_width="match_parent"
@@ -291,11 +333,15 @@
              android:textSize="@dimen/text_size"
              android:textAlignment="center"/>
 
-         <ImageView
+         <de.hdodenhof.circleimageview.CircleImageView
              android:id="@+id/aisha"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:src="@drawable/aisha" />
+             android:layout_centerInParent="true"
+             android:src="@drawable/aisha"
+             app:civ_border_color="@color/black"
+             app:civ_border_width="1dp"
+             android:transitionName="sample_transition"/>
 
          <TextView
              android:id="@+id/position_text_8"

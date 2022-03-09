@@ -42,6 +42,8 @@ public class DashboardActivity extends AppCompatActivity
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_dashboard);
 
+      setTitle(R.string.dashboard_activity);
+
       homeText = findViewById(R.id.home_text);
       docText = findViewById(R.id.doct_text);
       apptText = findViewById(R.id.appt_text);

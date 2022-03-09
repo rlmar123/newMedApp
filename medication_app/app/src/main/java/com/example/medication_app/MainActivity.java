@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
+      setTitle(R.string.home_activity);
 
       // store today's date in the viewModel
       MedicationViewModel.setCurrentJulianDate(getTodaysDate());

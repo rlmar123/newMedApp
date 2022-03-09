@@ -50,6 +50,8 @@ public class CalendarActivity extends AppCompatActivity
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_calendar);
 
+      setTitle(R.string.appt_activity);
+
       appointment_title = findViewById(R.id.appointment_title);
       appointment_location = findViewById(R.id.appointment_location);
       appointment_description = findViewById(R.id.appointment_description);

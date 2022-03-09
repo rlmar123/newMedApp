@@ -1,7 +1,7 @@
 <resources>
 
    <!--Positions-->
-   <string name="app_name">medication_app</string>
+   <string name="app_name">MedTracker</string>
    <string name="junior_developer">Junior Developer</string>
    <string name="software_developer_I">Software Developer I</string>
    <string name="software_developer_II">Software Developer II</string>
@@ -20,6 +20,14 @@
    <string name="veronica_quote">\"Believe in yourself, the rest will follow.\"</string>
    <string name="khouri_quote">\"One Love....\"</string>
    <string name="aisha_quote">\"Quality Takes Time\"</string>
+
+   <!--page titles-->
+   <string name="home_activity">"Home"</string>
+   <string name="appt_activity">"Make an appointment"</string>
+   <string name="about_us">"About Us"</string>
+   <string name="dashboard_activity">"Med Dashboard"</string>
+
+
 
 
 </resources>

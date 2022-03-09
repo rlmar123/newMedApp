@@ -35,18 +35,24 @@
              android:textSize="24sp" />
 
          <!--FIRST ROW-->
+
+         <!--end first-->
+
+
+         <!--second ROW-->
+
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_marginTop="150dp"
+             android:layout_marginTop="75dp"
              android:orientation="horizontal"
              android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_weight="1"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
@@ -76,8 +82,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_weight="1"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
@@ -107,10 +113,6 @@
 
          </LinearLayout>
 
-        <!--end first-->
-
-
-         <!--second ROW-->
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"

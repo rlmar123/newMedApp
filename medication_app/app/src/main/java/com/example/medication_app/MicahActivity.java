@@ -27,6 +27,7 @@ public class MicahActivity extends AppCompatActivity
    {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_micah);
+      setTitle(R.string.micah_quote);
 
       micah_title = findViewById(R.id.micah_title);
       micah_email = findViewById(R.id.micah_email);

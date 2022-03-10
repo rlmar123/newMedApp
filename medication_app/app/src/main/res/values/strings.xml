@@ -22,10 +22,15 @@
    <string name="aisha_quote">\"Quality Takes Time\"</string>
 
    <!--page titles-->
-   <string name="home_activity">"Home"</string>
-   <string name="appt_activity">"Make an appointment"</string>
-   <string name="about_us">"About Us"</string>
-   <string name="dashboard_activity">"Med Dashboard"</string>
+   <string name="home_activity">Home</string>
+   <string name="appt_activity">Make an appointment</string>
+   <string name="about_us">About Us</string>
+   <string name="dashboard_activity">Med Dashboard</string>
+
+   <!--page transitions-->
+   <string name="veronica_transition">veronica_transition</string>
+   <string name="micah_transition">micah_transition</string>
+
 
 
 

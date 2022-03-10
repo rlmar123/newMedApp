@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#99ffffff"
-    tools:context=".MicahActivity">
+    tools:context=".VeronicaActivity">
 
    <TextView
-       android:id="@+id/micah_title"
+       android:id="@+id/veronica_title"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginTop="52dp"
-       android:text="Micah Reynolds"
+       android:text="Veronica Smith"
        android:textSize="24dp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.497"
@@ -20,46 +20,46 @@
        app:layout_constraintTop_toTopOf="parent" />
 
    <de.hdodenhof.circleimageview.CircleImageView
-       android:id="@+id/micah_image"
+       android:id="@+id/veronica_image"
        android:layout_width="129dp"
        android:layout_height="129dp"
        android:layout_centerInParent="true"
        android:layout_marginStart="36dp"
        android:layout_marginTop="32dp"
-       android:src="@drawable/micah"
-       android:transitionName="@string/micah_transition"
+       android:src="@drawable/veronica"
+       android:transitionName="@string/veronica_transition"
        app:civ_border_color="@color/black"
        app:civ_border_width="1dp"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/micah_title" />
+       app:layout_constraintTop_toBottomOf="@+id/veronica_title" />
 
    <TextView
-       android:id="@+id/micah_email"
+       android:id="@+id/veronica_email"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginTop="148dp"
-       android:text="Email : ty@gmail.com"
+       android:text="Email : bbbhhhy@gmail.com"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.666"
-       app:layout_constraintStart_toEndOf="@+id/micah_image"
+       app:layout_constraintStart_toEndOf="@+id/veronica_image"
        app:layout_constraintTop_toTopOf="parent" />
 
    <TextView
-       android:id="@+id/micah_header"
+       android:id="@+id/veronica_header"
        android:layout_width="0dp"
        android:layout_height="wrap_content"
        android:layout_marginTop="32dp"
-       android:text="About Micah...."
+       android:text="About Veronica...."
        android:textSize="@dimen/text_size"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.148"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/micah_image"
+       app:layout_constraintTop_toBottomOf="@+id/veronica_image"
        app:layout_constraintVertical_bias="0.028" />
 
    <TextView
-       android:id="@+id/micah_bio"
+       android:id="@+id/veronica_bio"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginTop="20dp"
@@ -68,7 +68,7 @@
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.106"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/micah_header"
+       app:layout_constraintTop_toBottomOf="@+id/veronica_header"
        app:layout_constraintVertical_bias="0.066" />
 
 

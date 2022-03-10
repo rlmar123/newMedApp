@@ -55,7 +55,7 @@
              android:src="@drawable/micah"
              app:civ_border_color="@color/black"
              app:civ_border_width="1dp"
-             android:transitionName="sample_transition"/>
+             android:transitionName="@string/micah_transition"/>
 
          <TextView
              android:id="@+id/position_text_1"
@@ -261,7 +261,7 @@
              android:src="@drawable/veronica"
              app:civ_border_color="@color/black"
              app:civ_border_width="1dp"
-             android:transitionName="sample_transition"/>
+             android:transitionName="@string/veronica_transition"/>
 
          <TextView
              android:id="@+id/position_text_6"

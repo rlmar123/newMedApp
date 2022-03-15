@@ -1,5 +1,7 @@
 package com.example.medication_app.util;
 
+import com.example.medication_app.R;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -33,6 +35,14 @@ public class CONSTANTS
    public static final int THIRTY_ONE = 31;
 
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
+
+   // for animations
+   public static final int ANIMATION_RIGHT = R.anim.slide_in_right;
+   public static final int ANIMATION_LEFT = R.anim.slide_in_left;
+   public static final int ANIMATION_UP = R.anim.slide_in_up;
+
+   // test string
+   public static final String TEST_STRING = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
    // add days for each month
    public static HashMap <Integer, Integer> loadDays()

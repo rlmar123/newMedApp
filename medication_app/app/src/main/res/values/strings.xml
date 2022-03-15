@@ -17,7 +17,7 @@
    <string name="taylor_quote">\"I am the Program!!!!\"</string>
    <string name="paul_quote">\"One Day at a Time\"</string>
    <string name="jeff_quote">\"It is ok to be strange....\"</string>
-   <string name="veronica_quote">\"Believe in yourself, the rest will follow.\"</string>
+   <string name="veronica_quote">\"Believe in yourself, who else will?\"</string>
    <string name="khouri_quote">\"One Love....\"</string>
    <string name="aisha_quote">\"Quality Takes Time\"</string>
 
@@ -30,9 +30,6 @@
    <!--page transitions-->
    <string name="veronica_transition">veronica_transition</string>
    <string name="micah_transition">micah_transition</string>
-
-
-
 
 
 </resources>

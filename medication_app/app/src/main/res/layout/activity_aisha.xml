@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AishaActivity">
+
+   <TextView
+       android:id="@+id/aisha_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="52dp"
+       android:text="Aisha Waters"
+       android:textSize="24dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.497"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:id="@+id/aisha_image"
+       android:layout_width="129dp"
+       android:layout_height="129dp"
+       android:layout_centerInParent="true"
+       android:layout_marginStart="36dp"
+       android:layout_marginTop="32dp"
+       android:src="@drawable/aisha"
+       android:transitionName="@string/veronica_transition"
+       app:civ_border_color="@color/black"
+       app:civ_border_width="1dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/aisha_title" />
+
+   <TextView
+       android:id="@+id/aisha_email"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="148dp"
+       android:text="Email : bbbhhhy@gmail.com"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.666"
+       app:layout_constraintStart_toEndOf="@+id/aisha_image"
+       app:layout_constraintTop_toTopOf="parent" />
+
+
+   <TextView
+       android:id="@+id/aisha_header"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="32dp"
+       android:text="About Aisha...."
+       android:textSize="@dimen/text_size"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.148"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/aisha_image"
+       app:layout_constraintVertical_bias="0.028" />
+
+   <TextView
+       android:id="@+id/aisha_bio"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:text="TextView"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.106"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/aisha_header"
+       app:layout_constraintVertical_bias="0.066" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

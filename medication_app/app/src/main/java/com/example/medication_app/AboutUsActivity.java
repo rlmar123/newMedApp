@@ -16,6 +16,8 @@ public class AboutUsActivity extends AppCompatActivity {
    private ImageView taylor_image = null;
    private ImageView paul_image = null;
    private ImageView jeff_image = null;
+   private ImageView khouri_image = null;
+   private ImageView aisha_image = null;
 
 
    @Override
@@ -30,6 +32,8 @@ public class AboutUsActivity extends AppCompatActivity {
       taylor_image = findViewById(R.id.taylor);
       paul_image = findViewById(R.id.paul);
       jeff_image = findViewById(R.id.jeff);
+      khouri_image = findViewById(R.id.khouri);
+      aisha_image = findViewById(R.id.aisha);
 
       micah_image.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -91,6 +95,28 @@ public class AboutUsActivity extends AppCompatActivity {
          public void onClick(View view) {
             Intent intent = new Intent(AboutUsActivity.this, JeffActivity.class);
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(AboutUsActivity.this, jeff_image, "veronica_transition");
+
+            // starting our activity with below method.
+            startActivity(intent,options.toBundle());
+         }
+      });
+
+      khouri_image.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+            Intent intent = new Intent(AboutUsActivity.this, KhouriActivity.class);
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(AboutUsActivity.this, khouri_image, "veronica_transition");
+
+            // starting our activity with below method.
+            startActivity(intent,options.toBundle());
+         }
+      });
+
+      aisha_image.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+            Intent intent = new Intent(AboutUsActivity.this, AishaActivity.class);
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(AboutUsActivity.this, aisha_image, "veronica_transition");
 
             // starting our activity with below method.
             startActivity(intent,options.toBundle());

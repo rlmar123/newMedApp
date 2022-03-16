@@ -12,6 +12,12 @@
        android:supportsRtl="true"
        android:theme="@style/Theme.Medication_app">
       <activity
+          android:name=".AishaActivity"
+          android:exported="false" />
+      <activity
+          android:name=".KhouriActivity"
+          android:exported="false" />
+      <activity
           android:name=".JeffActivity"
           android:exported="false" />
       <activity

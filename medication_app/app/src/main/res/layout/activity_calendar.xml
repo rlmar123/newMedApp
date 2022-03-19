@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/my_green"
     tools:context=".CalendarActivity">
 
    <!--Transition name is same
@@ -12,16 +11,21 @@
        in previous imageview-->
    <LinearLayout
        android:id="@+id/appoint_layout"
-       android:layout_width="match_parent"
-       android:layout_height="75dp">
+       android:layout_width="350dp"
+       android:layout_height="75dp"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentEnd="true"
+       android:layout_marginStart="25dp"
+       android:layout_marginTop="50dp"
+       android:layout_marginEnd="30dp">
 
       <TextView
           android:id="@+id/appointment_text"
-          android:paddingTop="10dp"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_alignParentTop="true"
-          android:background="@color/my_blue"
+          android:background="@color/purple_500"
+          android:paddingTop="10dp"
           android:scaleType="centerCrop"
           android:text="Appointment"
           android:textAlignment="center"
@@ -34,25 +38,23 @@
 
    <androidx.cardview.widget.CardView
        android:id="@+id/card_view"
-       android:layout_width="350dp"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_below="@id/appoint_layout"
-
        android:layout_alignParentStart="true"
        android:layout_alignParentEnd="true"
        android:layout_marginStart="29dp"
-       android:layout_marginTop="49dp"
        android:layout_marginEnd="32dp"
        android:layout_marginBottom="8dp"
        app:cardCornerRadius="12dp"
        app:cardElevation="11dp"
        app:contentPadding="8dp">
 
-
       <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/appointment_title"
           android:layout_width="match_parent"
           android:layout_height="53dp"
+          android:background="@color/my_gray"
           android:hint="Appointment Title"
           android:inputType="text" />
 
@@ -61,6 +63,7 @@
           android:layout_width="match_parent"
           android:layout_height="53dp"
           android:layout_marginTop="75dp"
+          android:background="@color/my_gray"
           android:hint="Appointment Location"
           android:inputType="textEmailAddress" />
 
@@ -69,6 +72,7 @@
           android:layout_width="match_parent"
           android:layout_height="53dp"
           android:layout_marginTop="150dp"
+          android:background="@color/my_gray"
           android:hint="Appointment Description"
           android:inputType="textEmailAddress" />
 
@@ -77,6 +81,7 @@
           android:layout_width="match_parent"
           android:layout_height="53dp"
           android:layout_marginTop="225dp"
+          android:background="@color/my_gray"
           android:hint="Appointment Date"
           android:inputType="datetime" />
 
@@ -85,7 +90,8 @@
           android:layout_width="match_parent"
           android:layout_height="50dp"
           android:layout_marginTop="300dp"
-          android:text="CONFIRM" />
+          android:text="CONFIRM"
+          android:background="@color/my_blue"/>
 
    </androidx.cardview.widget.CardView>
 

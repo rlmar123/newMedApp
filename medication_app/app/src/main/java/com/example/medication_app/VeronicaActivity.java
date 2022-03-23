@@ -30,10 +30,10 @@ public class VeronicaActivity extends AppCompatActivity
 
       veronica_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, veronica_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, veronica_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, veronica_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, veronica_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, veronica_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, veronica_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, veronica_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, veronica_bio, CONSTANTS.ANIMATION_IN_UP);
    } // end onCreate
 
 } // end MicahActivity

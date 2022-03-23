@@ -3,9 +3,6 @@ package com.example.medication_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.example.medication_app.UI.AppAnimation;
@@ -33,10 +30,10 @@ public class MicahActivity extends AppCompatActivity
 
       micah_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, micah_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, micah_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, micah_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, micah_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, micah_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, micah_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, micah_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, micah_bio, CONSTANTS.ANIMATION_IN_UP);
    } // end onCreate
 
 } // end MicahActivity

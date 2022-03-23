@@ -29,9 +29,9 @@ public class TaylorActivity extends AppCompatActivity {
 
       taylor_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, taylor_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, taylor_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, taylor_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, taylor_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, taylor_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, taylor_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, taylor_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, taylor_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

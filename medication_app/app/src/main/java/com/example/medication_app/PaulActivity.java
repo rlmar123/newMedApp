@@ -29,9 +29,9 @@ public class PaulActivity extends AppCompatActivity
 
       paul_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, paul_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, paul_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, paul_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, paul_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, paul_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, paul_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, paul_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, paul_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

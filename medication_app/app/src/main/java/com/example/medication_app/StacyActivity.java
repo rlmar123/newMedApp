@@ -29,9 +29,9 @@ public class StacyActivity extends AppCompatActivity {
 
       stacy_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, stacy_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, stacy_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, stacy_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, stacy_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, stacy_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, stacy_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, stacy_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, stacy_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

@@ -29,9 +29,9 @@ public class AishaActivity extends AppCompatActivity
 
       aisha_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, aisha_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, aisha_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, aisha_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, aisha_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, aisha_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, aisha_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, aisha_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, aisha_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

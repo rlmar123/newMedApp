@@ -148,7 +148,6 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                 // no fields are missing
                 if((!doc_first_name.getText().toString().isEmpty()) && (!doc_last_name.getText().toString().isEmpty()) && (!doc_email.getText().toString().isEmpty()) && (!doc_phone_number.getText().toString().isEmpty()))
                 {
-
                     // phone number equals 10 digits
                     if(doc_phone_number.getText().toString().length() == CONSTANTS.MAX_PHONE_NUMBER_LENGTH)
                     {
@@ -161,13 +160,11 @@ public class FragmentDocInfo extends Fragment implements RecDocAdapt.OnContactCl
                     // phone number does not equal 10 digits
                     else
                        Snackbar.make(v, "Phone number must be 10 digits!", Snackbar.LENGTH_LONG).show();
-
                 }
 
                // field is missing
                 else
                     Snackbar.make(v, "Missing a field!!!", Snackbar.LENGTH_LONG).show();
-
             }
         });
 

@@ -29,9 +29,9 @@ public class KhouriActivity extends AppCompatActivity
 
       khouri_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, khouri_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, khouri_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, khouri_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, khouri_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, khouri_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, khouri_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, khouri_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, khouri_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

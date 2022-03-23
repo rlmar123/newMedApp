@@ -37,9 +37,11 @@ public class CONSTANTS
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations
-   public static final int ANIMATION_RIGHT = R.anim.slide_in_right;
-   public static final int ANIMATION_LEFT = R.anim.slide_in_left;
-   public static final int ANIMATION_UP = R.anim.slide_in_up;
+   public static final int ANIMATION_IN_RIGHT = R.anim.slide_in_right;
+   public static final int ANIMATION_IN_LEFT = R.anim.slide_in_left;
+   public static final int ANIMATION_IN_UP = R.anim.slide_in_up;
+   public static final int ANIMATION_OUT_LEFT = R.anim.slide_out_left;
+   public static final int ANIMATION_OUT_RIGHT = R.anim.slide_out_right;
 
    // test string
    public static final String TEST_STRING = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";

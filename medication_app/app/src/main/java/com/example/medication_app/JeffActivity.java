@@ -28,9 +28,9 @@ public class JeffActivity extends AppCompatActivity {
 
       jeff_bio.setText(CONSTANTS.TEST_STRING);
 
-      AppAnimation.inAnim(this, jeff_title, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, jeff_email, CONSTANTS.ANIMATION_RIGHT);
-      AppAnimation.inAnim(this, jeff_header, CONSTANTS.ANIMATION_LEFT);
-      AppAnimation.inAnim(this, jeff_bio, CONSTANTS.ANIMATION_UP);
+      AppAnimation.theAnimation(this, jeff_title, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, jeff_email, CONSTANTS.ANIMATION_IN_RIGHT);
+      AppAnimation.theAnimation(this, jeff_header, CONSTANTS.ANIMATION_IN_LEFT);
+      AppAnimation.theAnimation(this, jeff_bio, CONSTANTS.ANIMATION_IN_UP);
    }
 }

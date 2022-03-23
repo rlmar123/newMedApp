@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.telephony.PhoneNumberFormattingTextWatcher;;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -20,6 +23,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.medication_app.UI.AppAnimation;
+import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -68,12 +73,25 @@ public class CalendarActivity extends AppCompatActivity
 
       calIntent = new Intent(Intent.ACTION_INSERT);
 
+      appointment_date.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            String str = appointment_date.getText().toString();
+            int textLength = appointment_date.getText().length();
+            if ((textLength == 2) || (textLength == 5)) {
+
+               appointment_date.setText(new StringBuilder(appointment_date.getText().toString()).insert(str.length(), "/").toString());
+               appointment_date.setSelection(appointment_date.getText().length());
+            }
+
+         }
+      });
+
       confirm_button.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view)
          {
             setEventInfo();
-
          }
       });
 
@@ -118,18 +136,21 @@ public class CalendarActivity extends AppCompatActivity
             startTime.set(2012, 0, 29, begin_hour, begin_minute);
             calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis());
 
-            rightInAnim();
-            leftOutAnim();
+            // add end button slides in right
+            AppAnimation.theAnimation(CalendarActivity.this, add_end_button, CONSTANTS.ANIMATION_IN_RIGHT);
+            add_end_button.setVisibility(View.VISIBLE);
+
+            // add begin button slides out left
+            AppAnimation.theAnimation(CalendarActivity.this, add_begin_button, CONSTANTS.ANIMATION_OUT_LEFT);
+            add_begin_button.setVisibility(View.INVISIBLE);
+
 
          }
       };
 
       // int style = AlertDialog.THEME_HOLO_DARK;
-
       TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, begin_hour, begin_minute, false);
-
       timePickerDialog.setTitle("Begin Time");
-
       timePickerDialog.show();
 
    }
@@ -170,9 +191,7 @@ public class CalendarActivity extends AppCompatActivity
       // int style = AlertDialog.THEME_HOLO_DARK;
 
       TimePickerDialog timePickerDialog = new TimePickerDialog(CalendarActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK , onTimeSetListener, begin_hour, begin_minute, false);
-
       timePickerDialog.setTitle("End Time");
-
       timePickerDialog.show();
 
    }
@@ -187,11 +206,10 @@ public class CalendarActivity extends AppCompatActivity
       {
 
          add_begin_button.setVisibility(View.VISIBLE);
-         //cardView.setVisibility(View.INVISIBLE);
+
          cardViewAnim();
-         leftInAnim();
 
-
+         AppAnimation.theAnimation(this, add_begin_button, CONSTANTS.ANIMATION_IN_LEFT);
 
          calIntent.setData(CalendarContract.Events.CONTENT_URI);
          calIntent.putExtra(CalendarContract.Events.TITLE, appointment_title.getText().toString());
@@ -205,35 +223,10 @@ public class CalendarActivity extends AppCompatActivity
          Toast.makeText(CalendarActivity.this, "Missing a field!!!!", Toast.LENGTH_SHORT).show();
    }
 
-   private void leftInAnim()
-   {
-      Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
-      add_begin_button.startAnimation(animation);
-   }
-
-   private void rightInAnim()
-   {
-      add_end_button.setVisibility(View.VISIBLE);
-
-      Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
-      add_end_button.startAnimation(animation);
-   }
-
-   private void leftOutAnim()
-   {
-      Animation the_animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
-      add_begin_button.startAnimation(the_animation);
-      add_begin_button.setVisibility(View.INVISIBLE);
-   }
-
    private void cardViewAnim()
    {
-      Animation the_animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
-      cardView.setAnimation(the_animation);
+      AppAnimation.theAnimation(CalendarActivity.this, cardView, CONSTANTS.ANIMATION_OUT_LEFT);
       cardView.setVisibility(View.INVISIBLE);
       ((ViewGroup) cardView.getParent()).removeView(cardView);
    }
-
-
-
 } // end class

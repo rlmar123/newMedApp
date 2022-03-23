@@ -32,9 +32,7 @@
           android:textColor="@color/white"
           android:textSize="36sp"
           android:transitionName="example_transition" />
-
    </LinearLayout>
-
 
    <androidx.cardview.widget.CardView
        android:id="@+id/card_view"
@@ -47,7 +45,7 @@
        android:layout_marginEnd="32dp"
        android:layout_marginBottom="8dp"
        app:cardCornerRadius="12dp"
-       app:cardElevation="11dp"
+       app:cardElevation="10dp"
        app:contentPadding="8dp">
 
       <com.google.android.material.textfield.TextInputEditText
@@ -56,6 +54,7 @@
           android:layout_height="53dp"
           android:background="@color/my_gray"
           android:hint="Appointment Title"
+          android:drawableLeft="@drawable/ic_baseline_title_24"
           android:inputType="text" />
 
       <com.google.android.material.textfield.TextInputEditText
@@ -65,6 +64,7 @@
           android:layout_marginTop="75dp"
           android:background="@color/my_gray"
           android:hint="Appointment Location"
+          android:drawableLeft="@drawable/ic_baseline_location_on_24"
           android:inputType="textEmailAddress" />
 
       <com.google.android.material.textfield.TextInputEditText
@@ -74,6 +74,7 @@
           android:layout_marginTop="150dp"
           android:background="@color/my_gray"
           android:hint="Appointment Description"
+          android:drawableLeft="@drawable/ic_baseline_description_24"
           android:inputType="textEmailAddress" />
 
       <com.google.android.material.textfield.TextInputEditText
@@ -82,8 +83,9 @@
           android:layout_height="53dp"
           android:layout_marginTop="225dp"
           android:background="@color/my_gray"
-          android:hint="Appointment Date"
-          android:inputType="datetime" />
+          android:hint="Appointment Date YYYYMMDD"
+          android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
+          android:inputType="time" />
 
       <Button
           android:id="@+id/confirm_button"
@@ -92,7 +94,6 @@
           android:layout_marginTop="300dp"
           android:text="CONFIRM"
           android:background="@color/my_blue"/>
-
    </androidx.cardview.widget.CardView>
 
    <androidx.constraintlayout.widget.ConstraintLayout

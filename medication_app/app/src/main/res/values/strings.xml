@@ -23,7 +23,7 @@
 
    <!--page titles-->
    <string name="home_activity">Home</string>
-   <string name="appt_activity">Make an appointment</string>
+   <string name="appt_activity">Make an Appointment</string>
    <string name="about_us">About Us</string>
    <string name="dashboard_activity">Med Dashboard</string>
 

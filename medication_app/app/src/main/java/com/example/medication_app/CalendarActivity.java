@@ -30,7 +30,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Calendar;
 
 
-public class CalendarActivity extends AppCompatActivity
+public class CalendarActivity extends AppCompatActivity implements View.OnClickListener
 {
 
    private Button add_end_button = null;
@@ -73,49 +73,9 @@ public class CalendarActivity extends AppCompatActivity
 
       calIntent = new Intent(Intent.ACTION_INSERT);
 
-      appointment_date.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-            String str = appointment_date.getText().toString();
-            int textLength = appointment_date.getText().length();
-            if ((textLength == 2) || (textLength == 5)) {
-
-               appointment_date.setText(new StringBuilder(appointment_date.getText().toString()).insert(str.length(), "/").toString());
-               appointment_date.setSelection(appointment_date.getText().length());
-            }
-
-         }
-      });
-
-      confirm_button.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view)
-         {
-            setEventInfo();
-         }
-      });
-
-      add_begin_button.setOnClickListener(new View.OnClickListener()
-      {
-         @Override
-         public void onClick(View view)
-         {
-            startTime();
-            add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
-         } // end onClick
-
-      }); // end onClicklister
-
-      add_end_button.setOnClickListener(new View.OnClickListener()
-      {
-         @Override
-         public void onClick(View view)
-         {
-            add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
-            endTime();
-         } // end onClick
-
-      }); // end onClicklister
+      confirm_button.setOnClickListener(this);
+      add_begin_button.setOnClickListener(this);
+      add_end_button.setOnClickListener(this);
 
    } // end OnCreate
 
@@ -229,4 +189,27 @@ public class CalendarActivity extends AppCompatActivity
       cardView.setVisibility(View.INVISIBLE);
       ((ViewGroup) cardView.getParent()).removeView(cardView);
    }
+
+   @Override
+   public void onClick(View v)
+   {
+      switch (v.getId())
+      {
+         case R.id.confirm_button:
+            setEventInfo();
+            break;
+
+         case R.id.add_begin_date:
+            startTime();
+            add_begin_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
+            break;
+
+         case R.id.add_end_date:
+            add_end_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.my_green)));
+            endTime();
+            break;
+      } // end switch
+
+   } // end onClick
+
 } // end class

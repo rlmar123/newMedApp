@@ -46,6 +46,7 @@ public class MedicationViewModel extends AndroidViewModel
    public static void update(Medication medication) {repository.update(medication);}
    public static void delete(Medication medication) {repository.delete(medication);}
 
+   // converts YYYYMMDD to julian date
    public static int julianDate(String the_date)
    {
       HashMap <Integer, Integer> calendar_days = new HashMap<>();

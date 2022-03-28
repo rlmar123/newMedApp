@@ -78,12 +78,22 @@
           android:inputType="textEmailAddress" />
 
       <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/appointment_date"
+          android:id="@+id/appointment_begin_date"
           android:layout_width="match_parent"
           android:layout_height="53dp"
           android:layout_marginTop="225dp"
           android:background="@color/my_gray"
-          android:hint="Appointment Date YYYYMMDD"
+          android:hint="Begin Date YYYYMMDD"
+          android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
+          android:inputType="time" />
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/appointment_end_date"
+          android:layout_width="match_parent"
+          android:layout_height="53dp"
+          android:layout_marginTop="300dp"
+          android:background="@color/my_gray"
+          android:hint="End Date YYYYMMDD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
           android:inputType="time" />
 
@@ -91,7 +101,7 @@
           android:id="@+id/confirm_button"
           android:layout_width="match_parent"
           android:layout_height="50dp"
-          android:layout_marginTop="300dp"
+          android:layout_marginTop="375dp"
           android:text="CONFIRM"
           android:background="@color/my_blue"/>
    </androidx.cardview.widget.CardView>

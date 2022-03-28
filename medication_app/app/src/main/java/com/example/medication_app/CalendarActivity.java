@@ -9,13 +9,9 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.telephony.PhoneNumberFormattingTextWatcher;;
-import android.text.Editable;
-import android.text.TextWatcher;
+;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -32,7 +28,6 @@ import java.util.Calendar;
 
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener
 {
-
    private Button add_end_button = null;
    private Button add_begin_button = null;
    private Button confirm_button = null;
@@ -40,7 +35,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
    private TextInputEditText appointment_title;
    private TextInputEditText appointment_location;
    private TextInputEditText appointment_description;
-   private TextInputEditText appointment_date;
+   private TextInputEditText appointment_begin_date;
+   private TextInputEditText appointment_end_date;
 
    private CardView cardView;
 
@@ -54,13 +50,13 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
    {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_calendar);
-
       setTitle(R.string.appt_activity);
 
       appointment_title = findViewById(R.id.appointment_title);
       appointment_location = findViewById(R.id.appointment_location);
       appointment_description = findViewById(R.id.appointment_description);
-      appointment_date = findViewById(R.id.appointment_date);
+      appointment_begin_date = findViewById(R.id.appointment_begin_date);
+      appointment_end_date = findViewById(R.id.appointment_end_date);
 
       confirm_button = findViewById(R.id.confirm_button);
 
@@ -162,7 +158,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
       if((!appointment_title.getText().toString().isEmpty()) &&
       (!appointment_location.getText().toString().isEmpty()) &&
       (!appointment_description.getText().toString().isEmpty()) &&
-      (!appointment_date.getText().toString().isEmpty()))
+      (!appointment_begin_date.getText().toString().isEmpty()))
       {
 
          add_begin_button.setVisibility(View.VISIBLE);
@@ -175,7 +171,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
          calIntent.putExtra(CalendarContract.Events.TITLE, appointment_title.getText().toString());
          calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, appointment_location.getText().toString());
          calIntent.putExtra(CalendarContract.Events.DESCRIPTION, appointment_description.getText().toString());
-         calIntent.putExtra(Intent.EXTRA_EMAIL, appointment_date.getText().toString());
+         calIntent.putExtra(Intent.EXTRA_EMAIL, appointment_begin_date.getText().toString());
       }
 
       // Missing a field in the card view

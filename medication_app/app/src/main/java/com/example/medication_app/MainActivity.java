@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
       // starts before 1 month from now
       Calendar startDate = Calendar.getInstance();
-      startDate.add(Calendar.MONTH, -1);
+      startDate.add(Calendar.MONTH, 0);
 
       // ends after 1 month from now
       Calendar endDate = Calendar.getInstance();

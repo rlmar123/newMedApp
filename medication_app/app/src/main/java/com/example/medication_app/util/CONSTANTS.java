@@ -34,6 +34,9 @@ public class CONSTANTS
    public static final int THIRTY = 30;
    public static final int THIRTY_ONE = 31;
 
+   // the date pattern for parsing
+   public static final String DATE_PATTERN = "yyyy-mm-dd";
+
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations

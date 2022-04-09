@@ -83,9 +83,9 @@
           android:layout_height="53dp"
           android:layout_marginTop="225dp"
           android:background="@color/my_gray"
-          android:hint="Begin Date YYYYMMDD"
+          android:hint="Begin Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="time" />
+          android:inputType="number"/>
 
       <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/appointment_end_date"
@@ -93,9 +93,9 @@
           android:layout_height="53dp"
           android:layout_marginTop="300dp"
           android:background="@color/my_gray"
-          android:hint="End Date YYYYMMDD"
+          android:hint="End Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="time" />
+          android:inputType="number" />
 
       <Button
           android:id="@+id/confirm_button"

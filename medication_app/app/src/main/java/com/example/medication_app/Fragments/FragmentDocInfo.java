@@ -1,4 +1,4 @@
-package com.example.medication_app;
+package com.example.medication_app.Fragments;
 
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medication_app.Model.Doctor;
 import com.example.medication_app.Model.DoctorViewModel;
+import com.example.medication_app.R;
 import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;

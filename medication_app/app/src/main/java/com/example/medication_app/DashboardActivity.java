@@ -3,24 +3,17 @@ package com.example.medication_app;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.view.ViewCompat;
 
-import android.content.ContentUris;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.CalendarContract;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.transition.Fade;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.medication_app.EmpBios.AboutUsActivity;
 import com.example.medication_app.util.CONSTANTS;
-
-import java.util.Calendar;
-import java.util.Objects;
 
 public class DashboardActivity extends AppCompatActivity
 {

@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -47,13 +46,11 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
    private int end_hour, end_minute;
 
    private Intent calIntent;
-   private SimpleDateFormat sdformat;
+
    private Date begin_date;
    private Date end_date;
 
    private boolean flag = false;
-
-
 
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -162,7 +159,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
    }
 
-   private void setEventInfo() {
+   private void setEventInfo()
+   {
       // check all fields are filled
       if((!appointment_title.getText().toString().isEmpty()) &&
       (!appointment_location.getText().toString().isEmpty()) &&
@@ -170,12 +168,10 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
       (!appointment_begin_date.getText().toString().isEmpty()) &&
       (!appointment_end_date.getText().toString().isEmpty()))
       {
-
-
            //THIS WORKS!!!!!
-          if (checkIfDateIsValid(appointment_begin_date.getText().toString()))
+          if (checkDateFormat())
           {
-             Toast.makeText(CalendarActivity.this, "DATE IS GOOD", Toast.LENGTH_LONG).show();
+             Toast.makeText(CalendarActivity.this, "Month : " + begin_date.getMonth(), Toast.LENGTH_LONG).show();
 
              add_begin_button.setVisibility(View.VISIBLE);
 
@@ -187,9 +183,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
              calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, appointment_location.getText().toString());
              calIntent.putExtra(CalendarContract.Events.DESCRIPTION, appointment_description.getText().toString());
              calIntent.putExtra(Intent.EXTRA_EMAIL, appointment_begin_date.getText().toString());
-
-
           }
+
           else
              Toast.makeText(CalendarActivity.this, "DATE IS BAD", Toast.LENGTH_LONG).show();
 
@@ -231,54 +226,50 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
 
 
-   private boolean datesAreCorrect() throws ParseException
+   private boolean datesAreChronological()
    {
       boolean answer = false;
 
-      sdformat = new SimpleDateFormat(CONSTANTS.DATE_PATTERN);
+      if(begin_date.compareTo(end_date) > 0)
+      {
+         // Log.d("FROM CALENDAR","begin_date occurs after end_date");
+         Toast.makeText(CalendarActivity.this, "begin_date occurs after end_date", Toast.LENGTH_LONG).show();
+      }
 
-      try {
-         begin_date = sdformat.parse(appointment_begin_date.getText().toString());
-         end_date = sdformat.parse(appointment_end_date.getText().toString());
-
-         if(begin_date.compareTo(end_date) > 0)
-         {
-           // Log.d("FROM CALENDAR","begin_date occurs after end_date");
-            Toast.makeText(CalendarActivity.this, "begin_date occurs after end_date", Toast.LENGTH_LONG).show();
-         }
-
-         else if(begin_date.compareTo(end_date) < 0)
-         {
-           //  Log.d("FROM CALENDAR","begin_date occurs before end_date");
-            Toast.makeText(CalendarActivity.this, "begin_date occurs before end_date", Toast.LENGTH_LONG).show();
-            answer = true;
-         }
-         else if(begin_date.compareTo(end_date) == 0)
-         {
-          //  Log.d("FROM CALENDAR","Both dates are equal");
-            Toast.makeText(CalendarActivity.this, "EQUAL", Toast.LENGTH_LONG).show();
-            answer = true;
-         }
-      } catch (ParseException e) {
-         return false;
+      else if(begin_date.compareTo(end_date) < 0)
+      {
+         //  Log.d("FROM CALENDAR","begin_date occurs before end_date");
+         Toast.makeText(CalendarActivity.this, "begin_date occurs before end_date", Toast.LENGTH_LONG).show();
+         answer = true;
+      }
+      else if(begin_date.compareTo(end_date) == 0)
+      {
+         //  Log.d("FROM CALENDAR","Both dates are equal");
+         Toast.makeText(CalendarActivity.this, "EQUAL", Toast.LENGTH_LONG).show();
+         answer = true;
       }
 
       return answer;
    }
 
-   // progress
-   private boolean checkIfDateIsValid(String date)
+   private boolean checkDateFormat()
    {
       SimpleDateFormat format = new SimpleDateFormat(CONSTANTS.DATE_PATTERN);
       // With lenient parsing, the parser may use heuristics to interpret
       // inputs that do not precisely match this object's format.
       format.setLenient(false);
+
       try {
-         begin_date = format.parse(date);
-         end_date = format.parse(appointment_end_date.getText().toString());
+         // date objects stored here
+         /*begin_date = format.parse(appointment_begin_date.getText().toString().trim());*/
+         begin_date = format.parse("06/02/2008");
+         end_date = format.parse("05/06/2012 ");
+         // end_date = format.parse(appointment_end_date.getText().toString().trim());
       } catch (ParseException e) {
+         begin_date = null;
+         end_date = null;
          return false;
       }
       return true;
-   }
+   } // checkIfDateIsValid
 } // end class

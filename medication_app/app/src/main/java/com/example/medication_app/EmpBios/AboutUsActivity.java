@@ -1,4 +1,4 @@
-package com.example.medication_app;
+package com.example.medication_app.EmpBios;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.medication_app.R;
 
 public class AboutUsActivity extends AppCompatActivity {
 

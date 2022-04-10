@@ -1,4 +1,4 @@
-package com.example.medication_app;
+package com.example.medication_app.Fragments;
 
 
 
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.medication_app.Model.Medication;
+import com.example.medication_app.R;
 import com.example.medication_app.UI.RecMedAdapt;
 
 import java.util.Objects;

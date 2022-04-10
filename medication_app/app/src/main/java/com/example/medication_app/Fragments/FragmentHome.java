@@ -1,4 +1,4 @@
-package com.example.medication_app;
+package com.example.medication_app.Fragments;
 
 // import static MedicationViewModel.changeArray;
 

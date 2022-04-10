@@ -29,13 +29,13 @@ public class CONSTANTS
    // Dec 31 2022
    public static final int MAX_DAY = 22365;
 
-   // for months
+   // days for months
    public static final int LEAP = 28;
    public static final int THIRTY = 30;
    public static final int THIRTY_ONE = 31;
 
    // the date pattern for parsing
-   public static final String DATE_PATTERN = "yyyy-mm-dd";
+   public static final String DATE_PATTERN = "MM/dd/yyyy";
 
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 

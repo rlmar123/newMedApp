@@ -1,10 +1,11 @@
-package com.example.medication_app;
+package com.example.medication_app.EmpBios;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
 

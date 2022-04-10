@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
+import com.example.medication_app.Fragments.FragmentDocInfo;
+import com.example.medication_app.Fragments.FragmentHome;
 import com.example.medication_app.Model.MedicationViewModel;
 import com.example.medication_app.util.CONSTANTS;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

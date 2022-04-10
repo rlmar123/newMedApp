@@ -12,31 +12,31 @@
        android:supportsRtl="true"
        android:theme="@style/Theme.Medication_app">
       <activity
-          android:name=".AishaActivity"
+          android:name=".EmpBios.KhouriActivity"
           android:exported="false" />
       <activity
-          android:name=".KhouriActivity"
+          android:name=".EmpBios.JeffActivity"
           android:exported="false" />
       <activity
-          android:name=".JeffActivity"
+          android:name=".EmpBios.PaulActivity"
           android:exported="false" />
       <activity
-          android:name=".PaulActivity"
+          android:name=".EmpBios.TaylorActivity"
           android:exported="false" />
       <activity
-          android:name=".TaylorActivity"
+          android:name=".EmpBios.StacyActivity"
           android:exported="false" />
       <activity
-          android:name=".StacyActivity"
+          android:name=".EmpBios.VeronicaActivity"
           android:exported="false" />
       <activity
-          android:name=".VeronicaActivity"
+          android:name=".EmpBios.MicahActivity"
           android:exported="false" />
       <activity
-          android:name=".MicahActivity"
+          android:name=".EmpBios.AboutUsActivity"
           android:exported="false" />
       <activity
-          android:name=".AboutUsActivity"
+          android:name=".EmpBios.AishaActivity"
           android:exported="false" />
       <activity
           android:name=".CalendarActivity"

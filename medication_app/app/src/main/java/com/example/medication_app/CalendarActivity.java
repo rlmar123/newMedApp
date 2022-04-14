@@ -168,10 +168,10 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
       (!appointment_begin_date.getText().toString().isEmpty()) &&
       (!appointment_end_date.getText().toString().isEmpty()))
       {
-           //THIS WORKS!!!!!
+
           if (checkDateFormat())
           {
-             Toast.makeText(CalendarActivity.this, "Month : " + begin_date.getMonth(), Toast.LENGTH_LONG).show();
+             Toast.makeText(CalendarActivity.this, "Month : " + (begin_date.getDate()), Toast.LENGTH_LONG).show();
 
              add_begin_button.setVisibility(View.VISIBLE);
 
@@ -186,7 +186,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
           }
 
           else
-             Toast.makeText(CalendarActivity.this, "DATE IS BAD", Toast.LENGTH_LONG).show();
+             Toast.makeText(CalendarActivity.this, "DATE IS NOT MM-DD-YYYY format!!!!", Toast.LENGTH_LONG).show();
 
       }
 
@@ -261,10 +261,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
       try {
          // date objects stored here
-         /*begin_date = format.parse(appointment_begin_date.getText().toString().trim());*/
-         begin_date = format.parse("06/02/2008");
-         end_date = format.parse("05/06/2012 ");
-         // end_date = format.parse(appointment_end_date.getText().toString().trim());
+         begin_date = format.parse(appointment_begin_date.getText().toString());
+         end_date = format.parse(appointment_end_date.getText().toString());
       } catch (ParseException e) {
          begin_date = null;
          end_date = null;

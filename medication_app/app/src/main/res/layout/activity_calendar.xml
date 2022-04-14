@@ -85,7 +85,7 @@
           android:background="@color/my_gray"
           android:hint="Begin Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="number"/>
+          android:inputType="numberSigned"/>
 
       <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/appointment_end_date"
@@ -95,7 +95,7 @@
           android:background="@color/my_gray"
           android:hint="End Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="number" />
+          android:inputType="numberSigned" />
 
       <Button
           android:id="@+id/confirm_button"

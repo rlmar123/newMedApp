@@ -39,6 +39,11 @@ public class CONSTANTS
 
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
+   // to compare months in CalendarActivity
+   public static final int JAN = 1;
+   public static final int DEC = 12;
+
+
    // for animations
    public static final int ANIMATION_IN_RIGHT = R.anim.slide_in_right;
    public static final int ANIMATION_IN_LEFT = R.anim.slide_in_left;

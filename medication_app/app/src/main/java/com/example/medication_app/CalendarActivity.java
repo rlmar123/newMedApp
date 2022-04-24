@@ -169,13 +169,13 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
          // DATE IS MM-DD-YYYY format
           if (checkDateFormat())
           {
-             if(checkMonthAndDay())
+             if(datesAreChronological())
              {
                 moveToTimePicker();
              }
 
              else
-                Toast.makeText(CalendarActivity.this, "NOPE movetoTIMEPICKER", Toast.LENGTH_LONG).show();
+                Toast.makeText(CalendarActivity.this, "DATES ARE OUT OF ORDER", Toast.LENGTH_LONG).show();
           }
 
           // DATE IS NOT MM-DD-YYYY format
@@ -262,6 +262,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
       return true;
    } // end checkDateFormat
 
+   // we might not need this
    private boolean checkMonthAndDay()
    {
       int begin_month = (begin_date.getMonth() + 1);

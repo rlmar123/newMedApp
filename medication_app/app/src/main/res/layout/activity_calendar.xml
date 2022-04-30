@@ -77,7 +77,7 @@
           android:drawableLeft="@drawable/ic_baseline_description_24"
           android:inputType="textEmailAddress" />
 
-      <com.google.android.material.textfield.TextInputEditText
+<!--      <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/appointment_begin_date"
           android:layout_width="match_parent"
           android:layout_height="53dp"
@@ -85,9 +85,25 @@
           android:background="@color/my_gray"
           android:hint="Begin Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="numberSigned"/>
+          android:inputType="numberSigned"/>-->
 
-      <com.google.android.material.textfield.TextInputEditText
+      <Button
+          android:id="@+id/appointment_begin_date"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginTop="225dp"
+          android:text="Begin Date"
+          android:background="@color/my_blue"/>
+
+      <Button
+          android:id="@+id/appointment_end_date"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginTop="300dp"
+          android:text="End Date"
+          android:background="@color/my_blue"/>
+
+  <!--    <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/appointment_end_date"
           android:layout_width="match_parent"
           android:layout_height="53dp"
@@ -95,7 +111,7 @@
           android:background="@color/my_gray"
           android:hint="End Date YYYY-MM-DD"
           android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
-          android:inputType="numberSigned" />
+          android:inputType="numberSigned" />-->
 
       <Button
           android:id="@+id/confirm_button"

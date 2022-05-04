@@ -37,6 +37,13 @@ public class CONSTANTS
    // the date pattern for parsing
    public static final String DATE_PATTERN = "MM-dd-yyyy";
 
+   // used in CalendarActivity
+   public static final String SEL_BEGIN_DATE = "Select Begin Date";
+   public static final String SEL_END_DATE = "Select End Date";
+
+   public static final String BEGIN_TIME = "Begin Time";
+   public static final String END_TIME = "End Time";
+
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations

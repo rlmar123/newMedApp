@@ -44,6 +44,14 @@ public class CONSTANTS
    public static final String BEGIN_TIME = "Begin Time";
    public static final String END_TIME = "End Time";
 
+   // used in MicahActivity
+   public static final String MICAH_INTRO = "Micah has been with RL3 software since 2020. He graduated from William Paterson with a BS in Computer Science." +
+  " His passion is developing software. His hobbies include history, exercise, and guitar playing.  ......  ";
+
+   public static final String MICAH_BODY = "Micah has a veterans mindset and deals with problems in a professional manner. Always eager to learn, Micah embraces new technologies with enthusiasm." +
+  " Micah is orginally from Portland, Maine. He currently resides in Cheyenne, Wyoming.";
+
+
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations

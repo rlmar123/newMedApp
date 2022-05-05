@@ -15,7 +15,8 @@ public class MicahActivity extends AppCompatActivity
    private TextView micah_title;
    private TextView micah_email;
    private TextView micah_header;
-   private TextView micah_bio;
+   private TextView micah_intro;
+   private TextView micah_body;
 
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -27,14 +28,18 @@ public class MicahActivity extends AppCompatActivity
       micah_title = findViewById(R.id.micah_title);
       micah_email = findViewById(R.id.micah_email);
       micah_header = findViewById(R.id.micah_header);
-      micah_bio = findViewById(R.id.micah_bio);
+      micah_intro = findViewById(R.id.micah_intro);
+      micah_body = findViewById(R.id.micah_body);
 
-      micah_bio.setText(CONSTANTS.TEST_STRING);
+      micah_intro.setText(CONSTANTS.MICAH_INTRO);
+      micah_body.setText(CONSTANTS.MICAH_BODY);
+
 
       AppAnimation.theAnimation(this, micah_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, micah_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, micah_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, micah_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, micah_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, micah_body, CONSTANTS.ANIMATION_IN_UP);
    } // end onCreate
 
 } // end MicahActivity

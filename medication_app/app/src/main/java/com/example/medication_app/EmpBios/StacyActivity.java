@@ -14,7 +14,9 @@ public class StacyActivity extends AppCompatActivity {
    private TextView stacy_title;
    private TextView stacy_email;
    private TextView stacy_header;
-   private TextView stacy_bio;
+   private TextView stacy_intro;
+   private TextView stacy_body;
+
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -25,14 +27,18 @@ public class StacyActivity extends AppCompatActivity {
       stacy_title = findViewById(R.id.stacy_title);
       stacy_email = findViewById(R.id.paul_email);
       stacy_header = findViewById(R.id.paul_header);
-      stacy_bio = findViewById(R.id.stacy_bio);
+      stacy_intro = findViewById(R.id.stacy_intro);
+      stacy_body = findViewById(R.id.stacy_body);
 
 
-      stacy_bio.setText(CONSTANTS.TEST_STRING);
+      stacy_intro.setText(CONSTANTS.STACY_INTRO);
+      stacy_body.setText(CONSTANTS.STACY_BODY);
+
 
       AppAnimation.theAnimation(this, stacy_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, stacy_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, stacy_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, stacy_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, stacy_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, stacy_body, CONSTANTS.ANIMATION_IN_LEFT);
    }
 }

@@ -52,6 +52,16 @@ public class CONSTANTS
   " Micah is orginally from Portland, Maine. He currently resides in Cheyenne, Wyoming.";
 
 
+   // used in StacyActivity
+   public static final String STACY_INTRO = "Stacy gas been with the company for 3 years. She graduated NJIT cum laude with a BS in Mathematics. She also has an MS in Computer Engineering." +
+   " Stacy loves mentoring our junior developers. Stacy loves the NBA. Her favorite team are the New York Knicks. She has been a season ticket holder for 10 years";
+
+   public static final String STACY_BODY = "She constantly exceeds all of our expectations and meets deadlines either way before it is due or on time. She loves giving back by helping junior devs fix bugs in their code and help them understand new concepts." +
+   " Stacy is from Yonkers, NY. She lives in Hartford, Connecticut.";
+
+
+
+
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations
@@ -65,7 +75,7 @@ public class CONSTANTS
    public static final String TEST_STRING = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
    // add days for each month
-   public static HashMap <Integer, Integer> loadDays()
+   public static final HashMap <Integer, Integer> loadDays()
    {
       HashMap <Integer, Integer> calendar_days = new HashMap<>();
 

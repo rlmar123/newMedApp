@@ -53,12 +53,19 @@ public class CONSTANTS
 
 
    // used in StacyActivity
-   public static final String STACY_INTRO = "Stacy gas been with the company for 3 years. She graduated NJIT cum laude with a BS in Mathematics. She also has an MS in Computer Engineering." +
+   public static final String STACY_INTRO = "Stacy Has been with the company for 3 years. She graduated NJIT cum laude with a BS in Mathematics. She also has an MS in Computer Engineering." +
    " Stacy loves mentoring our junior developers. Stacy loves the NBA. Her favorite team are the New York Knicks. She has been a season ticket holder for 10 years";
 
    public static final String STACY_BODY = "She constantly exceeds all of our expectations and meets deadlines either way before it is due or on time. She loves giving back by helping junior devs fix bugs in their code and help them understand new concepts." +
-   " Stacy is from Yonkers, NY. She lives in Hartford, Connecticut.";
+   " Stacy is from Yonkers, New York. She lives in Hartford, Connecticut.";
 
+   // used in StacyActivity
+   //"Taylor Vaughn"
+   public static final String TAYLOR_INTRO = "Taylor has been with RL3 for 7 years. He graduated Rutgers Coding bootcamp in 2015. Taylor likes the great outdoors. He enjoys hiking and fishing. " +
+   " Taylor enjoys working with his teammates. Taylor enjoys watching NASCAR.";
+
+   public static final String TAYLOR_BODY = "Taylor always strives for self improvement. He really enjoys coding the solution, once he knows it will work, Taylor is usually the first to volunteer to help onboard new employees. " +
+   " Taylor is from Los Angeles, California. He lives in Madrid, Spain";
 
 
 

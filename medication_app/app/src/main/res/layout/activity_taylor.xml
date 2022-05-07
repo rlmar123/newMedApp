@@ -58,7 +58,7 @@
        app:layout_constraintVertical_bias="0.028" />
 
    <TextView
-       android:id="@+id/taylor_bio"
+       android:id="@+id/taylor_intro"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginTop="20dp"
@@ -68,6 +68,19 @@
        app:layout_constraintHorizontal_bias="0.106"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/taylor_header"
+       app:layout_constraintVertical_bias="0.066" />
+
+   <TextView
+       android:id="@+id/taylor_body"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:text="TextView"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.106"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/taylor_intro"
        app:layout_constraintVertical_bias="0.066" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,12 @@ public class PaulActivity extends AppCompatActivity
    private TextView paul_title;
    private TextView paul_email;
    private TextView paul_header;
-   private TextView paul_bio;
+   private TextView paul_intro;
+   private TextView paul_body;
+
+
+/*   private TextView taylor_intro;
+   private TextView taylor_body;*/
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +31,16 @@ public class PaulActivity extends AppCompatActivity
       paul_title = findViewById(R.id.paul_title);
       paul_email = findViewById(R.id.paul_email);
       paul_header = findViewById(R.id.paul_header);
-      paul_bio = findViewById(R.id.paul_bio);
+      paul_intro = findViewById(R.id.paul_intro);
+      paul_body = findViewById(R.id.paul_body);
 
-      paul_bio.setText(CONSTANTS.TEST_STRING);
+      paul_intro.setText(CONSTANTS.PAUL_INTRO);
+      paul_body.setText(CONSTANTS.PAUL_BODY);
 
       AppAnimation.theAnimation(this, paul_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, paul_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, paul_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, paul_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, paul_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, paul_body, CONSTANTS.ANIMATION_IN_UP);
    }
 }

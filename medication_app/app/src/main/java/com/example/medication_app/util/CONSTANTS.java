@@ -49,7 +49,7 @@ public class CONSTANTS
   " His passion is developing software. His hobbies include history, exercise, and guitar playing.  ......  ";
 
    public static final String MICAH_BODY = "Micah has a veterans mindset and deals with problems in a professional manner. Always eager to learn, Micah embraces new technologies with enthusiasm." +
-  " Micah is orginally from Portland, Maine. He currently resides in Cheyenne, Wyoming.";
+  " Micah is orginally from Portland, ME. He currently resides in Cheyenne, Wyoming.";
 
 
    // used in StacyActivity
@@ -57,18 +57,26 @@ public class CONSTANTS
    " Stacy loves mentoring our junior developers. Stacy loves the NBA. Her favorite team are the New York Knicks. She has been a season ticket holder for 10 years";
 
    public static final String STACY_BODY = "She constantly exceeds all of our expectations and meets deadlines either way before it is due or on time. She loves giving back by helping junior devs fix bugs in their code and help them understand new concepts." +
-   " Stacy is from Yonkers, New York. She lives in Hartford, Connecticut.";
+   " Stacy is from Yonkers, NY. She lives in Hartford, Connecticut.";
 
-   // used in StacyActivity
-   //"Taylor Vaughn"
+
+   // used in TaylorActivity
    public static final String TAYLOR_INTRO = "Taylor has been with RL3 for 7 years. He graduated Rutgers Coding bootcamp in 2015. Taylor likes the great outdoors. He enjoys hiking and fishing. " +
    " Taylor enjoys working with his teammates. Taylor enjoys watching NASCAR.";
 
    public static final String TAYLOR_BODY = "Taylor always strives for self improvement. He really enjoys coding the solution, once he knows it will work, Taylor is usually the first to volunteer to help onboard new employees. " +
-   " Taylor is from Los Angeles, California. He lives in Madrid, Spain";
+   " Taylor is from Los Angeles, CA. He lives in Madrid, Spain";
 
 
+   // used in PaulActivity
+   public static final String PAUL_INTRO = "Paul has been with the company for 10 years. He was a software developer I for 3 years. He then decided to become a manager and lead his own team. Paul practices martial arts and holds a black belt in Judo." +
+   " Paul loves motivating the team, and the team loves Taylor. He likes Hockey.";
 
+   public static final String PAUL_BODY = "Paul is an excellent and compassionate leader. He never asks other to people to do that which he would not do himself. Paul leads by example. " +
+   " Paul is from Tampa, FL and currently resides there.";
+
+
+   // number of characters for phone number input
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 
    // for animations

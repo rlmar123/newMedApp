@@ -61,7 +61,7 @@ public class CONSTANTS
 
 
    // used in TaylorActivity
-   public static final String TAYLOR_INTRO = "Taylor has been with RL3 for 7 years. He graduated Rutgers Coding bootcamp in 2015. Taylor likes the great outdoors. He enjoys hiking and fishing. " +
+   public static final String TAYLOR_INTRO = "Taylor has been with RL3 for 7 years. He graduated Rutgers Coding bootcamp in 2015. Taylor loves the great outdoors. He enjoys hiking and fishing. " +
    " Taylor enjoys working with his teammates. Taylor enjoys watching NASCAR.";
 
    public static final String TAYLOR_BODY = "Taylor always strives for self improvement. He really enjoys coding the solution, once he knows it will work, Taylor is usually the first to volunteer to help onboard new employees. " +
@@ -75,6 +75,14 @@ public class CONSTANTS
    public static final String PAUL_BODY = "Paul is an excellent and compassionate leader. He never asks other to people to do that which he would not do himself. Paul leads by example. " +
    " Paul is from Tampa, FL and currently resides there.";
 
+
+   // Jeff Samuels
+   // used in JeffActivity
+   public static final String JEFF_INTRO = "Jeff has been with RL3 software for 3 years. He holds two degrees in Psychology. He also holds a degree in Math. Jeff enjoys collecting medieval weapons and loves astronomy. " +
+   " Jeff loves working with our clients. He strives to gain a better understanding of the client's business needs. He enjoys doing Tai-Chi in the park. ";
+
+   public static final String JEFF_BODY = "Jeff is a determined analyst. He has a strong can do attitude and never stops until the job is done. Jeff served in the United States Msrine Corps for 4 years snd was honorably " +
+   " discharged. He is originally from Amarillo, TX. He lives in Miami, FL.";
 
    // number of characters for phone number input
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;

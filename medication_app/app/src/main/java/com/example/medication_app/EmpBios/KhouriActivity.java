@@ -14,7 +14,8 @@ public class KhouriActivity extends AppCompatActivity
    private TextView khouri_title;
    private TextView khouri_email;
    private TextView khouri_header;
-   private TextView khouri_bio;
+   private TextView khouri_intro;
+   private TextView khouri_body;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +27,17 @@ public class KhouriActivity extends AppCompatActivity
       khouri_title = findViewById(R.id.khouri_title);
       khouri_email = findViewById(R.id.khouri_email);
       khouri_header = findViewById(R.id.khouri_header);
-      khouri_bio = findViewById(R.id.khouri_bio);
+      khouri_intro = findViewById(R.id.khouri_intro);
+      khouri_body = findViewById(R.id.khouri_body);
 
-      khouri_bio.setText(CONSTANTS.TEST_STRING);
+      khouri_intro.setText(CONSTANTS.KHOURI_INTRO);
+      khouri_body.setText(CONSTANTS.KHOURI_BODY);
+
 
       AppAnimation.theAnimation(this, khouri_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, khouri_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, khouri_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, khouri_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, khouri_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, khouri_body, CONSTANTS.ANIMATION_IN_UP);
    }
 }

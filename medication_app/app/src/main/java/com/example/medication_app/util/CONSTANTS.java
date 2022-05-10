@@ -76,13 +76,27 @@ public class CONSTANTS
    " Paul is from Tampa, FL and currently resides there.";
 
 
-   // Jeff Samuels
    // used in JeffActivity
    public static final String JEFF_INTRO = "Jeff has been with RL3 software for 3 years. He holds two degrees in Psychology. He also holds a degree in Math. Jeff enjoys collecting medieval weapons and loves astronomy. " +
    " Jeff loves working with our clients. He strives to gain a better understanding of the client's business needs. He enjoys doing Tai-Chi in the park. ";
 
    public static final String JEFF_BODY = "Jeff is a determined analyst. He has a strong can do attitude and never stops until the job is done. Jeff served in the United States Msrine Corps for 4 years snd was honorably " +
    " discharged. He is originally from Amarillo, TX. He lives in Miami, FL.";
+
+   // Veronica Smith
+   //used in VeronicaActivity
+   /*
+   * BEGIN HERE NEXT TIME!!!!!!!!!!!!!!
+   *
+   * */
+
+   // used in KhouriActivity
+   public static final String KHOURI_INTRO = "Khouri has been will the company since its inception in 1995. He is A+ certified and builds PC's in his spare time. He is loves football and his favorite team is the Dallas Cowboys." +
+   " Khouri loves creating solutions and business reuqirements for our clients";
+
+   public static final String KHOURI_BODY = "Khouri is passionate about all of our projects, and his goal is to always deliver the best product to the customer possible. " +
+   " Khouri is from Austin, TX. He lives in Mobile, AL.";
+
 
    // number of characters for phone number input
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;

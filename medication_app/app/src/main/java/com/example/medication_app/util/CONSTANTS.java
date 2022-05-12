@@ -80,15 +80,18 @@ public class CONSTANTS
    public static final String JEFF_INTRO = "Jeff has been with RL3 software for 3 years. He holds two degrees in Psychology. He also holds a degree in Math. Jeff enjoys collecting medieval weapons and loves astronomy. " +
    " Jeff loves working with our clients. He strives to gain a better understanding of the client's business needs. He enjoys doing Tai-Chi in the park. ";
 
-   public static final String JEFF_BODY = "Jeff is a determined analyst. He has a strong can do attitude and never stops until the job is done. Jeff served in the United States Msrine Corps for 4 years snd was honorably " +
+   public static final String JEFF_BODY = "Jeff is a determined analyst. He has a strong can do attitude and never stops until the job is done. Jeff served in the United States Marine Corps for 4 years snd was honorably " +
    " discharged. He is originally from Amarillo, TX. He lives in Miami, FL.";
+
 
    // Veronica Smith
    //used in VeronicaActivity
-   /*
-   * BEGIN HERE NEXT TIME!!!!!!!!!!!!!!
-   *
-   * */
+   public static final String VERONICA_INTRO = "Veronica has been with the company for 7 years. She has a bachelor's degree in biology. Veronica enjoys working with the clients and drawing up the business requirements.  " +
+   "Veronica enjoys showing others how to work with clients. She always gives 110% and never misses adeadline. She enjoys bowling. ";
+
+   public static final String VERONICA_BODY = "Veronica always exceeds expectations. She is always looking to improve the product. Veronica loves running marathons and completed 10 of them."+
+   "Veronica is from Los Angeles, CA. She still lives there";
+
 
    // used in KhouriActivity
    public static final String KHOURI_INTRO = "Khouri has been will the company since its inception in 1995. He is A+ certified and builds PC's in his spare time. He is loves football and his favorite team is the Dallas Cowboys." +

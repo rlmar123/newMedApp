@@ -15,7 +15,8 @@ public class VeronicaActivity extends AppCompatActivity
    private TextView veronica_title;
    private TextView veronica_email;
    private TextView veronica_header;
-   private TextView veronica_bio;
+   private TextView veronica_intro;
+   private TextView veronica_body;
 
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -27,14 +28,17 @@ public class VeronicaActivity extends AppCompatActivity
       veronica_title = findViewById(R.id.veronica_title);
       veronica_email = findViewById(R.id.veronica_email);
       veronica_header = findViewById(R.id.veronica_header);
-      veronica_bio = findViewById(R.id.veronica_bio);
+      veronica_intro = findViewById(R.id.veronica_intro);
+      veronica_body = findViewById(R.id.veronica_body);
 
-      veronica_bio.setText(CONSTANTS.TEST_STRING);
+      veronica_intro.setText(CONSTANTS.VERONICA_INTRO);
+      veronica_body.setText(CONSTANTS.VERONICA_BODY);
 
       AppAnimation.theAnimation(this, veronica_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, veronica_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, veronica_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, veronica_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, veronica_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, veronica_body, CONSTANTS.ANIMATION_IN_UP);
    } // end onCreate
 
 } // end MicahActivity

@@ -14,7 +14,8 @@ public class AishaActivity extends AppCompatActivity
    private TextView aisha_title;
    private TextView aisha_email;
    private TextView aisha_header;
-   private TextView aisha_bio;
+   private TextView aisha_intro;
+   private TextView aisha_body;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +27,16 @@ public class AishaActivity extends AppCompatActivity
       aisha_title = findViewById(R.id.aisha_title);
       aisha_email = findViewById(R.id.aisha_email);
       aisha_header = findViewById(R.id.aisha_header);
-      aisha_bio = findViewById(R.id.aisha_bio);
+      aisha_intro = findViewById(R.id.aisha_intro);
+      aisha_body = findViewById(R.id.aisha_body);
 
-      aisha_bio.setText(CONSTANTS.TEST_STRING);
+      aisha_intro.setText(CONSTANTS.AISHA_INTRO);
+      aisha_body.setText(CONSTANTS.AISHA_BODY);
 
       AppAnimation.theAnimation(this, aisha_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, aisha_email, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, aisha_header, CONSTANTS.ANIMATION_IN_LEFT);
-      AppAnimation.theAnimation(this, aisha_bio, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, aisha_intro, CONSTANTS.ANIMATION_IN_UP);
+      AppAnimation.theAnimation(this, aisha_body, CONSTANTS.ANIMATION_IN_UP);
    }
 }

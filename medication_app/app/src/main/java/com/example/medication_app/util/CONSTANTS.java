@@ -84,22 +84,28 @@ public class CONSTANTS
    " discharged. He is originally from Amarillo, TX. He lives in Miami, FL.";
 
 
-   // Veronica Smith
    //used in VeronicaActivity
-   public static final String VERONICA_INTRO = "Veronica has been with the company for 7 years. She has a bachelor's degree in biology. Veronica enjoys working with the clients and drawing up the business requirements.  " +
-   "Veronica enjoys showing others how to work with clients. She always gives 110% and never misses adeadline. She enjoys bowling. ";
+   public static final String VERONICA_INTRO = "Veronica has been with the company for 7 years. She has a bachelor's degree in biology. Veronica enjoys working with the clients and drawing up the business requirements.  "  +
+   "Veronica enjoys showing others how to work with clients. She always gives 110% and never misses a deadline. She enjoys bowling. ";
 
    public static final String VERONICA_BODY = "Veronica always exceeds expectations. She is always looking to improve the product. Veronica loves running marathons and completed 10 of them."+
    "Veronica is from Los Angeles, CA. She still lives there";
 
 
    // used in KhouriActivity
-   public static final String KHOURI_INTRO = "Khouri has been will the company since its inception in 1995. He is A+ certified and builds PC's in his spare time. He is loves football and his favorite team is the Dallas Cowboys." +
-   " Khouri loves creating solutions and business reuqirements for our clients";
+   public static final String KHOURI_INTRO = "Khouri has been will the company since its inception in 1995. He is A+ certified and builds PC's in his spare time. He is loves football and his favorite team is the Dallas Cowboys."  +
+   "Khouri loves creating solutions and business requirements for our clients";
 
-   public static final String KHOURI_BODY = "Khouri is passionate about all of our projects, and his goal is to always deliver the best product to the customer possible. " +
-   " Khouri is from Austin, TX. He lives in Mobile, AL.";
+   public static final String KHOURI_BODY = "Khouri is passionate about all of our projects, and his goal is to always deliver the best product to the customer possible. Khouri loves sitting in on software meetings " +
+   "Khouri is from Austin, TX. He lives in Mobile, AL.";
 
+
+   // used in AishaActivity
+   public static final String AISHA_INTRO = "Aisha has been with RL3 for 15 years. She started as an intern from Rutgers University. Once she graduated with her Bs in Computer Science, we immediately hired her as a Software Developer. " +
+   "Aisha enjoys being a part of the software development process from concept to deployment. ";
+
+   public static final String AISHA_BODY = "Aisha enjoys working with all of the employees and she always encourages new ideas from everyone. She holds a black belt in Karate. She also does gymnastic and water painting in her spare time. " +
+   "Aisha is from Miami, FL and currently resdies there.";
 
    // number of characters for phone number input
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;

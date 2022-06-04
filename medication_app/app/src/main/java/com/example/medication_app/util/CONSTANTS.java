@@ -107,6 +107,10 @@ public class CONSTANTS
    public static final String AISHA_BODY = "Aisha enjoys working with all of the employees and she always encourages new ideas from everyone. She holds a black belt in Karate. She also does gymnastic and water painting in her spare time. " +
    "Aisha is from Miami, FL and currently resdies there.";
 
+   public static final String AISHA_EMAIL = "aisha_waters@rl3_software.com";
+
+
+
    // number of characters for phone number input
    public static final int MAX_PHONE_NUMBER_LENGTH = 14;
 

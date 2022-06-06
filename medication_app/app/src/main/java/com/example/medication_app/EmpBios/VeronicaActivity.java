@@ -1,10 +1,12 @@
 package com.example.medication_app.EmpBios;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.medication_app.Model.SendEmail;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
@@ -33,6 +35,17 @@ public class VeronicaActivity extends AppCompatActivity
 
       veronica_intro.setText(CONSTANTS.VERONICA_INTRO);
       veronica_body.setText(CONSTANTS.VERONICA_BODY);
+
+      veronica_email.setText(CONSTANTS.VERONICA_EMAIL);
+
+      veronica_email.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View v)
+         {
+            SendEmail.EmailIntent(CONSTANTS.VERONICA_EMAIL, VeronicaActivity.this);
+         }
+      });
 
       AppAnimation.theAnimation(this, veronica_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, veronica_email, CONSTANTS.ANIMATION_IN_RIGHT);

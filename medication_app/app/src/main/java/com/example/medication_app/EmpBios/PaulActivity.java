@@ -3,8 +3,10 @@ package com.example.medication_app.EmpBios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.medication_app.Model.SendEmail;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
@@ -36,6 +38,16 @@ public class PaulActivity extends AppCompatActivity
 
       paul_intro.setText(CONSTANTS.PAUL_INTRO);
       paul_body.setText(CONSTANTS.PAUL_BODY);
+      paul_email.setText(CONSTANTS.PAUL_EMAIL);
+
+      paul_email.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View v)
+         {
+            SendEmail.EmailIntent(CONSTANTS.PAUL_EMAIL, PaulActivity.this);
+         }
+      });
 
       AppAnimation.theAnimation(this, paul_title, CONSTANTS.ANIMATION_IN_RIGHT);
       AppAnimation.theAnimation(this, paul_email, CONSTANTS.ANIMATION_IN_RIGHT);

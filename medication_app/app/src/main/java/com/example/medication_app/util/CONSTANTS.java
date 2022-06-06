@@ -51,6 +51,8 @@ public class CONSTANTS
    public static final String MICAH_BODY = "Micah has a veterans mindset and deals with problems in a professional manner. Always eager to learn, Micah embraces new technologies with enthusiasm." +
   " Micah is orginally from Portland, ME. He currently resides in Cheyenne, Wyoming.";
 
+   public static final String MICAH_EMAIL = "mreynolds@rl3software.com";
+
 
    // used in StacyActivity
    public static final String STACY_INTRO = "Stacy Has been with the company for 3 years. She graduated NJIT cum laude with a BS in Mathematics. She also has an MS in Computer Engineering." +
@@ -58,6 +60,8 @@ public class CONSTANTS
 
    public static final String STACY_BODY = "She constantly exceeds all of our expectations and meets deadlines either way before it is due or on time. She loves giving back by helping junior devs fix bugs in their code and help them understand new concepts." +
    " Stacy is from Yonkers, NY. She lives in Hartford, Connecticut.";
+
+   public static final String STACY_EMAIL = "shollywood@rl3software.com";
 
 
    // used in TaylorActivity
@@ -67,6 +71,8 @@ public class CONSTANTS
    public static final String TAYLOR_BODY = "Taylor always strives for self improvement. He really enjoys coding the solution, once he knows it will work, Taylor is usually the first to volunteer to help onboard new employees. " +
    " Taylor is from Los Angeles, CA. He lives in Madrid, Spain";
 
+   public static final String TAYLOR_EMAIL = "tvaughn@rl3software.com";
+
 
    // used in PaulActivity
    public static final String PAUL_INTRO = "Paul has been with the company for 10 years. He was a software developer I for 3 years. He then decided to become a manager and lead his own team. Paul practices martial arts and holds a black belt in Judo." +
@@ -74,6 +80,8 @@ public class CONSTANTS
 
    public static final String PAUL_BODY = "Paul is an excellent and compassionate leader. He never asks other to people to do that which he would not do himself. Paul leads by example. " +
    " Paul is from Tampa, FL and currently resides there.";
+
+   public static final String PAUL_EMAIL = "plockwood@rl3software.com";
 
 
    // used in JeffActivity
@@ -83,6 +91,8 @@ public class CONSTANTS
    public static final String JEFF_BODY = "Jeff is a determined analyst. He has a strong can do attitude and never stops until the job is done. Jeff served in the United States Marine Corps for 4 years snd was honorably " +
    " discharged. He is originally from Amarillo, TX. He lives in Miami, FL.";
 
+   public static final String JEFF_EMAIL = "jsamuels@rl3software.com";
+
 
    //used in VeronicaActivity
    public static final String VERONICA_INTRO = "Veronica has been with the company for 7 years. She has a bachelor's degree in biology. Veronica enjoys working with the clients and drawing up the business requirements.  "  +
@@ -90,6 +100,8 @@ public class CONSTANTS
 
    public static final String VERONICA_BODY = "Veronica always exceeds expectations. She is always looking to improve the product. Veronica loves running marathons and completed 10 of them."+
    "Veronica is from Los Angeles, CA. She still lives there";
+
+   public static final String VERONICA_EMAIL = "vsmith@rl3software.com";
 
 
    // used in KhouriActivity
@@ -99,6 +111,8 @@ public class CONSTANTS
    public static final String KHOURI_BODY = "Khouri is passionate about all of our projects, and his goal is to always deliver the best product to the customer possible. Khouri loves sitting in on software meetings " +
    "Khouri is from Austin, TX. He lives in Mobile, AL.";
 
+   public static final String KHOURI_EMAIL = "kvalentine@rl3software.com";
+
 
    // used in AishaActivity
    public static final String AISHA_INTRO = "Aisha has been with RL3 for 15 years. She started as an intern from Rutgers University. Once she graduated with her Bs in Computer Science, we immediately hired her as a Software Developer. " +
@@ -107,7 +121,7 @@ public class CONSTANTS
    public static final String AISHA_BODY = "Aisha enjoys working with all of the employees and she always encourages new ideas from everyone. She holds a black belt in Karate. She also does gymnastic and water painting in her spare time. " +
    "Aisha is from Miami, FL and currently resdies there.";
 
-   public static final String AISHA_EMAIL = "aisha_waters@rl3_software.com";
+   public static final String AISHA_EMAIL = "awaters@rl3software.com";
 
 
 

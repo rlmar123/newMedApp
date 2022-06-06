@@ -3,8 +3,10 @@ package com.example.medication_app.EmpBios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.medication_app.Model.SendEmail;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
@@ -32,6 +34,16 @@ public class KhouriActivity extends AppCompatActivity
 
       khouri_intro.setText(CONSTANTS.KHOURI_INTRO);
       khouri_body.setText(CONSTANTS.KHOURI_BODY);
+      khouri_email.setText(CONSTANTS.KHOURI_EMAIL);
+
+      khouri_email.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View v)
+         {
+            SendEmail.EmailIntent(CONSTANTS.KHOURI_EMAIL, KhouriActivity.this);
+         }
+      });
 
 
       AppAnimation.theAnimation(this, khouri_title, CONSTANTS.ANIMATION_IN_RIGHT);

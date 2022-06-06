@@ -3,8 +3,10 @@ package com.example.medication_app.EmpBios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.medication_app.Model.SendEmail;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
@@ -33,6 +35,17 @@ public class MicahActivity extends AppCompatActivity
 
       micah_intro.setText(CONSTANTS.MICAH_INTRO);
       micah_body.setText(CONSTANTS.MICAH_BODY);
+      micah_email.setText(CONSTANTS.MICAH_EMAIL);
+
+      micah_email.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View v)
+         {
+            SendEmail.EmailIntent(CONSTANTS.MICAH_EMAIL, MicahActivity.this);
+         }
+      });
+
 
 
       AppAnimation.theAnimation(this, micah_title, CONSTANTS.ANIMATION_IN_RIGHT);

@@ -3,8 +3,10 @@ package com.example.medication_app.EmpBios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.medication_app.Model.SendEmail;
 import com.example.medication_app.R;
 import com.example.medication_app.UI.AppAnimation;
 import com.example.medication_app.util.CONSTANTS;
@@ -18,8 +20,10 @@ public class StacyActivity extends AppCompatActivity {
    private TextView stacy_body;
 
    @Override
-   protected void onCreate(Bundle savedInstanceState) {
+   protected void onCreate(Bundle savedInstanceState)
+   {
       super.onCreate(savedInstanceState);
+
       setContentView(R.layout.activity_stacy);
 
       setTitle(R.string.stacy_quote);
@@ -33,6 +37,17 @@ public class StacyActivity extends AppCompatActivity {
 
       stacy_intro.setText(CONSTANTS.STACY_INTRO);
       stacy_body.setText(CONSTANTS.STACY_BODY);
+      stacy_email.setText(CONSTANTS.STACY_EMAIL);
+
+      stacy_email.setOnClickListener(new View.OnClickListener()
+      {
+         @Override
+         public void onClick(View v)
+         {
+            SendEmail.EmailIntent(CONSTANTS.STACY_EMAIL, StacyActivity.this);
+         }
+      });
+
 
 
       AppAnimation.theAnimation(this, stacy_title, CONSTANTS.ANIMATION_IN_RIGHT);
